@@ -393,56 +393,8 @@ include("edit_icon.php");
 
 }
 
-if(isset($_GET['insert_bundle'])){
-
-include("insert_bundle.php");
-
-}
-
-if(isset($_GET['view_bundles'])){
-
-include("view_bundles.php");
-
-}
-
-if(isset($_GET['delete_bundle'])){
-
-include("delete_bundle.php");
-
-}
 
 
-if(isset($_GET['edit_bundle'])){
-
-include("edit_bundle.php");
-
-}
-
-
-if(isset($_GET['insert_rel'])){
-
-include("insert_rel.php");
-
-}
-
-if(isset($_GET['view_rel'])){
-
-include("view_rel.php");
-
-}
-
-if(isset($_GET['delete_rel'])){
-
-include("delete_rel.php");
-
-}
-
-
-if(isset($_GET['edit_rel'])){
-
-include("edit_rel.php");
-
-}
 
 
 if(isset($_GET['edit_contact_us'])){
