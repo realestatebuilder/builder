@@ -106,7 +106,7 @@ else {
 
 <li><!-- li Starts -->
 
-<a href="thepetfood.in/logout.php">
+<a href="http://localhost/builder/admin_area/logout.php">
 
 <i class="fa fa-fw fa-power-off"> </i> Log Out
 
@@ -207,7 +207,7 @@ else {
 
 <li><!-- li Starts -->
 
-<a href="thepetfood.in/logout.php">
+<a href="http://localhost/builder/admin_area/logout.php">
 
 <i class="fa fa-fw fa-power-off"></i> Log Out
 
