@@ -381,6 +381,17 @@ else {
 
 </div><!-- form-group Ends -->
 
+<div class="form-group" ><!-- form-group Starts -->
+
+<label class="col-md-3 control-label" > <a href="https://www.google.com/maps" target="_blank">Map Location </a></label>
+
+<div class="col-md-6" >
+
+<input type="text" name="map_location" class="form-control" required >
+
+</div>
+
+</div><!-- form-group Ends -->
 
 <div class="form-group" ><!-- form-group Starts -->
 
@@ -422,6 +433,7 @@ $bed_room = $_POST['bed_room'];
 $liv_room = $_POST['liv_room'];
 $parking = $_POST['parking'];
 $kitchen = $_POST['kitchen'];
+$map_location = $_POST['map_location'];
 
 $delivery_type = $_POST['delivery_type'];
 $price = $_POST['price'];
@@ -463,7 +475,7 @@ move_uploaded_file($temp_name4,"property_images/$product_img4");
 move_uploaded_file($temp_name5,"property_images/$product_img5");
 
 $agent = 1;
-$insert_property = "insert into properties (property_title,property_details,delivery_type,availability,price,property_address,property_img1,property_img2,property_img3,property_img4,property_img5,bed_room,liv_room,parking,kitchen,property_type,floor_space,agent_id,blueprint,property_video) values ('$property_title','$property_details','$delivery_type','$availability','$price','$property_address','$product_img1','$product_img2','$product_img3','$product_img4','$product_img5','$bed_room','$liv_room','$parking','$kitchen','$property_type','$floor_space',$agent,'$blueprint','$property_video')";
+$insert_property = "insert into properties (property_title,property_details,delivery_type,availability,price,property_address,property_img1,property_img2,property_img3,property_img4,property_img5,bed_room,liv_room,parking,kitchen,property_type,floor_space,agent_id,blueprint,property_video,map_location) values ('$property_title','$property_details','$delivery_type','$availability','$price','$property_address','$product_img1','$product_img2','$product_img3','$product_img4','$product_img5','$bed_room','$liv_room','$parking','$kitchen','$property_type','$floor_space',$agent,'$blueprint','$property_video','$map_location')";
 
 $run_property = mysqli_query($con,$insert_property);
 

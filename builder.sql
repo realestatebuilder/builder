@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 10, 2020 at 02:23 PM
+-- Generation Time: Jul 10, 2020 at 02:44 PM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.3.3
 
@@ -97,15 +97,17 @@ CREATE TABLE `properties` (
   `floor_space` varchar(20) DEFAULT NULL,
   `agent_id` int(10) DEFAULT NULL,
   `blueprint` varchar(50) DEFAULT NULL,
-  `property_video` varchar(50) DEFAULT NULL
+  `property_video` varchar(50) DEFAULT NULL,
+  `map_location` varchar(1000) DEFAULT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `properties`
 --
 
-INSERT INTO `properties` (`property_id`, `property_title`, `property_details`, `delivery_type`, `availability`, `price`, `property_address`, `property_img1`, `property_img2`, `property_img3`, `property_img4`, `property_img5`, `bed_room`, `liv_room`, `parking`, `kitchen`, `property_type`, `floor_space`, `agent_id`, `blueprint`, `property_video`) VALUES
-(1, 'Chaundeshwari Nivas', '<p>sarang lives there, please beware</p>', 'Rent', 'Avail', '500', 'Viman Nagar', 'Screenshot (4).png', 'Screenshot (5).png', 'Screenshot (6).png', 'Screenshot (8).png', 'Screenshot (9).png', '3', '3', 'Bike + Car Parking', '1', 'Apartment', '1000sqft', 1, 'Screenshot (13).png', 'WIN_20200422_11_38_34_Pro.mp4');
+INSERT INTO `properties` (`property_id`, `property_title`, `property_details`, `delivery_type`, `availability`, `price`, `property_address`, `property_img1`, `property_img2`, `property_img3`, `property_img4`, `property_img5`, `bed_room`, `liv_room`, `parking`, `kitchen`, `property_type`, `floor_space`, `agent_id`, `blueprint`, `property_video`, `map_location`) VALUES
+(1, 'Chaundeshwari Nivas', '<p>sarang lives there, please beware</p>', 'Rent', 'Avail', '500', 'Viman Nagar', 'Screenshot (4).png', 'Screenshot (5).png', 'Screenshot (6).png', 'Screenshot (8).png', 'Screenshot (9).png', '3', '3', 'Bike + Car Parking', '1', 'Apartment', '1000sqft', 1, 'Screenshot (13).png', 'WIN_20200422_11_38_34_Pro.mp4', NULL),
+(3, 'Ashirvad Nivas', '<p>go get it..!</p>', 'Sale', 'Available', '1000', 'Chinchwad', 'about.jpg', 'advertisements.jpg', 'bg.jpg', 'bginside.jpg', 'facebook.png', '0', '1', 'Not Available', '1', 'Apartment', '1700sqft', 1, 'logo.png', 'WIN_20200409_19_25_03_Pro.mp4', '<iframe src=\"https://www.google.com/maps/embed?pb=!1m26!1m12!1m3!1d1890.4393598856968!2d73.78117215807208!3d18.624523996837155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m11!3e6!4m3!3m2!1d18.6229016!2d73.7820462!4m5!1s0x3bc2b9a54f8d6c25%3A0x6c24b1bf1f23643!2sGandhi%20Peth%2C%20Chinchwad%20Gaon%2C%20Chinchwad%2C%20Pimpri-Chinchwad%2C%20Maharashtra%20411033!3m2!1d18.6261464!2d73.7820006!5e0!3m2!1sen!2sin!4v1594384513223!5m2!1sen!2sin\" width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0;\" allowfullscreen=\"\" aria-hidden=\"false\" tabindex=\"0\"></iframe>');
 
 -- --------------------------------------------------------
 
@@ -206,7 +208,7 @@ ALTER TABLE `agent`
 -- AUTO_INCREMENT for table `properties`
 --
 ALTER TABLE `properties`
-  MODIFY `property_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `property_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
