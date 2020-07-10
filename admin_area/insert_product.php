@@ -442,7 +442,7 @@ $product_img5 = $_FILES['product_img5']['name'];
 
 
 $temp_blue_name = $_FILES['blueprint']['tmp_name'];
-$property_video = $_FILES['property_video']['property_video'];
+$property_video = $_FILES['property_video']['tmp_name'];
 
 
 $temp_name1 = $_FILES['product_img1']['tmp_name'];
@@ -452,7 +452,7 @@ $temp_name4 = $_FILES['product_img4']['tmp_name'];
 $temp_name5 = $_FILES['product_img5']['tmp_name'];
 
 
-move_uploaded_file($temp_blue_name,"property_videos/$product_img1");
+move_uploaded_file($temp_blue_name,"property_videos/$product_video");
 
 move_uploaded_file($temp_name1,"property_images/$product_img1");
 move_uploaded_file($temp_name2,"property_images/$product_img2");
@@ -460,7 +460,7 @@ move_uploaded_file($temp_name3,"property_images/$product_img3");
 move_uploaded_file($temp_name4,"property_images/$product_img4");
 move_uploaded_file($temp_name5,"property_images/$product_img5");
 
-$insert_property = "insert into properties (property_title,property_details,delivery_type,availability,price,property_address,property_img1,property_img2,property_img3,property_img4,property_img5,bed_room,liv_room,parking,kitchen,property_type,floor_space,blueprint,property_video) values ('$property_title','$property_details','$delivery_type','$availability','$price','$property_address','$product_img1','$product_img2','$product_img3','$product_img4','$product_img5','$bed_room','$liv_room','$parking','$kitchen','$property_type','$floor_space','$blueprint','$property_video')";
+$insert_property = "insert into properties (property_title,property_details,delivery_type,availability,price,property_address,property_img1,property_img2,property_img3,property_img4,property_img5,bed_room,liv_room,parking,kitchen,property_type,floor_space,agent_id,blueprint,property_video) values ('$property_title','$property_details','$delivery_type','$availability','$price','$property_address','$product_img1','$product_img2','$product_img3','$product_img4','$product_img5','$bed_room','$liv_room','$parking','$kitchen','$property_type','$floor_space',1,'$blueprint','$property_video')";
 
 $run_property = mysqli_query($con,$insert_property);
 
@@ -471,7 +471,11 @@ echo "<script>alert('Product has been inserted successfully')</script>";
 echo "<script>window.open('index.php?view_products','_self')</script>";
 
 }
+else
+{
+echo "<script>alert('Product Failed')</script>";
 
+}
 }
 
 ?>
