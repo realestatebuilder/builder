@@ -15,11 +15,11 @@ else {
 
 <head>
 
-<title> Insert Products </title>
+<title> Insert Property </title>
 
 
 <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
-  <script>tinymce.init({ selector:'#product_desc,#product_features' });</script>
+  <script>tinymce.init({ selector:'#property_details' });</script>
 
 </head>
 
@@ -33,7 +33,7 @@ else {
 
 <li class="active">
 
-<i class="fa fa-dashboard"> </i> Dashboard / Insert Products
+<i class="fa fa-dashboard"> </i> Dashboard / Insert Property
 
 </li>
 
@@ -54,7 +54,7 @@ else {
 
 <h3 class="panel-title">
 
-<i class="fa fa-money fa-fw"></i> Insert Products
+<i class="fa fa-money fa-fw"></i> Insert Properties
 
 </h3>
 
@@ -66,11 +66,11 @@ else {
 
 <div class="form-group" ><!-- form-group Starts -->
 
-<label class="col-md-3 control-label" > Product Title </label>
+<label class="col-md-3 control-label" > Property Title </label>
 
 <div class="col-md-6" >
 
-<input type="text" name="product_title" class="form-control" required >
+<input type="text" name="property_title" class="form-control" required >
 
 </div>
 
@@ -79,19 +79,11 @@ else {
 
 <div class="form-group" ><!-- form-group Starts -->
 
-<label class="col-md-3 control-label" > Product Url </label>
+<label class="col-md-3 control-label" > Property Address </label>
 
 <div class="col-md-6" >
 
-<input type="text" name="product_url" class="form-control" required >
-
-<br>
-
-<p style="font-size:15px; font-weight:bold;">
-
-Product Url Example : navy-blue-t-shirt
-
-</p>
+<input type="text" name="property_address" class="form-control" required >
 
 </div>
 
@@ -100,31 +92,18 @@ Product Url Example : navy-blue-t-shirt
 
 <div class="form-group" ><!-- form-group Starts -->
 
-<label class="col-md-3 control-label" > Select A Manufacturer </label>
+<label class="col-md-3 control-label" > Delivery Type </label>
 
 <div class="col-md-6" >
 
-<select class="form-control" name="manufacturer"><!-- select manufacturer Starts -->
+<select class="form-control" name="delivery_type"><!-- select delivery_type Starts -->
 
-<option> Select A Manufacturer </option>
+<option> Select A Delevery Type </option>
+<option> Sale </option>
+<option> Rent </option>
 
-<?php
 
-$get_manufacturer = "select * from manufacturers";
-$run_manufacturer = mysqli_query($con,$get_manufacturer);
-while($row_manufacturer= mysqli_fetch_array($run_manufacturer)){
-$manufacturer_id = $row_manufacturer['manufacturer_id'];
-$manufacturer_title = $row_manufacturer['manufacturer_title'];
-
-echo "<option value='$manufacturer_id'>
-$manufacturer_title
-</option>";
-
-}
-
-?>
-
-</select><!-- select manufacturer Ends -->
+</select><!-- select delivery_type Ends -->
 
 </div>
 
@@ -133,34 +112,15 @@ $manufacturer_title
 
 <div class="form-group" ><!-- form-group Starts -->
 
-<label class="col-md-3 control-label" > Product Category </label>
+<label class="col-md-3 control-label" > Availability </label>
 
 <div class="col-md-6" >
 
-<select name="product_cat" class="form-control" >
+<select name="availability" class="form-control" >
 
-<option> Select  a Product Category </option>
-
-
-<?php
-
-$get_p_cats = "select * from product_categories";
-
-$run_p_cats = mysqli_query($con,$get_p_cats);
-
-while ($row_p_cats=mysqli_fetch_array($run_p_cats)) {
-
-$p_cat_id = $row_p_cats['p_cat_id'];
-
-$p_cat_title = $row_p_cats['p_cat_title'];
-
-echo "<option value='$p_cat_id' >$p_cat_title</option>";
-
-}
-
-
-?>
-
+<option> Select Property Availability </option>
+<option> Available </option>
+<option> Not Available </option>
 
 </select>
 
@@ -170,33 +130,18 @@ echo "<option value='$p_cat_id' >$p_cat_title</option>";
 
 <div class="form-group" ><!-- form-group Starts -->
 
-<label class="col-md-3 control-label" > Category </label>
+<label class="col-md-3 control-label" > Property Type </label>
 
 <div class="col-md-6" >
 
 
-<select name="cat" class="form-control" >
+<select name="property_type" class="form-control" >
 
-<option> Select a Category </option>
-
-<?php
-
-$get_cat = "select * from categories ";
-
-$run_cat = mysqli_query($con,$get_cat);
-
-while ($row_cat=mysqli_fetch_array($run_cat)) {
-
-$cat_id = $row_cat['cat_id'];
-
-$cat_title = $row_cat['cat_title'];
-
-echo "<option value='$cat_id'>$cat_title</option>";
-
-}
-
-?>
-
+<option> Select Property Type </option>
+<option> Apartment </option>
+<option> Office Space </option>
+<option> Building </option>
+<option> Shop </option>
 
 </select>
 
@@ -242,11 +187,11 @@ echo "<option value='$cat_id'>$cat_title</option>";
 
 <div class="form-group" ><!-- form-group Starts -->
 
-<label class="col-md-3 control-label" > Product Price </label>
+<label class="col-md-3 control-label" > Product Image 4 </label>
 
 <div class="col-md-6" >
 
-<input type="text" name="product_price" class="form-control" required >
+<input type="file" name="product_img4" class="form-control" required >
 
 </div>
 
@@ -254,11 +199,11 @@ echo "<option value='$cat_id'>$cat_title</option>";
 
 <div class="form-group" ><!-- form-group Starts -->
 
-<label class="col-md-3 control-label" > Product Sale Price </label>
+<label class="col-md-3 control-label" > Product Image 5 </label>
 
 <div class="col-md-6" >
 
-<input type="text" name="psp_price" class="form-control" required >
+<input type="file" name="product_img5" class="form-control" required >
 
 </div>
 
@@ -266,11 +211,11 @@ echo "<option value='$cat_id'>$cat_title</option>";
 
 <div class="form-group" ><!-- form-group Starts -->
 
-<label class="col-md-3 control-label" > Product Keywords </label>
+<label class="col-md-3 control-label" > Property Price/Rent </label>
 
 <div class="col-md-6" >
 
-<input type="text" name="product_keywords" class="form-control" required >
+<input type="number" name="price" class="form-control" required >
 
 </div>
 
@@ -278,7 +223,7 @@ echo "<option value='$cat_id'>$cat_title</option>";
 
 <div class="form-group" ><!-- form-group Starts -->
 
-<label class="col-md-3 control-label" > Product Tabs </label>
+<label class="col-md-3 control-label" > Property Tabs </label>
 
 <div class="col-md-6" >
 
@@ -286,19 +231,19 @@ echo "<option value='$cat_id'>$cat_title</option>";
 
 <li class="active">
 
-<a data-toggle="tab" href="#description"> Product Description </a>
+<a data-toggle="tab" href="#description"> Property Description </a>
 
 </li>
 
 <li>
 
-<a data-toggle="tab" href="#features"> Product Features </a>
+<a data-toggle="tab" href="#features"> Property Blueprint </a>
 
 </li>
 
 <li>
 
-<a data-toggle="tab" href="#video"> Sounds And Videos </a>
+<a data-toggle="tab" href="#video"> Property Video </a>
 
 </li>
 
@@ -310,7 +255,7 @@ echo "<option value='$cat_id'>$cat_title</option>";
 
 <br>
 
-<textarea name="product_desc" class="form-control" rows="15" id="product_desc">
+<textarea name="property_details" class="form-control" rows="15" id="property_details">
 
 
 </textarea>
@@ -322,10 +267,8 @@ echo "<option value='$cat_id'>$cat_title</option>";
 
 <br>
 
-<textarea name="product_features" class="form-control" rows="15" id="product_features">
+<input type="file" id="blueprint" name="blueprint" class="form-control" required >
 
-
-</textarea>
 
 </div><!-- features tab-pane fade in Ends -->
 
@@ -334,10 +277,7 @@ echo "<option value='$cat_id'>$cat_title</option>";
 
 <br>
 
-<textarea name="product_video" class="form-control" rows="15">
-
-
-</textarea>
+<input type="file" id="property_video" name="property_video" class="form-control" required >
 
 </div><!-- video tab-pane fade in Ends -->
 
@@ -350,15 +290,97 @@ echo "<option value='$cat_id'>$cat_title</option>";
 
 <div class="form-group" ><!-- form-group Starts -->
 
-<label class="col-md-3 control-label" > Product Label </label>
+<label class="col-md-3 control-label" > Carpet Area </label>
 
 <div class="col-md-6" >
 
-<input type="text" name="product_label" class="form-control" required >
+<input type="text" name="floor_space" class="form-control" required >
 
 </div>
 
 </div><!-- form-group Ends -->
+
+<div class="form-group" ><!-- form-group Starts -->
+
+<label class="col-md-3 control-label" > Bedrooms </label>
+
+<div class="col-md-6" >
+
+
+<select name="bed_room" class="form-control" >
+
+<option> 0 </option>
+<option> 1 </option>
+<option> 2 </option>
+<option> 3 </option>
+<option> 4 </option>
+<option> 4+ </option>
+
+
+</select>
+
+</div>
+
+</div><!-- form-group Ends -->
+
+<div class="form-group" ><!-- form-group Starts -->
+
+<label class="col-md-3 control-label" > Living Rooms </label>
+
+<div class="col-md-6" >
+
+
+<select name="liv_room" class="form-control" >
+
+<option> 0 </option>
+<option> 1 </option>
+<option> 2 </option>
+<option> 3 </option>
+
+</select>
+
+</div>
+
+</div><!-- form-group Ends -->
+
+<div class="form-group" ><!-- form-group Starts -->
+
+<label class="col-md-3 control-label" > Kitchen </label>
+
+<div class="col-md-6" >
+
+
+<select name="kitchen" class="form-control" >
+
+<option> 0 </option>
+<option> 1 </option>
+
+</select>
+
+</div>
+
+</div><!-- form-group Ends -->
+
+<div class="form-group" ><!-- form-group Starts -->
+
+<label class="col-md-3 control-label" > Parking </label>
+
+<div class="col-md-6" >
+
+
+<select name="parking" class="form-control" >
+
+<option> Bike Parking </option>
+<option> Car Parking </option>
+<option> Bike + Car Parking </option>
+<option> Not Available </option>
+
+</select>
+
+</div>
+
+</div><!-- form-group Ends -->
+
 
 <div class="form-group" ><!-- form-group Starts -->
 
@@ -393,43 +415,56 @@ echo "<option value='$cat_id'>$cat_title</option>";
 
 if(isset($_POST['submit'])){
 
-$product_title = $_POST['product_title'];
-$product_cat = $_POST['product_cat'];
-$cat = $_POST['cat'];
-$manufacturer_id = $_POST['manufacturer'];
-$product_price = $_POST['product_price'];
-$product_desc = $_POST['product_desc'];
-$product_keywords = $_POST['product_keywords'];
+$property_title = $_POST['property_title'];
+$availability = $_POST['availability'];
+$property_type = $_POST['property_type'];
+$bed_room = $_POST['bed_room'];
+$liv_room = $_POST['liv_room'];
+$parking = $_POST['parking'];
+$kitchen = $_POST['kitchen'];
 
-$psp_price = $_POST['psp_price'];
+$delivery_type = $_POST['delivery_type'];
+$price = $_POST['price'];
+$property_details = $_POST['property_details'];
 
-$product_label = $_POST['product_label'];
+$floor_space = $_POST['floor_space'];
 
-$product_url = $_POST['product_url'];
+$property_address = $_POST['property_address'];
 
-$product_features = $_POST['product_features'];
-
-$product_video = $_POST['product_video'];
-
-$status = "product";
+$blueprint = $_FILES['blueprint']['name'];
+$property_video = $_FILES['property_video']['name'];
 
 $product_img1 = $_FILES['product_img1']['name'];
 $product_img2 = $_FILES['product_img2']['name'];
 $product_img3 = $_FILES['product_img3']['name'];
+$product_img4 = $_FILES['product_img4']['name'];
+$product_img5 = $_FILES['product_img5']['name'];
+
+
+$temp_blue_name = $_FILES['blueprint']['tmp_name'];
+$property_video = $_FILES['property_video']['property_video'];
+
 
 $temp_name1 = $_FILES['product_img1']['tmp_name'];
 $temp_name2 = $_FILES['product_img2']['tmp_name'];
 $temp_name3 = $_FILES['product_img3']['tmp_name'];
+$temp_name4 = $_FILES['product_img4']['tmp_name'];
+$temp_name5 = $_FILES['product_img5']['tmp_name'];
 
-move_uploaded_file($temp_name1,"product_images/$product_img1");
-move_uploaded_file($temp_name2,"product_images/$product_img2");
-move_uploaded_file($temp_name3,"product_images/$product_img3");
 
-$insert_product = "insert into products (p_cat_id,cat_id,manufacturer_id,date,product_title,product_url,product_img1,product_img2,product_img3,product_price,product_psp_price,product_desc,product_features,product_video,product_keywords,product_label,status) values ('$product_cat','$cat','$manufacturer_id',NOW(),'$product_title','$product_url','$product_img1','$product_img2','$product_img3','$product_price','$psp_price','$product_desc','$product_features','$product_video','$product_keywords','$product_label','$status')";
+move_uploaded_file($temp_blue_name,"property_videos/$product_img1");
 
-$run_product = mysqli_query($con,$insert_product);
+move_uploaded_file($temp_name1,"property_images/$product_img1");
+move_uploaded_file($temp_name2,"property_images/$product_img2");
+move_uploaded_file($temp_name3,"property_images/$product_img3");
+move_uploaded_file($temp_name4,"property_images/$product_img4");
+move_uploaded_file($temp_name5,"property_images/$product_img5");
 
-if($run_product){
+$insert_property = "insert into properties (property_title,property_details,delivery_type,availability,price,property_address,property_img1,property_img2,property_img3,property_img4,property_img5,bed_room,liv_room,parking,kitchen,property_type,floor_space,blueprint,property_video) values ('$property_title','$property_details','$delivery_type','$availability','$price','$property_address','$product_img1','$product_img2','$product_img3','$product_img4','$product_img5','$bed_room','$liv_room','$parking','$kitchen','$property_type','$floor_space','$blueprint','$property_video')";
+
+$run_property = mysqli_query($con,$insert_property);
+
+if($run_property){
 
 echo "<script>alert('Product has been inserted successfully')</script>";
 
