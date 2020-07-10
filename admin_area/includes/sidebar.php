@@ -67,7 +67,7 @@ else {
 
 <a href="index.php?view_products" >
 
-<i class="fa fa-fw fa-envelope" ></i> Products 
+<i class="fa fa-fw fa-envelope" ></i> Properties 
 
 <span class="badge" ><?php echo $count_products; ?></span>
 
@@ -142,7 +142,7 @@ else {
 
 <a href="#" data-toggle="collapse" data-target="#products">
 
-<i class="fa fa-fw fa-table"></i> Products
+<i class="fa fa-fw fa-table"></i> Properties
 
 <i class="fa fa-fw fa-caret-down"></i>
 
@@ -152,11 +152,11 @@ else {
 <ul id="products" class="collapse">
 
 <li>
-<a href="index.php?insert_product"> Insert Products </a>
+<a href="index.php?insert_product"> Insert Properties </a>
 </li>
 
 <li>
-<a href="index.php?view_products"> View Products </a>
+<a href="index.php?view_products"> View Properties </a>
 </li>
 
 

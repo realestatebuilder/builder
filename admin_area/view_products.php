@@ -21,7 +21,7 @@ else {
 
 <li class="active" >
 
-<i class="fa fa-dashboard"></i> Dashboard / View Products
+<i class="fa fa-dashboard"></i> Dashboard / View Properties
 
 </li>
 
@@ -41,7 +41,7 @@ else {
 
 <h3 class="panel-title" ><!-- panel-title Starts -->
 
-<i class="fa fa-money fa-fw" ></i> View Products
+<i class="fa fa-money fa-fw" ></i> View Properties
 
 </h3><!-- panel-title Ends -->
 
@@ -57,17 +57,15 @@ else {
 <thead>
 
 <tr>
-<th>Product ID</th>
-<th>Product Title</th>
-<th>Product Image</th>
-<th>Product Price</th>
-<th>Product sold</th>
-<th>Product Keywords</th>
-<th>Product Date</th>
-<th>Product Delete</th>
-<th>Product Edit</th>
-
-
+<th>Property ID</th>
+<th>Property Title</th>
+<th>Property Image</th>
+<th>Property Price</th>
+<th>Property Availability</th>
+<th>Property Address</th>
+<th>Property Type</th>
+<th>Property Delete</th>
+<th>Property Edit</th>
 
 </tr>
 
@@ -79,23 +77,25 @@ else {
 
 $i = 0;
 
-$get_pro = "select * from products where status='product'";
+$get_pro = "select * from properties";
 
 $run_pro = mysqli_query($con,$get_pro);
 
 while($row_pro=mysqli_fetch_array($run_pro)){
 
-$pro_id = $row_pro['product_id'];
+$property_id = $row_pro['property_id'];
 
-$pro_title = $row_pro['product_title'];
+$pro_title = $row_pro['property_title'];
 
-$pro_image = $row_pro['product_img1'];
+$pro_image = $row_pro['property_img1'];
 
-$pro_price = $row_pro['product_price'];
+$pro_availability = $row_pro['availability'];
 
-$pro_keywords = $row_pro['product_keywords'];
+$pro_address = $row_pro['property_address'];
 
-$pro_date = $row_pro['date'];
+$pro_type = $row_pro['property_type'];
+
+$pro_price = $row_pro['price'];
 
 $i++;
 
@@ -107,27 +107,19 @@ $i++;
 
 <td><?php echo $pro_title; ?></td>
 
-<td><img src="product_images/<?php echo $pro_image; ?>" width="60" height="60"></td>
+<td><img src="property_images/<?php echo $pro_image; ?>" width="60" height="60"></td>
 
-<td>$ <?php echo $pro_price; ?></td>
+<td> <?php echo $pro_price; ?> </td>
 
-<td>
-<?php
+<td><?php echo $pro_availability; ?></td>
 
-$get_sold = "select * from pending_orders where product_id='$pro_id'";
-$run_sold = mysqli_query($con,$get_sold);
-$count = mysqli_num_rows($run_sold);
-echo $count;
-?>
-</td>
+<td><?php echo $pro_address; ?></td>
 
-<td> <?php echo $pro_keywords; ?> </td>
-
-<td><?php echo $pro_date; ?></td>
+<td><?php echo $pro_type; ?></td>
 
 <td>
 
-<a href="index.php?delete_product=<?php echo $pro_id; ?>">
+<a href="index.php?delete_product=<?php echo $property_id; ?>">
 
 <i class="fa fa-trash-o"> </i> Delete
 
@@ -137,7 +129,7 @@ echo $count;
 
 <td>
 
-<a href="index.php?edit_product=<?php echo $pro_id; ?>">
+<a href="index.php?edit_product=<?php echo $property_id; ?>">
 
 <i class="fa fa-pencil"> </i> Edit
 
