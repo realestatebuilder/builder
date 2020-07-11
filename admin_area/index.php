@@ -35,13 +35,9 @@ $admin_email = $row_admin['admin_email'];
 
 $admin_image = $row_admin['admin_image'];
 
-$admin_country = $row_admin['admin_country'];
-
-$admin_job = $row_admin['admin_job'];
-
 $admin_contact = $row_admin['admin_contact'];
 
-$admin_about = $row_admin['admin_about'];
+$admin_about = $row_admin['admin_address'];
 
 
 $get_products = "select * from properties";

@@ -36,13 +36,9 @@ $admin_image = $row_admin['admin_image'];
 
 $new_admin_image = $row_admin['admin_image'];
 
-$admin_country = $row_admin['admin_country'];
-
-$admin_job = $row_admin['admin_job'];
-
 $admin_contact = $row_admin['admin_contact'];
 
-$admin_about = $row_admin['admin_about'];
+$admin_address = $row_admin['admin_address'];
 
 
 
@@ -135,32 +131,6 @@ $admin_about = $row_admin['admin_about'];
 
 <div class="form-group"><!-- form-group Starts -->
 
-<label class="col-md-3 control-label">User Country: </label>
-
-<div class="col-md-6"><!-- col-md-6 Starts -->
-
-<input type="text" name="admin_country" class="form-control" required value="<?php echo $admin_country; ?>">
-
-</div><!-- col-md-6 Ends -->
-
-</div><!-- form-group Ends -->
-
-
-<div class="form-group"><!-- form-group Starts -->
-
-<label class="col-md-3 control-label">User Job: </label>
-
-<div class="col-md-6"><!-- col-md-6 Starts -->
-
-<input type="text" name="admin_job" class="form-control" required value="<?php echo $admin_job; ?>">
-
-</div><!-- col-md-6 Ends -->
-
-</div><!-- form-group Ends -->
-
-
-<div class="form-group"><!-- form-group Starts -->
-
 <label class="col-md-3 control-label">User Contact: </label>
 
 <div class="col-md-6"><!-- col-md-6 Starts -->
@@ -174,11 +144,11 @@ $admin_about = $row_admin['admin_about'];
 
 <div class="form-group"><!-- form-group Starts -->
 
-<label class="col-md-3 control-label">User About: </label>
+<label class="col-md-3 control-label">User Address: </label>
 
 <div class="col-md-6"><!-- col-md-6 Starts -->
 
-<textarea name="admin_about" class="form-control" rows="3"> <?php echo $admin_about; ?> </textarea>
+<textarea name="admin_address" class="form-control" rows="3"> <?php echo $admin_address; ?> </textarea>
 
 </div><!-- col-md-6 Ends -->
 
@@ -192,7 +162,7 @@ $admin_about = $row_admin['admin_about'];
 
 <input type="file" name="admin_image" class="form-control" >
 <br>
-<img src="admin_images/<?Php echo $admin_image; ?>" width="70" height="70" >
+<img src="admin_images/<?Php echo $admin_image; ?>" width="100" height="100" >
 
 </div><!-- col-md-6 Ends -->
 
@@ -233,28 +203,23 @@ $admin_email = $_POST['admin_email'];
 
 $admin_pass = $_POST['admin_pass'];
 
-$admin_country = $_POST['admin_country'];
-
-$admin_job = $_POST['admin_job'];
-
 $admin_contact = $_POST['admin_contact'];
 
-$admin_about = $_POST['admin_about'];
-
+$admin_address = $_POST['admin_address'];
 
 $admin_image = $_FILES['admin_image']['name'];
 
-$temp_admin_image = $_FILES['admin_image']['tmp_name'];
-
-move_uploaded_file($temp_admin_image,"admin_images/$admin_image");
-
-if(empty($admin_image)){
-
-$admin_image = $new_admin_image;
-
+if(empty($admin_image))
+{
+  $admin_image = $row_admin['admin_image'];
+}
+else
+{
+  $temp_admin_image = $_FILES['admin_image']['tmp_name'];
+  move_uploaded_file($temp_admin_image,"admin_images/$admin_image");
 }
 
-$update_admin = "update admins set admin_name='$admin_name',admin_email='$admin_email',admin_pass='$admin_pass',admin_image='$admin_image',admin_contact='$admin_contact',admin_country='$admin_country',admin_job='$admin_job',admin_about='$admin_about' where admin_id='$admin_id'";
+$update_admin = "update admins set admin_name='$admin_name',admin_email='$admin_email',admin_pass='$admin_pass',admin_image='$admin_image',admin_contact='$admin_contact',admin_address='$admin_address' where admin_id='$admin_id'";
 
 $run_admin = mysqli_query($con,$update_admin);
 
@@ -262,9 +227,7 @@ if($run_admin){
 
 echo "<script>alert('User Has Been Updated successfully and login again')</script>";
 
-echo "<script>window.open('login.php','_self')</script>";
-
-session_destroy();
+echo "<script>window.open('index.php?view_users','_self')</script>";
 
 }
 

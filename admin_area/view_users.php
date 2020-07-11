@@ -65,12 +65,11 @@ else {
 
 <th>User Image:</th>
 
-<th>User Country:</th>
-
-<th>User Job:</th>
+<th>User Contact:</th>
 
 <th>Delete User:</th>
 
+<th>Edit User</th>
 
 </tr>
 
@@ -94,13 +93,7 @@ $admin_email = $row_admin['admin_email'];
 
 $admin_image = $row_admin['admin_image'];
 
-$admin_country = $row_admin['admin_country'];
-
-$admin_job = $row_admin['admin_job'];
-
-
-
-
+$admin_contact = $row_admin['admin_contact'];
 
 ?>
 
@@ -112,9 +105,7 @@ $admin_job = $row_admin['admin_job'];
 
 <td><img src="admin_images/<?php echo $admin_image; ?>" width="60" height="60" ></td>
 
-<td><?php echo $admin_country; ?></td>
-
-<td><?php echo $admin_job; ?></td>
+<td><?php echo $admin_contact; ?></td>
 
 <td>
 
@@ -126,7 +117,15 @@ $admin_job = $row_admin['admin_job'];
 
 </td>
 
+<td>
 
+<a href="index.php?user_profile=<?php echo $admin_id; ?>">
+
+<i class="fa fa-pencil"> </i> Edit
+
+</a>
+
+</td>
 </tr>
 
 

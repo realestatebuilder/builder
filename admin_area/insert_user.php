@@ -95,32 +95,6 @@ else {
 
 <div class="form-group"><!-- form-group Starts -->
 
-<label class="col-md-3 control-label">User Country: </label>
-
-<div class="col-md-6"><!-- col-md-6 Starts -->
-
-<input type="text" name="admin_country" class="form-control" required>
-
-</div><!-- col-md-6 Ends -->
-
-</div><!-- form-group Ends -->
-
-
-<div class="form-group"><!-- form-group Starts -->
-
-<label class="col-md-3 control-label">User Job: </label>
-
-<div class="col-md-6"><!-- col-md-6 Starts -->
-
-<input type="text" name="admin_job" class="form-control" required>
-
-</div><!-- col-md-6 Ends -->
-
-</div><!-- form-group Ends -->
-
-
-<div class="form-group"><!-- form-group Starts -->
-
 <label class="col-md-3 control-label">User Contact: </label>
 
 <div class="col-md-6"><!-- col-md-6 Starts -->
@@ -134,11 +108,11 @@ else {
 
 <div class="form-group"><!-- form-group Starts -->
 
-<label class="col-md-3 control-label">User About: </label>
+<label class="col-md-3 control-label">User Address: </label>
 
 <div class="col-md-6"><!-- col-md-6 Starts -->
 
-<textarea name="admin_about" class="form-control" rows="3"> </textarea>
+<textarea name="admin_address" class="form-control" rows="3"> </textarea>
 
 </div><!-- col-md-6 Ends -->
 
@@ -191,13 +165,9 @@ $admin_email = $_POST['admin_email'];
 
 $admin_pass = $_POST['admin_pass'];
 
-$admin_country = $_POST['admin_country'];
-
-$admin_job = $_POST['admin_job'];
-
 $admin_contact = $_POST['admin_contact'];
 
-$admin_about = $_POST['admin_about'];
+$admin_address = $_POST['admin_address'];
 
 
 $admin_image = $_FILES['admin_image']['name'];
@@ -206,7 +176,7 @@ $temp_admin_image = $_FILES['admin_image']['tmp_name'];
 
 move_uploaded_file($temp_admin_image,"admin_images/$admin_image");
 
-$insert_admin = "insert into admins (admin_name,admin_email,admin_pass,admin_image,admin_contact,admin_country,admin_job,admin_about) values ('$admin_name','$admin_email','$admin_pass','$admin_image','$admin_contact','$admin_country','$admin_job','$admin_about')";
+$insert_admin = "insert into admins (admin_name,admin_email,admin_pass,admin_image,admin_contact,admin_address) values ('$admin_name','$admin_email','$admin_pass','$admin_image','$admin_contact','$admin_address')";
 
 $run_admin = mysqli_query($con,$insert_admin);
 

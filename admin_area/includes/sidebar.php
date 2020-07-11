@@ -76,31 +76,6 @@ else {
 
 </li><!-- li Ends -->
 
-<li><!-- li Starts -->
-
-<a href="index.php?view_customers" >
-
-<i class="fa fa-fw fa-gear" ></i> Customers
-
-<span class="badge" ><?php echo $count_customers; ?></span>
-
-
-</a>
-
-</li><!-- li Ends -->
-
-<li><!-- li Starts -->
-
-<a href="index.php?view_p_cats" >
-
-<i class="fa fa-fw fa-gear" ></i> Product Categories
-
-<span class="badge" ><?php echo $count_p_categories; ?></span>
-
-
-</a>
-
-</li><!-- li Ends -->
 
 <li class="divider"></li>
 
@@ -195,10 +170,6 @@ else {
 
 <li>
 <a href="index.php?view_users"> View Users </a>
-</li>
-
-<li>
-<a href="index.php?user_profile=<?php echo $admin_id; ?>"> Edit Profile </a>
 </li>
 
 </ul>
