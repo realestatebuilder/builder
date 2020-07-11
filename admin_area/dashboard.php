@@ -366,7 +366,7 @@ View All Orders <i class="fa fa-arrow-circle-right" ></i>
 
 <span class="thumb-info-inner"> <?php echo $admin_name; ?> </span>
 
-<span class="thumb-info-type"> <?php echo $admin_job; ?> </span>
+
 
 </div><!-- thumb-info-title Ends -->
 
@@ -376,15 +376,15 @@ View All Orders <i class="fa fa-arrow-circle-right" ></i>
 
 <div class="widget-content-expanded"><!-- widget-content-expanded Starts -->
 
-<i class="fa fa-user"></i> <span>Email: </span> <?php echo $admin_email; ?>  <br>
-<i class="fa fa-user"></i> <span>Country: </span> <?php echo $admin_country; ?>   <br>
-<i class="fa fa-user"></i> <span>Contact: </span> <?php echo $admin_contact; ?>   <br>
+<span>Email: </span> <?php echo $admin_email; ?>  <br>
+
+<span>Contact: </span> <?php echo $admin_contact; ?>   <br>
 
 </div><!-- widget-content-expanded Ends -->
 
 <hr class="dotted short">
 
-<h5 class="text-muted">About</h5>
+<h5 class="text-muted">Address</h5>
 
 <p>
 <?php echo $admin_about; ?>
