@@ -2,34 +2,54 @@
 include_once "connection.php";
 
 if(isset($_POST['submit'])){
-	$search_value = $_POST['search'];
-	$delivery_type = $_POST['delivery_type'];
-	$search_price = $_POST['search_price'];
+  $search_value = $_POST['search'];
+  echo "<script>console.log('$search_value')</script>";
+  $delivery_type = $_POST['delivery_type'];
+  echo "<script>console.log('$delivery_type')</script>";
+  $search_price = $_POST['search_price'];
+  echo "<script>console.log('$search_price')</script>";
+
+  // echo "<script>console.log('$search_value')</script>";
+  
 	$property_type = $_POST['property_type'];
 	
-	if(empty($search_value) or empty($search_price) or empty($delivery_type) or empty($property_type)){
+	if(empty($search_price) or empty($delivery_type) or empty($property_type)){
 		header ("Location: index.php");
 	}
-	
-	if($search_price == 1){
-		$query = "select * from properties where (property_title LIKE '%$search_value%' or property_details LIKE '%$search_value%' or property_address LIKE '%$search_value%' or property_type LIKE '%$search_value%') and (delivery_type = '$delivery_type') and (property_type = '$property_type') and (price >= 5000 and price <= 50000)";
+  if($search_value == '')
+  {
+		$query = "select * from properties where  delivery_type = '$delivery_type' and property_type = '$property_type' and price >= 5000 and price <= 50000";
+  }
+	elseif($search_price == 1){
+  
+		$query = "select * from properties where property_title LIKE '%$search_value%' or property_details LIKE '%$search_value%' or property_address LIKE '%$search_value%' or property_type LIKE '%$search_value%' and delivery_type = '$delivery_type' and property_type = '$property_type' and price >= 5000 and price <= 50000";
 	}
 	elseif($search_price == 2){
-		$query = "select * from properties where (property_title LIKE '%$search_value%' or property_details LIKE '%$search_value%' or property_address LIKE '%$search_value%' or property_type LIKE '%$search_value%') and (delivery_type = '$delivery_type') and (property_type = '$property_type') and (price >= 50000 and price <= 100000)";
+		$query = "select * from properties where property_title LIKE '%$search_value%' or property_details LIKE '%$search_value%' or property_address LIKE '%$search_value%' or property_type LIKE '%$search_value%' and delivery_type = '$delivery_type' and property_type = '$property_type' and price >= 50000 and price <= 100000";
 	}
 	
 	elseif($search_price == 3){
-		$query = "select * from properties where (property_title LIKE '%$search_value%' or property_details LIKE '%$search_value%' or property_address LIKE '%$search_value%' or property_type LIKE '%$search_value%') and (delivery_type = '$delivery_type') and (property_type = '$property_type') and (price >= 100000 and price <= 200000)";
+		$query = "select * from properties where property_title LIKE '%$search_value%' or property_details LIKE '%$search_value%' or property_address LIKE '%$search_value%' or property_type LIKE '%$search_value%' and delivery_type = '$delivery_type' and property_type = '$property_type' and price >= 100000 and price <= 200000";
 	}
 	
 	elseif($search_price == 4){
 		$query = "select * from properties where (property_title LIKE '%$search_value%' or property_details LIKE '%$search_value%' or property_address LIKE '%$search_value%' or property_type LIKE '%$search_value%') and (delivery_type = '$delivery_type') and (property_type = '$property_type') and (price >= 200000)";
-	}
-	
-	$result = mysqli_query($con, $query);
+  }
+  
+  
+  
+  
+  $result = mysqli_query($con, $query) ;
+  echo "Error message = ".$con->error.'hrll';
 	if(!$result){
-		echo "Error Found!!";
-	}
+    echo "<script>console.log('Database not connected')</script>";
+  }
+  else
+  {
+    
+   
+    echo "<script>console.log('Database  connected')</script>";
+  }
 	
 }
 
@@ -71,6 +91,66 @@ else {header ("Location: index.php"); }
 <!-- slitslider -->
 
 <script src='assets/google_analytics_auto.js'></script></head>
+<head>
+  <style>
+.patch {
+
+text-decoration : none;
+
+position: absolute;
+
+margin-top: -16.5%;
+
+margin-left:-28.6%;
+
+z-index: 20;
+
+}
+
+
+.patch .patch-background {
+
+position: absolute;
+top:0;
+right:0;
+}
+
+.patch .thepatch {
+
+position: relative;
+width: 100px;
+padding: 6px 50px 6px 15px;
+margin: 40px 50px 10px -71px;
+color: #fff;
+font-size:18px;
+font-weight:bold;
+background-color:#72b70f;
+text-shadow: 0px 1px 2px #bbb ;
+
+}
+
+.patch .thepatch:before,
+.patch .thepatch:after {
+content: '';
+position: absolute;
+width:0;
+height:0;
+}
+
+.patch .thepatch:after {
+left: 0px;
+top: 100%;
+border-width : 5px 10px;
+border-style: solid;
+border-color: #e77548 #e77548 transparent transparent;
+}
+
+.patch.sale {
+top: 0;
+
+}
+  </style>
+</head>
 
 <body>
 
@@ -206,19 +286,25 @@ else {header ("Location: index.php"); }
 			$id = $property_result['property_id'];
 			$property_title = $property_result['property_title'];
 			$delivery_type = $property_result['delivery_type'];
-			$availablility = $property_result['availablility'];
+			$availablility = $property_result['availability'];
 			$price = $property_result['price'];
-			$property_img = $property_result['property_img'];
+			$property_img = $property_result['property_img1'];
 			$bed_room = $property_result['bed_room'];
 			$liv_room = $property_result['liv_room'];
 			$parking = $property_result['parking'];
 			$kitchen = $property_result['kitchen'];
-			$utility = $property_result['utility'];
+			$address = $property_result['property_address'];
+      // echo "<script>console.log('This is +$property_title')</script>";
 		
 	  ?>
       <div class="col-lg-4 col-sm-6">
       <div class="properties">
-        <div class="image-holder"><img src="<?php echo $property_img; ?>" class="img-responsive" alt="properties">
+        <div class="image-holder"><img src="images/properties/<?php echo $property_img; ?>" class="img-responsive" alt="properties">
+            <a class='patch sale' href='#' style='color:black;'>
+                <div class='thepatch'><?php echo $delivery_type; ?></div>
+                <div class='patch-background'> </div>
+            </a> 
+        
           <?php if($availablility == 0){ ?><div class="status sold">Available</div> <?php } else { ?>
           <div class="status new">Not Available</div>
           <?php } ?>

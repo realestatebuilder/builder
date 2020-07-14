@@ -16,15 +16,15 @@ while($property_result = mysqli_fetch_assoc($result)){
 			$property_title = $property_result['property_title'];
 			$property_details = $property_result['property_details'];
 			$delivery_type = $property_result['delivery_type'];
-			$availablility = $property_result['availablility'];
+			$availablility = $property_result['availability'];
 			$price = $property_result['price'];
 			$property_address = $property_result['property_address'];
-			$property_img = $property_result['property_img'];
+			$property_img = $property_result['property_img1'];
 			$bed_room = $property_result['bed_room'];
 			$liv_room = $property_result['liv_room'];
 			$parking = $property_result['parking'];
 			$kitchen = $property_result['kitchen'];
-			$utility = $property_result['utility'];
+			
 			$property_type = $property_result['property_type'];
 			$floor_space = $property_result['floor_space'];
 			
@@ -267,10 +267,10 @@ if(!$imgresult){
     <b>Rooms: &nbsp;</b>
     <span data-toggle="tooltip" data-placement="bottom" data-original-title="Bed Room"><?php echo $bed_room; ?></span> 
     <span data-toggle="tooltip" data-placement="bottom" data-original-title="Living Room"><?php echo $liv_room; ?></span> 
-    <span data-toggle="tooltip" data-placement="bottom" data-original-title="Parking"><?php echo $parking; ?></span> 
     <span data-toggle="tooltip" data-placement="bottom" data-original-title="Kitchen"><?php echo $kitchen; ?></span> 
     </div>
     </div>
+    <div class="well"><span class="glyphicon glyphicon-check"></span> &nbsp; <b>Parking - <?php echo $parking; ?> </b></div>
     
     <div class="well"><span class="glyphicon glyphicon-check"></span> &nbsp; <b>Floor Space - <?php echo $floor_space; ?></b></div>
 
