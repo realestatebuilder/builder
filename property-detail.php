@@ -14,12 +14,18 @@ if(!$result){
 
 while($property_result = mysqli_fetch_assoc($result)){
 			$property_title = $property_result['property_title'];
-			$property_details = $property_result['property_details'];
+      $property_details = $property_result['property_details'];
+			$map_location = $property_result['map_location'];
 			$delivery_type = $property_result['delivery_type'];
 			$availablility = $property_result['availability'];
 			$price = $property_result['price'];
 			$property_address = $property_result['property_address'];
-			$property_img = $property_result['property_img1'];
+      $property_img1 = $property_result['property_img1'];
+			$property_img2 = $property_result['property_img2'];
+			$property_img3 = $property_result['property_img3'];
+			$property_img4 = $property_result['property_img4'];
+			$property_img5 = $property_result['property_img5'];
+      
 			$bed_room = $property_result['bed_room'];
 			$liv_room = $property_result['liv_room'];
 			$parking = $property_result['parking'];
@@ -213,14 +219,24 @@ if(!$imgresult){
         
         <!-- Item 1 -->
         <?php 
-			while($imageresult = mysqli_fetch_assoc($imgresult)){
-				$image = $imageresult['property_images'];
+			
 			
 		?>
         <div class="item">
-          <img src="<?php echo $image; ?>" class="properties" alt="properties" />
+          <img src="images/properties/<?php echo $property_img1; ?>" class="properties" alt="properties" />
         </div>
-        <?php } ?>
+        <div class="item">
+          <img src="images/properties/<?php echo $property_img2; ?>" class="properties" alt="properties" />
+        </div>
+        <div class="item">
+          <img src="images/properties/<?php echo $property_img3; ?>" class="properties" alt="properties" />
+        </div>
+        <div class="item">
+          <img src="images/properties/<?php echo $property_img4; ?>" class="properties" alt="properties" />
+        </div>
+        <div class="item">
+          <img src="images/properties/<?php echo $property_img5; ?>" class="properties" alt="properties" />
+        </div>
         <!-- #Item 1 -->
       </div>
       <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
@@ -238,7 +254,7 @@ if(!$imgresult){
 
   </div>
   <div><h4><span class="glyphicon glyphicon-map-marker"></span> Location</h4>
-<div class="well"><?php echo $property_address; ?></div>
+<div class="well"><?php echo $map_location; ?></div>
   </div>
 
   </div>
@@ -253,7 +269,12 @@ if(!$imgresult){
 <span class="glyphicon glyphicon-envelope"></span> <?php echo $agent_email; ?><br>
 </div>
 
-<div class="well"><p class="price"> $ <?php echo $price; ?></p></div>
+<a href="#" class="btn btn-info btn-lg" style="cursor:pointer"><span class="glyphicon glyphicon-picture"></span> <b>Property Blueprint </b></a>
+<br><br>
+<a href="#" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-facetime-video"></span> <b>Property Video &nbsp; &nbsp; &nbsp; </b></a>
+<br><br>
+
+<div class="well"><p class="price">₹ <?php echo $price; ?></p></div>
 
   <p class="area"><div class="well"><span class="glyphicon glyphicon-map-marker"></span> <?php echo $property_address; ?> </div></p>
   
@@ -273,6 +294,9 @@ if(!$imgresult){
     <div class="well"><span class="glyphicon glyphicon-check"></span> &nbsp; <b>Parking - <?php echo $parking; ?> </b></div>
     
     <div class="well"><span class="glyphicon glyphicon-check"></span> &nbsp; <b>Floor Space - <?php echo $floor_space; ?></b></div>
+
+    
+
 
 </div>
 <div class="col-lg-12 col-sm-6 ">

@@ -250,7 +250,7 @@ top: 0;
 	  ?>
       <div class="col-lg-4 col-sm-6">
       <div class="properties">
-        <div class="image-holder"><img src="<?php echo $property_img; ?>" class="img-responsive" alt="properties">
+        <div class="image-holder"><img src="images/properties/<?php echo $property_img; ?>" class="img-responsive" alt="properties">
             <a class='patch sale' href='#' style='color:black;'>
                 <div class='thepatch'><?php echo $delivery_type; ?></div>
                 <div class='patch-background'> </div>
