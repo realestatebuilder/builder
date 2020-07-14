@@ -186,7 +186,8 @@ top: 0;
     <input type="text" class="form-control" name="search" placeholder="Search of Properties">
     <div class="row">
             <div class="col-lg-5">
-              <select name="delivery_type" class="form-control">
+            <select name="delivery_type" class="form-control">
+                <option value="Rent/Sale">Rent/Sale</option>
                 <option value="Rent">Rent</option>
                 <option value="Sale">Sale</option>
               </select>
@@ -238,9 +239,9 @@ top: 0;
 			$id = $property_result['property_id'];
 			$property_title = $property_result['property_title'];
 			$delivery_type = $property_result['delivery_type'];
-			$availablility = $property_result['availablility'];
+			$availablility = $property_result['availability'];
 			$price = $property_result['price'];
-			$property_img = $property_result['property_img'];
+			$property_img = $property_result['property_img1'];
 			$bed_room = $property_result['bed_room'];
 			$liv_room = $property_result['liv_room'];
 			$parking = $property_result['parking'];
@@ -262,13 +263,12 @@ top: 0;
           <?php } ?>
         </div>
         <h4><a href="property-detail.php?id=<?php echo $id; ?>"><?php echo $property_title;  ?></a></h4>
-        <p class="price">Price: $<?php echo $price; ?></p>
+        <p class="price">Price: ₹<?php echo $price; ?></p>
         <p class="price">Address : <?php echo $address; ?></p>
         <!-- <p class="price">Utilities: <?php ; ?></p> -->
         <div class="listing-detail">
         <span data-toggle="tooltip" data-placement="bottom" data-original-title="Bed Room"><?php echo $bed_room; ?></span> 
         <span data-toggle="tooltip" data-placement="bottom" data-original-title="Living Room"><?php echo $liv_room; ?></span> 
-        <span data-toggle="tooltip" data-placement="bottom" data-original-title="Parking"><?php echo $parking; ?></span> 
         <span data-toggle="tooltip" data-placement="bottom" data-original-title="Kitchen"><?php echo $kitchen; ?></span> 
         </div>
         <a class="btn btn-primary" href="property-detail.php?id=<?php echo $id; ?>">View Details</a>

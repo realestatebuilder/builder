@@ -12,35 +12,56 @@ if(isset($_POST['submit'])){
   // echo "<script>console.log('$search_value')</script>";
   
 	$property_type = $_POST['property_type'];
-	
-	if(empty($search_price) or empty($delivery_type) or empty($property_type)){
-		header ("Location: index.php");
-	}
-  if($search_value == '')
-  {
-		$query = "select * from properties where  delivery_type = '$delivery_type' and property_type = '$property_type' and price >= 5000 and price <= 50000";
-  }
-	elseif($search_price == 1){
   
-		$query = "select * from properties where property_title LIKE '%$search_value%' or property_details LIKE '%$search_value%' or property_address LIKE '%$search_value%' or property_type LIKE '%$search_value%' and delivery_type = '$delivery_type' and property_type = '$property_type' and price >= 5000 and price <= 50000";
-	}
-	elseif($search_price == 2){
-		$query = "select * from properties where property_title LIKE '%$search_value%' or property_details LIKE '%$search_value%' or property_address LIKE '%$search_value%' or property_type LIKE '%$search_value%' and delivery_type = '$delivery_type' and property_type = '$property_type' and price >= 50000 and price <= 100000";
-	}
-	
-	elseif($search_price == 3){
-		$query = "select * from properties where property_title LIKE '%$search_value%' or property_details LIKE '%$search_value%' or property_address LIKE '%$search_value%' or property_type LIKE '%$search_value%' and delivery_type = '$delivery_type' and property_type = '$property_type' and price >= 100000 and price <= 200000";
-	}
-	
-	elseif($search_price == 4){
-		$query = "select * from properties where (property_title LIKE '%$search_value%' or property_details LIKE '%$search_value%' or property_address LIKE '%$search_value%' or property_type LIKE '%$search_value%') and (delivery_type = '$delivery_type') and (property_type = '$property_type') and (price >= 200000)";
+  $query = "select * from properties where availability='Available'";
+  $availableValues = array();
+
+  
+  if(!empty($_POST['search']))
+  {
+   
+     $query.="and property_title LIKE '%$search_value%' or property_details LIKE '%$search_value%' ";   
   }
+  else if(!empty($_POST['delivery_type']) and $_POST['delivery_type'] != 'Rent/Sale')
+  {
+   
+    $query.="and delivery_type = '$delivery_type'";
+  }
+  else if(!empty($_POST['property_type']) and $_POST['property_type'] != 'Property Type')
+  {
+    $query .= "and property_type = '$property_type'";
+  }
+  else if(!empty($_POST['search_price']))
+  {
+    if($_POST['search_price']==1)
+    {
+      $query .= "and price BETWEEN 5000 AND 50000";
+    }
+    else if($_POST['search_price']==2)
+    {
+      $query .= "and price BETWEEN 50000 AND 100000"; 
+    }
+    else if($_POST['search_price']==3)
+    {
+      $query .= "and price price BETWEEN 100000 AND 200000"; 
+    }
+    else if($_POST['search_price']==4)
+    {
+      $query .= "and price >= 200000 "; 
+    }
+   
+  }
+  else
+  {
+
+  }
+  echo "<script>console.log($query)</script>";
+  
   
   
   
   
   $result = mysqli_query($con, $query) ;
-  echo "Error message = ".$con->error.'hrll';
 	if(!$result){
     echo "<script>console.log('Database not connected')</script>";
   }
@@ -235,6 +256,7 @@ top: 0;
     <div class="row">
             <div class="col-lg-5">
               <select name="delivery_type" class="form-control">
+                <option value="Rent/Sale">Rent/Sale</option>
                 <option value="Rent">Rent</option>
                 <option value="Sale">Sale</option>
               </select>
@@ -253,7 +275,7 @@ top: 0;
           <div class="row">
           <div class="col-lg-12">
               <select name="property_type" class="form-control">
-                <option>Property Type</option>
+                <option disabled>Property Type</option>
                 <option value="Apartment">Apartment</option>
                 <option value="Building">Building</option>
                 <option value="Office-Space">Office-Space</option>
@@ -310,13 +332,13 @@ top: 0;
           <?php } ?>
         </div>
         <h4><a href="property-detail.php?id=<?php echo $id; ?>"><?php echo $property_title;  ?></a></h4>
-        <p class="price">Price: $<?php echo $price; ?></p>
-        <p class="price">Delivery Type: <?php echo $delivery_type; ?></p>
+        <p class="price">Price: ₹ <?php echo $price; ?></p>
+        <p class="price">Address : <?php echo $address; ?></p>
         <!-- <p class="price">Utilities: <?php echo $utility; ?></p> -->
         <div class="listing-detail">
         <span data-toggle="tooltip" data-placement="bottom" data-original-title="Bed Room"><?php echo $bed_room; ?></span> 
         <span data-toggle="tooltip" data-placement="bottom" data-original-title="Living Room"><?php echo $liv_room; ?></span> 
-        <span data-toggle="tooltip" data-placement="bottom" data-original-title="Parking"><?php echo $parking; ?></span> 
+      
         <span data-toggle="tooltip" data-placement="bottom" data-original-title="Kitchen"><?php echo $kitchen; ?></span> 
         </div>
         <a class="btn btn-primary" href="property-detail.php?id=<?php echo $id; ?>">View Details</a>

@@ -13,6 +13,9 @@ if(!$result){
 }
 
 while($property_result = mysqli_fetch_assoc($result)){
+
+      $property_id = $property_result['property_id'];
+      
 			$property_title = $property_result['property_title'];
       $property_details = $property_result['property_details'];
 			$map_location = $property_result['map_location'];
@@ -33,7 +36,10 @@ while($property_result = mysqli_fetch_assoc($result)){
 			
 			$property_type = $property_result['property_type'];
 			$floor_space = $property_result['floor_space'];
-			
+      
+      $blueprint = $property_result['blueprint'];
+      $property_video = $property_result['property_video'];
+
 			$agent_name = $property_result['agent_name'];
 			$agent_address = $property_result['agent_address'];
 			$agent_contact = $property_result['agent_contact'];
@@ -48,6 +54,7 @@ $imgresult = mysqli_query($con, $imgquery);
 if(!$imgresult){
 	echo "Error Found!!!";
 }
+echo "<script>console.log('$property_id')</script>";
 ?>
 
 <!DOCTYPE html>
@@ -168,6 +175,7 @@ if(!$imgresult){
     <div class="row">
             <div class="col-lg-5">
               <select name="delivery_type" class="form-control">
+                <option value="Rent/Sale">Rent/Sale</option>
                 <option value="Rent">Rent</option>
                 <option value="Sale">Sale</option>
               </select>
@@ -269,9 +277,9 @@ if(!$imgresult){
 <span class="glyphicon glyphicon-envelope"></span> <?php echo $agent_email; ?><br>
 </div>
 
-<a href="#" class="btn btn-info btn-lg" style="cursor:pointer"><span class="glyphicon glyphicon-picture"></span> <b>Property Blueprint </b></a>
+<a href="#"  class="btn btn-info btn-lg"  data-toggle="modal" data-target="#exampleModal" style="cursor:pointer"><span class="glyphicon glyphicon-picture"></span> <b>Property Blueprint </b></a>
 <br><br>
-<a href="#" class="btn btn-info btn-lg"><span class="glyphicon glyphicon-facetime-video"></span> <b>Property Video &nbsp; &nbsp; &nbsp; </b></a>
+<a href="#" class="btn btn-info btn-lg" data-toggle="modal" data-target="#exampleModal2" style="cursor:pointer"><span class="glyphicon glyphicon-facetime-video"></span> <b>Property Video &nbsp; &nbsp; &nbsp; </b></a>
 <br><br>
 
 <div class="well"><p class="price">₹ <?php echo $price; ?></p></div>
@@ -396,10 +404,64 @@ if(!$imgresult){
 </div>
 <!-- /.modal -->
 
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Property Blueprint</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+     <a ><img width=500 height=300 src="images/properties/<?php echo $blueprint; ?>"></a>
+      </div>
+      <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div> -->
+    </div>
+  </div>
+</div>
 
 
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModal" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Property Video</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <video width="520" height="300" controls>
+        <source src="images/property_videos/<?php echo $property_video ?>" type="video/mp4">
+        <!-- <source src="movie.ogg" type="video/ogg"> -->
+      </video>
+
+      </div>
+      <!-- <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div> -->
+    </div>
+  </div>
+</div>
 </body>
+<script>
+function showmodal(id)
+{
+  console.log("This is id "+id);
+  $("#modal3").modal("open")
+}
 
+
+</script>
 <!-- Mirrored from thebootstrapthemes.com/live/thebootstrapthemes-realestate/property-detail.php by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 11 Apr 2017 02:45:26 GMT -->
 </html>
 

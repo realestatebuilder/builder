@@ -332,7 +332,7 @@ top: 0;
           <?php } ?>
         </div>
         <h4><a href="property-detail.php?id=<?php echo $id; ?>"><?php echo $property_title;  ?></a></h4>
-        <p class="price">Price: $<?php echo $price; ?></p>
+        <p class="price">Price: ₹<?php echo $price; ?></p>
         <p class="price">Address: <?php echo $address; ?></p>
         <!-- <p class="price">Utilities: <?php echo $utility; ?></p> -->
         <div class="listing-detail">

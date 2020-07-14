@@ -186,7 +186,8 @@ top: 0;
     <input type="text" class="form-control" name="search" placeholder="Search of Properties">
     <div class="row">
             <div class="col-lg-5">
-              <select name="delivery_type" class="form-control">
+            <select name="delivery_type" class="form-control">
+                <option value="Rent/Sale">Rent/Sale</option>
                 <option value="Rent">Rent</option>
                 <option value="Sale">Sale</option>
               </select>
@@ -262,7 +263,7 @@ top: 0;
           <?php } ?>
         </div>
         <h4><a href="property-detail.php?id=<?php echo $id; ?>"><?php echo $property_title;  ?></a></h4>
-        <p class="price">Price: $<?php echo $price; ?></p>
+        <p class="price">Price: ₹<?php echo $price; ?></p>
         <p class="price">Address : <?php echo $address; ?></p>
         <!-- <p class="price">Utilities: <?php ?></p> -->
         <div class="listing-detail">
