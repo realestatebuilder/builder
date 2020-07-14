@@ -43,6 +43,66 @@ if(!$result){
 <!-- slitslider -->
 
 <script src='assets/google_analytics_auto.js'></script></head>
+<head>
+  <style>
+.patch {
+
+text-decoration : none;
+
+position: absolute;
+
+margin-top: -16.5%;
+
+margin-left:-28.6%;
+
+z-index: 20;
+
+}
+
+
+.patch .patch-background {
+
+position: absolute;
+top:0;
+right:0;
+}
+
+.patch .thepatch {
+
+position: relative;
+width: 100px;
+padding: 6px 50px 6px 15px;
+margin: 40px 50px 10px -71px;
+color: #fff;
+font-size:18px;
+font-weight:bold;
+background-color:#72b70f;
+text-shadow: 0px 1px 2px #bbb ;
+
+}
+
+.patch .thepatch:before,
+.patch .thepatch:after {
+content: '';
+position: absolute;
+width:0;
+height:0;
+}
+
+.patch .thepatch:after {
+left: 0px;
+top: 100%;
+border-width : 5px 10px;
+border-style: solid;
+border-color: #e77548 #e77548 transparent transparent;
+}
+
+.patch.sale {
+top: 0;
+
+}
+  </style>
+</head>
 
 <body>
 
@@ -185,20 +245,26 @@ if(!$result){
 			$liv_room = $property_result['liv_room'];
 			$parking = $property_result['parking'];
 			$kitchen = $property_result['kitchen'];
-			$utility = $property_result['utility'];
+			$address = $property_result['property_address'];
 		
 	  ?>
       <div class="col-lg-4 col-sm-6">
       <div class="properties">
         <div class="image-holder"><img src="<?php echo $property_img; ?>" class="img-responsive" alt="properties">
+            <a class='patch sale' href='#' style='color:black;'>
+                <div class='thepatch'><?php echo $delivery_type; ?></div>
+                <div class='patch-background'> </div>
+            </a>  
+
+
           <?php if($availablility == 0){ ?><div class="status sold">Available</div> <?php } else { ?>
           <div class="status new">Not Available</div>
           <?php } ?>
         </div>
         <h4><a href="property-detail.php?id=<?php echo $id; ?>"><?php echo $property_title;  ?></a></h4>
         <p class="price">Price: $<?php echo $price; ?></p>
-        <p class="price">Delivery Type: <?php echo $delivery_type; ?></p>
-        <!-- <p class="price">Utilities: <?php echo $utility; ?></p> -->
+        <p class="price">Address : <?php echo $address; ?></p>
+        <!-- <p class="price">Utilities: <?php ; ?></p> -->
         <div class="listing-detail">
         <span data-toggle="tooltip" data-placement="bottom" data-original-title="Bed Room"><?php echo $bed_room; ?></span> 
         <span data-toggle="tooltip" data-placement="bottom" data-original-title="Living Room"><?php echo $liv_room; ?></span> 
