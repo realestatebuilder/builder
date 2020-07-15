@@ -161,7 +161,7 @@ else {
 <div class="col-md-6" >
 
 <input type="file" name="product_img1" class="form-control"  >
-<img src="property_images/<?php echo $row_pro['property_img1']; ?>" name = "property_img1" height="100" width="100">
+<img src="../images/properties/<?php echo $row_pro['property_img1']; ?>" name = "property_img1" height="100" width="100">
 
 </div>
 
@@ -174,7 +174,7 @@ else {
 <div class="col-md-6" >
 
 <input type="file" name="product_img2" class="form-control"  >
-<img src="property_images/<?php echo $row_pro['property_img2']; ?>" name = "property_img2" height="100" width="100">
+<img src="../images/properties/<?php echo $row_pro['property_img2']; ?>" name = "property_img2" height="100" width="100">
 
 </div>
 
@@ -187,7 +187,7 @@ else {
 <div class="col-md-6" >
 
 <input type="file" name="product_img3" class="form-control"  >
-<img src="property_images/<?php echo $row_pro['property_img3']; ?>" name = "property_img3" height="100" width="100">
+<img src="../images/properties/<?php echo $row_pro['property_img3']; ?>" name = "property_img3" height="100" width="100">
 
 </div>
 
@@ -200,7 +200,7 @@ else {
 <div class="col-md-6" >
 
 <input type="file" name="product_img4" class="form-control"  >
-<img src="property_images/<?php echo $row_pro['property_img4']; ?>" name = "property_img4" height="100" width="100">
+<img src="../images/properties/<?php echo $row_pro['property_img4']; ?>" name = "property_img4" height="100" width="100">
 
 </div>
 
@@ -213,7 +213,7 @@ else {
 <div class="col-md-6" >
 
 <input type="file" name="product_img5" class="form-control"  >
-<img src="property_images/<?php echo $row_pro['property_img5']; ?>" name = "property_img5" height="100" width="100">
+<img src="../images/properties/<?php echo $row_pro['property_img5']; ?>" name = "property_img5" height="100" width="100">
 </div>
 
 </div><!-- form-group Ends -->
@@ -277,7 +277,7 @@ else {
 <br>
 
 <input type="file" id="blueprint" name="blueprint" class="form-control"  >
-<img src="property_images/<?php echo $row_pro['blueprint']; ?>" name = "blueprints" height="200" width="200">
+<img src="../images/properties/<?php echo $row_pro['blueprint']; ?>" name = "blueprints" height="200" width="200">
 
 
 </div><!-- features tab-pane fade in Ends -->
@@ -289,7 +289,7 @@ else {
 
 <input type="file" id="property_video" name="property_video" class="form-control"  >
 <video width="320" height="240" controls>
-  <source src="property_videos/<?php echo $row_pro['property_video']; ?>" type="video/mp4">
+  <source src="../images/property_videos/<?php echo $row_pro['property_video']; ?>" type="video/mp4">
   <!-- <source src="movie.ogg" type="video/ogg"> -->
 </video>
 
@@ -478,7 +478,7 @@ if(empty($product_img1))
 else
 {
   $temp_name1 = $_FILES['product_img1']['tmp_name'];
-  move_uploaded_file($temp_name1,"property_images/$product_img1");
+  move_uploaded_file($temp_name1,"../images/properties/$product_img1");
 }
 
 if(empty($product_img2))
@@ -488,7 +488,7 @@ if(empty($product_img2))
 else
 {
   $temp_name2 = $_FILES['product_img2']['tmp_name'];
-  move_uploaded_file($temp_name2,"property_images/$product_img2");
+  move_uploaded_file($temp_name2,"../images/properties/$product_img2");
 }
 
 if(empty($product_img3))
@@ -498,7 +498,7 @@ if(empty($product_img3))
 else
 {
   $temp_name3 = $_FILES['product_img3']['tmp_name'];
-  move_uploaded_file($temp_name3,"property_images/$product_img3");
+  move_uploaded_file($temp_name3,"../images/properties/$product_img3");
 }
 
 if(empty($product_img4))
@@ -508,7 +508,7 @@ if(empty($product_img4))
 else
 {
   $temp_name4 = $_FILES['product_img4']['tmp_name'];
-  move_uploaded_file($temp_name4,"property_images/$product_img4");
+  move_uploaded_file($temp_name4,"../images/properties/$product_img4");
 }
 
 if(empty($product_img5))
@@ -518,7 +518,7 @@ if(empty($product_img5))
 else
 {
   $temp_name5 = $_FILES['product_img5']['tmp_name'];
-  move_uploaded_file($temp_name5,"property_images/$product_img5");
+  move_uploaded_file($temp_name5,"../images/properties/$product_img5");
 }
 
 if(empty($blueprint))
@@ -528,7 +528,7 @@ if(empty($blueprint))
 else
 {
   $blueprint_temp = $_FILES['blueprint']['tmp_name'];
-  move_uploaded_file($blueprint_temp,"property_images/$blueprint");
+  move_uploaded_file($blueprint_temp,"../images/properties/$blueprint");
 }
 
 if(empty($property_video))
@@ -538,7 +538,7 @@ if(empty($property_video))
 else
 {
   $property_video_temp = $_FILES['property_video']['tmp_name'];
-  move_uploaded_file($property_video_temp,"property_videos/$property_video");
+  move_uploaded_file($property_video_temp,"../images/property_videos/$property_video");
 }
 
 $update_property = "update properties set property_title = '$property_title' ,property_details = '$property_details',delivery_type = '$delivery_type',availability = '$availability',price = '$price',property_address = '$property_address',property_img1 = '$product_img1',property_img2 = '$product_img2',property_img3 = '$product_img3',property_img4 = '$product_img4',property_img5 = '$product_img5',bed_room = '$bed_room',liv_room = '$liv_room',parking = '$parking',kitchen = '$kitchen',property_type = '$property_type',floor_space = '$floor_space',agent_id = '$agent_id',blueprint = '$blueprint',property_video = '$property_video',map_location = '$map_location'";

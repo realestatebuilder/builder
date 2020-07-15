@@ -464,18 +464,18 @@ $temp_name4 = $_FILES['product_img4']['tmp_name'];
 $temp_name5 = $_FILES['product_img5']['tmp_name'];
 
 
-move_uploaded_file($property_name,"property_videos/$property_video");
-move_uploaded_file($temp_blue_name,"property_videos/$blueprint");
+move_uploaded_file($property_name,"../images/property_videos/$property_video");
+move_uploaded_file($temp_blue_name,"../images/property_videos/$blueprint");
 
 
-move_uploaded_file($temp_name1,"property_images/$product_img1");
-move_uploaded_file($temp_name2,"property_images/$product_img2");
-move_uploaded_file($temp_name3,"property_images/$product_img3");
-move_uploaded_file($temp_name4,"property_images/$product_img4");
-move_uploaded_file($temp_name5,"property_images/$product_img5");
+move_uploaded_file($temp_name1,"../images/properties/$product_img1");
+move_uploaded_file($temp_name2,"../images/properties/$product_img2");
+move_uploaded_file($temp_name3,"../images/properties/$product_img3");
+move_uploaded_file($temp_name4,"../images/properties/$product_img4");
+move_uploaded_file($temp_name5,"../images/properties/$product_img5");
 
 $agent = 1;
-$insert_property = "insert into properties (property_title,property_details,delivery_type,availability,price,property_address,property_img1,property_img2,property_img3,property_img4,property_img5,bed_room,liv_room,parking,kitchen,property_type,floor_space,agent_id,blueprint,property_video,map_location) values ('$property_title','$property_details','$delivery_type','$availability','$price','$property_address','$product_img1','$product_img2','$product_img3','$product_img4','$product_img5','$bed_room','$liv_room','$parking','$kitchen','$property_type','$floor_space',$agent,'$blueprint','$property_video','$map_location')";
+$insert_property = "insert into properties (property_title,property_details,delivery_type,availability,price,property_address,property_img1,property_img2,property_img3,property_img4,property_img5,bed_room,liv_room,parking,kitchen,property_type,floor_space,agent_id,blueprint,property_video,map_location) values ('$property_title','$property_details','$delivery_type','$availability',$price,'$property_address','$product_img1','$product_img2','$product_img3','$product_img4','$product_img5','$bed_room','$liv_room','$parking','$kitchen','$property_type','$floor_space',$agent,'$blueprint','$property_video','$map_location')";
 
 $run_property = mysqli_query($con,$insert_property);
 
