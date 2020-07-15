@@ -541,7 +541,8 @@ else
   move_uploaded_file($property_video_temp,"../images/property_videos/$property_video");
 }
 
-$update_property = "update properties set property_title = '$property_title' ,property_details = '$property_details',delivery_type = '$delivery_type',availability = '$availability',price = '$price',property_address = '$property_address',property_img1 = '$product_img1',property_img2 = '$product_img2',property_img3 = '$product_img3',property_img4 = '$product_img4',property_img5 = '$product_img5',bed_room = '$bed_room',liv_room = '$liv_room',parking = '$parking',kitchen = '$kitchen',property_type = '$property_type',floor_space = '$floor_space',agent_id = '$agent_id',blueprint = '$blueprint',property_video = '$property_video',map_location = '$map_location'";
+$property_id = $_GET['edit_product'];
+$update_property = "update properties set property_title = '$property_title' ,property_details = '$property_details',delivery_type = '$delivery_type',availability = '$availability',price = '$price',property_address = '$property_address',property_img1 = '$product_img1',property_img2 = '$product_img2',property_img3 = '$product_img3',property_img4 = '$product_img4',property_img5 = '$product_img5',bed_room = '$bed_room',liv_room = '$liv_room',parking = '$parking',kitchen = '$kitchen',property_type = '$property_type',floor_space = '$floor_space',agent_id = '$agent_id',blueprint = '$blueprint',property_video = '$property_video',map_location = '$map_location' where property_id = $property_id";
 
 $run_property = mysqli_query($con,$update_property);
 
