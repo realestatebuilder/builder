@@ -343,7 +343,7 @@ img {
 .img-responsive {
   display: block;
   height: 500;
-  width: 300%;
+  width: 300;
 }
 
 .img-rounded {
