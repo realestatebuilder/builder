@@ -24,10 +24,7 @@ while($property_result = mysqli_fetch_assoc($result)){
 			$price = $property_result['price'];
 			$property_address = $property_result['property_address'];
       $property_img1 = $property_result['property_img1'];
-			$property_img2 = $property_result['property_img2'];
-			$property_img3 = $property_result['property_img3'];
-			$property_img4 = $property_result['property_img4'];
-			$property_img5 = $property_result['property_img5'];
+			
       
 			$bed_room = $property_result['bed_room'];
 			$liv_room = $property_result['liv_room'];
