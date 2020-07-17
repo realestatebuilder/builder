@@ -1,7 +1,8 @@
 <?php
 include_once "connection.php";
 
-if(isset($_POST['submit'])){
+if(isset($_POST['submit']))
+{
   $search_value = $_POST['search'];
   echo "<script>console.log('$search_value')</script>";
   $delivery_type = $_POST['delivery_type'];
@@ -73,8 +74,10 @@ if(isset($_POST['submit'])){
   }
 	
 }
-
-else {header ("Location: index.php"); }
+else
+{
+  header("Location: index.php"); 
+}
 
 ?>
 
@@ -112,6 +115,7 @@ else {header ("Location: index.php"); }
 <!-- slitslider -->
 
 <script src='assets/google_analytics_auto.js'></script></head>
+
 <head>
   <style>
 .patch {
@@ -304,49 +308,70 @@ top: 0;
 
      <!-- properties -->
       <?php 
-	  	while($property_result = mysqli_fetch_assoc($result)){
-			$id = $property_result['property_id'];
-			$property_title = $property_result['property_title'];
-			$delivery_type = $property_result['delivery_type'];
-			$availablility = $property_result['availability'];
-			$price = $property_result['price'];
-			$property_img = $property_result['property_img1'];
-			$bed_room = $property_result['bed_room'];
-			$liv_room = $property_result['liv_room'];
-			$parking = $property_result['parking'];
-			$kitchen = $property_result['kitchen'];
-			$address = $property_result['property_address'];
-      // echo "<script>console.log('This is +$property_title')</script>";
-		
-	  ?>
-      <div class="col-lg-4 col-sm-6">
-      <div class="properties">
-        <div class="image-holder"><img src="images/properties/<?php echo $property_img; ?>" class="img-responsive" alt="properties">
-            <a class='patch sale' href='#' style='color:black;'>
-                <div class='thepatch'><?php echo $delivery_type; ?></div>
-                <div class='patch-background'> </div>
-            </a> 
+      $show_modal="";
+      $rowcount=mysqli_num_rows($result);
+      if($rowcount>0)
+      {
+        while($property_result = mysqli_fetch_assoc($result))
+        {
+          $id = $property_result['property_id'];
+          $property_title = $property_result['property_title'];
+          $delivery_type = $property_result['delivery_type'];
+          $availablility = $property_result['availability'];
+          $price = $property_result['price'];
+          $property_img = $property_result['property_img1'];
+          $bed_room = $property_result['bed_room'];
+          $liv_room = $property_result['liv_room'];
+          $parking = $property_result['parking'];
+          $kitchen = $property_result['kitchen'];
+          $address = $property_result['property_address'];
+          // echo "<script>console.log('This is +$property_title')</script>";
         
-          <?php if($availablility == 0){ ?><div class="status sold">Available</div> <?php } else { ?>
-          <div class="status new">Not Available</div>
-          <?php } ?>
-        </div>
-        <h4><a href="property-detail.php?id=<?php echo $id; ?>"><?php echo $property_title;  ?></a></h4>
-        <p class="price">Price: ₹ <?php echo $price; ?></p>
-        <p class="price">Address : <?php echo $address; ?></p>
-        <!-- <p class="price">Utilities: <?php echo $utility; ?></p> -->
-        <div class="listing-detail">
-        <span data-toggle="tooltip" data-placement="bottom" data-original-title="Bed Room"><?php echo $bed_room; ?></span> 
-        <span data-toggle="tooltip" data-placement="bottom" data-original-title="Living Room"><?php echo $liv_room; ?></span> 
-      
-        <span data-toggle="tooltip" data-placement="bottom" data-original-title="Kitchen"><?php echo $kitchen; ?></span> 
-        </div>
-        <a class="btn btn-primary" href="property-detail.php?id=<?php echo $id; ?>">View Details</a>
-      </div>
-      </div>
-      <?php } ?>
-      <!-- properties -->
+        
+        ?>
+          <div class="col-lg-4 col-sm-6">
+          <div class="properties">
+            <div class="image-holder"><img src="images/properties/<?php echo $property_img; ?>" class="img-responsive" alt="properties">
+                <a class='patch sale' href='#' style='color:black;'>
+                    <div class='thepatch'><?php echo $delivery_type; ?></div>
+                    <div class='patch-background'> </div>
+                </a> 
+            
+              <?php if($availablility == 0){ ?><div class="status sold">Available</div> <?php } else { ?>
+              <div class="status new">Not Available</div>
+              <?php } ?>
+            </div>
+            <h4><a href="property-detail.php?id=<?php echo $id; ?>"><?php echo $property_title;  ?></a></h4>
+            <p class="price">Price: ₹ <?php echo $price; ?></p>
+            <p class="price">Address : <?php echo $address; ?></p>
+            <!-- <p class="price">Utilities: <?php echo $utility; ?></p> -->
+            <div class="listing-detail">
+            <span data-toggle="tooltip" data-placement="bottom" data-original-title="Bed Room"><?php echo $bed_room; ?></span> 
+            <span data-toggle="tooltip" data-placement="bottom" data-original-title="Living Room"><?php echo $liv_room; ?></span> 
+          
+            <span data-toggle="tooltip" data-placement="bottom" data-original-title="Kitchen"><?php echo $kitchen; ?></span> 
+            </div>
+            <a class="btn btn-primary" href="property-detail.php?id=<?php echo $id; ?>">View Details</a>
+          </div>
+          </div>
+          <?php 
 
+                }
+                $show_modal="0";
+        }
+        else
+        { 
+          $show_modal="1";
+          include("scripts.js.php"); 
+          $rowcount=mysqli_num_rows($result);
+          echo "<script>$('#exampleModal').modal('show')</script>";
+          echo "<script>console.log('This is + $rowcount')</script>";
+        } 
+         ?>
+          <!-- properties -->
+    
+    
+    
 
 </div>
 </div>
@@ -400,7 +425,74 @@ top: 0;
 <p class="copyright">Copyright 2017. All rights reserved.	</p>
 
 
-</div></div>
+<!-- </div></div> -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Tell us your requirement</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+         
+              <div class="form-group">
+                <label for="name">Full Name:</label>
+                <input type="text" class="form-control" id="name" name="fname">
+              </div>
+              <div class="form-group">
+                <label for="email">Email address:</label>
+                <input type="email" class="form-control" id="email" name="email">
+              </div>
+              <div class="form-group">
+                <label for="mobileNo">Mobile Number:</label>
+                <input type="number" class="form-control" id="mobileNo" name="mobNo">
+              </div>
+              <div class="form-group">
+                <label for="bhk">Rent/Sale - </label>
+                <select class="form-control" id="deliverytype" name="deliverytype">
+                  <option selected disabled> Rent/Sale </option>
+                  <option>Rent </option>
+                  <option>Sale</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="bhk">Select your need - </label>
+                <select class="form-control" id="bhk" name="bhk">
+                  <option selected disabled> Need </option>
+                  <option value="0"> < 1 BHK </option>
+                  <option value="1">1 BHK</option>
+                  <option value="2">2 BHK</option>
+                  <option value="3">3+ BHK</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="price">Price Range - </label>
+                <select class="form-control" id="price" name="price">
+                  <option value="0" selected disabled >Price Range</option>
+                  <option value="1">₹5000 to ₹50,000</option>
+                  <option value="2">₹50,000 to ₹1,00,000</option>
+                  <option value="3">₹1,00,000 to ₹2,00,000</option>
+                  <option value="4">₹2,00,000 and above</option>
+                </select>
+              </div>
+       
+      </div>
+      <div class="modal-footer">
+      <center>
+        <input type="submit" id="submitRequest"  name="submitRequest" class="btn btn-primary" style="width:20%;" value="Submit">
+        <button type="submit" class="btn btn-primary" style="width:20%;">Close</button>
+       <center>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
 
 
 
