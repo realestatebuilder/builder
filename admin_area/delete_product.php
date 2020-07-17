@@ -19,8 +19,10 @@ if(isset($_GET['delete_product'])){
 $delete_id = $_GET['delete_product'];
 
 $delete_pro = "delete from properties where property_id='$delete_id'";
+$delete_img = "delete from property_image where property_id='$delete_id'";
 
 $run_delete = mysqli_query($con,$delete_pro);
+$run_delete_img = mysqli_query($con,$delete_img);
 
 if($run_delete){
 

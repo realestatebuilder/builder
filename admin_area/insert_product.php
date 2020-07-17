@@ -98,7 +98,7 @@ else {
 
 <select class="form-control" name="delivery_type"><!-- select delivery_type Starts -->
 
-<option> Select A Delevery Type </option>
+<option> Select A Delivery Type </option>
 <option> Sale </option>
 <option> Rent </option>
 
@@ -151,7 +151,7 @@ else {
 
 <div class="form-group" ><!-- form-group Starts -->
 
-<label class="col-md-3 control-label" > Product Image 1 </label>
+<label class="col-md-3 control-label" > Thumbnail </label>
 
 <div class="col-md-6" >
 
@@ -163,51 +163,17 @@ else {
 
 <div class="form-group" ><!-- form-group Starts -->
 
-<label class="col-md-3 control-label" > Product Image 2 </label>
+<label class="col-md-3 control-label" >  Select Image Files to Upload </label>
 
 <div class="col-md-6" >
 
-<input type="file" name="product_img2" class="form-control" required >
+<input type="file" class="form-control" name="files[]" multiple >
 
 </div>
 
 </div><!-- form-group Ends -->
 
-<div class="form-group" ><!-- form-group Starts -->
 
-<label class="col-md-3 control-label" > Product Image 3 </label>
-
-<div class="col-md-6" >
-
-<input type="file" name="product_img3" class="form-control" required >
-
-</div>
-
-</div><!-- form-group Ends -->
-
-<div class="form-group" ><!-- form-group Starts -->
-
-<label class="col-md-3 control-label" > Product Image 4 </label>
-
-<div class="col-md-6" >
-
-<input type="file" name="product_img4" class="form-control" required >
-
-</div>
-
-</div><!-- form-group Ends -->
-
-<div class="form-group" ><!-- form-group Starts -->
-
-<label class="col-md-3 control-label" > Product Image 5 </label>
-
-<div class="col-md-6" >
-
-<input type="file" name="product_img5" class="form-control" required >
-
-</div>
-
-</div><!-- form-group Ends -->
 
 <div class="form-group" ><!-- form-group Starts -->
 
@@ -447,10 +413,10 @@ $blueprint = $_FILES['blueprint']['name'];
 $property_video = $_FILES['property_video']['name'];
 
 $product_img1 = $_FILES['product_img1']['name'];
-$product_img2 = $_FILES['product_img2']['name'];
-$product_img3 = $_FILES['product_img3']['name'];
-$product_img4 = $_FILES['product_img4']['name'];
-$product_img5 = $_FILES['product_img5']['name'];
+// $product_img2 = $_FILES['product_img2']['name'];
+// $product_img3 = $_FILES['product_img3']['name'];
+// $product_img4 = $_FILES['product_img4']['name'];
+// $product_img5 = $_FILES['product_img5']['name'];
 
 
 $temp_blue_name = $_FILES['blueprint']['tmp_name'];
@@ -458,10 +424,10 @@ $property_name = $_FILES['property_video']['tmp_name'];
 
 
 $temp_name1 = $_FILES['product_img1']['tmp_name'];
-$temp_name2 = $_FILES['product_img2']['tmp_name'];
-$temp_name3 = $_FILES['product_img3']['tmp_name'];
-$temp_name4 = $_FILES['product_img4']['tmp_name'];
-$temp_name5 = $_FILES['product_img5']['tmp_name'];
+// $temp_name2 = $_FILES['product_img2']['tmp_name'];
+// $temp_name3 = $_FILES['product_img3']['tmp_name'];
+// $temp_name4 = $_FILES['product_img4']['tmp_name'];
+// $temp_name5 = $_FILES['product_img5']['tmp_name'];
 
 
 move_uploaded_file($property_name,"../images/property_videos/$property_video");
@@ -469,19 +435,79 @@ move_uploaded_file($temp_blue_name,"../images/property_videos/$blueprint");
 
 
 move_uploaded_file($temp_name1,"../images/properties/$product_img1");
-move_uploaded_file($temp_name2,"../images/properties/$product_img2");
-move_uploaded_file($temp_name3,"../images/properties/$product_img3");
-move_uploaded_file($temp_name4,"../images/properties/$product_img4");
-move_uploaded_file($temp_name5,"../images/properties/$product_img5");
+// move_uploaded_file($temp_name2,"../images/properties/$product_img2");
+// move_uploaded_file($temp_name3,"../images/properties/$product_img3");
+// move_uploaded_file($temp_name4,"../images/properties/$product_img4");
+// move_uploaded_file($temp_name5,"../images/properties/$product_img5");
 
 $agent = 1;
-$insert_property = "insert into properties (property_title,property_details,delivery_type,availability,price,property_address,property_img1,property_img2,property_img3,property_img4,property_img5,bed_room,liv_room,parking,kitchen,property_type,floor_space,agent_id,blueprint,property_video,map_location) values ('$property_title','$property_details','$delivery_type','$availability',$price,'$property_address','$product_img1','$product_img2','$product_img3','$product_img4','$product_img5','$bed_room','$liv_room','$parking','$kitchen','$property_type','$floor_space',$agent,'$blueprint','$property_video','$map_location')";
+$insert_property = "insert into properties (property_title,property_details,delivery_type,availability,price,property_address,property_img1,bed_room,liv_room,parking,kitchen,property_type,floor_space,agent_id,blueprint,property_video,map_location) values ('$property_title','$property_details','$delivery_type','$availability',$price,'$property_address','$product_img1','$bed_room','$liv_room','$parking','$kitchen','$property_type','$floor_space',$agent,'$blueprint','$property_video','$map_location')";
 
 $run_property = mysqli_query($con,$insert_property);
+
+   // File upload configuration 
+   $targetDir = "../images/properties/"; 
+   $allowTypes = array('jpg','png','jpeg','gif'); 
+  
+    $query = "SELECT MAX(property_id) FROM properties";
+    $result = mysqli_query($con, $query);
+    if($result->num_rows > 0){
+      while($row = $result->fetch_assoc()){
+          echo $row["MAX(property_id)"];
+          $property_id=$row["MAX(property_id)"];
+          echo $property_id;
+  
+   }
+  }
+   $statusMsg = $errorMsg = $insertValuesSQL = $errorUpload = $errorUploadType = ''; 
+   $fileNames = array_filter($_FILES['files']['name']); 
+   if(!empty($fileNames)){ 
+    foreach($_FILES['files']['name'] as $key=>$val){ 
+        // File upload path 
+        $fileName = basename($_FILES['files']['name'][$key]); 
+        $targetFilePath = $targetDir . $fileName; 
+         
+        // Check whether file type is valid 
+        $fileType = pathinfo($targetFilePath, PATHINFO_EXTENSION); 
+        if(in_array($fileType, $allowTypes)){ 
+            // Upload file to server 
+            if(move_uploaded_file($_FILES["files"]["tmp_name"][$key], $targetFilePath)){ 
+                // Image db insert sql 
+                $insertValuesSQL .= "('".$fileName."', '".$property_id."'),"; 
+            }else{ 
+                $errorUpload .= $_FILES['files']['name'][$key].' | '; 
+            } 
+        }else{ 
+            $errorUploadType .= $_FILES['files']['name'][$key].' | '; 
+        } 
+    } 
+     
+    if(!empty($insertValuesSQL)){ 
+        $insertValuesSQL = trim($insertValuesSQL, ','); 
+        // Insert image file name into database 
+        
+        $run_property1 = mysqli_query($con,"INSERT INTO property_image (property_images,property_id) VALUES $insertValuesSQL");
+        
+        if($run_property1){ 
+            $errorUpload = !empty($errorUpload)?'Upload Error: '.trim($errorUpload, ' | '):''; 
+            $errorUploadType = !empty($errorUploadType)?'File Type Error: '.trim($errorUploadType, ' | '):''; 
+            $errorMsg = !empty($errorUpload)?'<br/>'.$errorUpload.'<br/>'.$errorUploadType:'<br/>'.$errorUploadType; 
+            $statusMsg = "Files are uploaded successfully.".$errorMsg; 
+        }else{ 
+            $statusMsg = "Sorry, there was an error uploading your file."; 
+        } 
+    } 
+}else{ 
+    $statusMsg = 'Please select a file to upload.'; 
+} 
+ 
+// Display status message 
+echo $statusMsg; 
 
 if($run_property){
 
 echo "<script>alert('Product has been inserted successfully')</script>";
+echo "<script>alert($property_id)</script>";
 
 echo "<script>window.open('index.php?view_products','_self')</script>";
 

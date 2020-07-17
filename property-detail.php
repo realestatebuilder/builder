@@ -226,25 +226,19 @@ echo "<script>console.log('$property_id')</script>";
         <!-- #Item 0 -->
         
         <!-- Item 1 -->
-        <?php 
-			
-			
-		?>
-        <div class="item">
-          <img src="images/properties/<?php echo $property_img1; ?>" class="properties" alt="properties" />
+        <?php
+
+        if($imgresult->num_rows > 0){
+          while($row = $imgresult->fetch_assoc()){
+              $imageURL = 'images/properties/'.$row["property_images"];
+      ?>
+          <div class="item">
+          <img src="<?php echo $imageURL; ?>" class="properties" alt="properties" />
         </div>
-        <div class="item">
-          <img src="images/properties/<?php echo $property_img2; ?>" class="properties" alt="properties" />
-        </div>
-        <div class="item">
-          <img src="images/properties/<?php echo $property_img3; ?>" class="properties" alt="properties" />
-        </div>
-        <div class="item">
-          <img src="images/properties/<?php echo $property_img4; ?>" class="properties" alt="properties" />
-        </div>
-        <div class="item">
-          <img src="images/properties/<?php echo $property_img5; ?>" class="properties" alt="properties" />
-        </div>
+      <?php }
+      } ?>
+          
+	
         <!-- #Item 1 -->
       </div>
       <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
