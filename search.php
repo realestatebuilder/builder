@@ -347,6 +347,8 @@ top: 0;
           $parking = $property_result['parking'];
           $kitchen = $property_result['kitchen'];
           $address = $property_result['property_address'];
+          $property_type = $property_result['property_type'];
+
           // echo "<script>console.log('This is +$property_title')</script>";
         
         
@@ -366,7 +368,7 @@ top: 0;
             <h4><a href="property-detail.php?id=<?php echo $id; ?>"><?php echo $property_title;  ?></a></h4>
             <p class="price">Price: ₹ <?php echo $price; ?></p>
             <p class="price">Address : <?php echo $address; ?></p>
-            <!-- <p class="price">Utilities: <?php echo $utility; ?></p> -->
+            <p class="price">Type : <?php echo $property_type; ?></p>
             <div class="listing-detail">
             <span data-toggle="tooltip" data-placement="bottom" data-original-title="Bed Room"><?php echo $bed_room; ?></span> 
             <span data-toggle="tooltip" data-placement="bottom" data-original-title="Living Room"><?php echo $liv_room; ?></span> 
