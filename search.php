@@ -483,7 +483,7 @@ top: 0;
       <div class="modal-footer">
       <center>
         <input type="submit" id="submitRequest"  name="submitRequest" class="btn btn-primary" style="width:20%;" value="Submit">
-        <button type="submit" class="btn btn-primary" style="width:20%;">Close</button>
+        <button type="submit" id="closeRequest" class="btn btn-primary" style="width:20%;">Close</button>
        <center>
       
       </div>

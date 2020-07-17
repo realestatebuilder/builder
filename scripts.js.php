@@ -6,7 +6,9 @@ $(document).ready(function(){
         $("#exampleModal").modal("show");
     }
 
-
+$("#closeRequest").click(function(){
+    $("#exampleModal").modal("hide");
+})
   $("#submitRequest").click(function(){
     console.log("Sarang Started")
 
