@@ -17,26 +17,27 @@ if(isset($_POST['submit']))
   $query = "select * from properties where availability='Available'";
   $availableValues = array();
 
+  echo "<script>console.log(typeof($search_price))</script>";
+
   
   if(!empty($_POST['search']))
   {
    
      $query.="and property_title LIKE '%$search_value%' or property_details LIKE '%$search_value%' ";   
   }
-  else if(!empty($_POST['delivery_type']) and $_POST['delivery_type'] != 'Rent/Sale')
+  if(!empty($_POST['delivery_type']) and $_POST['delivery_type'] != 'Rent/Sale')
   {
-   
     $query.="and delivery_type = '$delivery_type'";
   }
-  else if(!empty($_POST['property_type']) and $_POST['property_type'] != 'Property Type')
+  if(!empty($_POST['property_type']) and $_POST['property_type'] != 'Property Type')
   {
     $query .= "and property_type = '$property_type'";
   }
-  else if(!empty($_POST['search_price']))
+  if(!empty($_POST['search_price']))
   {
     if($_POST['search_price']==1)
     {
-      $query .= "and price BETWEEN 5000 AND 50000";
+      $query .= "and price > 5000 AND price < 50000";
     }
     else if($_POST['search_price']==2)
     {
@@ -52,10 +53,7 @@ if(isset($_POST['submit']))
     }
    
   }
-  else
-  {
-
-  }
+  
   echo "<script>console.log($query)</script>";
   
   

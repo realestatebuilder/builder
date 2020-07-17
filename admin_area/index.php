@@ -44,8 +44,9 @@ $get_products = "select * from properties";
 $run_products = mysqli_query($con,$get_products);
 $count_products = mysqli_num_rows($run_products);
 
-
-
+if($admin_id == 0)
+{
+echo "<script>console.log('Entered in if')</script>";
 ?>
 
 
@@ -69,7 +70,7 @@ $count_products = mysqli_num_rows($run_products);
 
 <div id="wrapper"><!-- wrapper Starts -->
 
-<?php include("includes/sidebar.php");  ?>
+<?php include("includes/superadminsidebar.php");  ?>
 
 <div id="page-wrapper"><!-- page-wrapper Starts -->
 
@@ -169,4 +170,97 @@ include("user_profile.php");
 
 </html>
 
-<?php } ?>
+<?php 
+}
+else
+{
+    echo "<script>console.log('Entered in else')</script>";
+
+    ?>
+
+
+    <!DOCTYPE html>
+    <html>
+    
+    <head>
+    
+    <title>Admin Panel</title>
+    
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    
+    <link href="css/style.css" rel="stylesheet">
+    
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" >
+    <link rel="shortcut icon" href="//cdn.shopify.com/s/files/1/2484/9148/files/SDQSDSQ_32x32.png?v=1511436147" type="image/png">
+    
+    </head>
+    
+    <body>
+    
+    <div id="wrapper"><!-- wrapper Starts -->
+    
+    <?php include("includes/sidebar.php");  ?>
+    
+    <div id="page-wrapper"><!-- page-wrapper Starts -->
+    
+    <div class="container-fluid"><!-- container-fluid Starts -->
+    
+    <?php
+       
+    if(isset($_GET['insert_product'])){
+    
+    include("insert_product.php");
+    
+    }
+    
+    if(isset($_GET['view_products'])){
+    
+    include("view_products.php");
+    
+    }
+    
+    if(isset($_GET['delete_product'])){
+    
+    include("delete_product.php");
+    
+    }
+    
+    if(isset($_GET['edit_product'])){
+    
+    include("edit_product.php");
+    
+    }
+    
+    
+    
+    
+    if(isset($_GET['user_profile'])){
+    
+    include("user_profile.php");
+    
+    }
+    
+    
+    ?>
+    
+    </div><!-- container-fluid Ends -->
+    
+    </div><!-- page-wrapper Ends -->
+    
+    </div><!-- wrapper Ends -->
+    
+    <script src="js/jquery.min.js"></script>
+    
+    <script src="js/bootstrap.min.js"></script>
+    
+    
+    </body>
+    
+    
+    </html>
+    
+    <?php 
+    }
+
+} 
+?>

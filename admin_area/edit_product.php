@@ -7,13 +7,17 @@ echo "<script>window.open('login.php','_self')</script>";
 }
 
 else {
+  $pageid=$_GET['edit_product'];
 
   $get_pro = "select * from properties where property_id = ".$_GET['edit_product'];
-
+ 
   $run_pro = mysqli_query($con,$get_pro);
+
   
   $row_pro = mysqli_fetch_array($run_pro);
+ 
 ?>
+
 <!DOCTYPE html>
 
 <html>
@@ -156,7 +160,7 @@ else {
 
 <div class="form-group" ><!-- form-group Starts -->
 
-<label class="col-md-3 control-label" > Product Image 1 </label>
+<label class="col-md-3 control-label" > Thumbnail </label>
 
 <div class="col-md-6" >
 
@@ -167,56 +171,35 @@ else {
 
 </div><!-- form-group Ends -->
 
+<?php
+$count=1;
+ $get_img = "select * from property_image where property_id = ".$_GET['edit_product'];
+ $run_img = mysqli_query($con,$get_img);
+if($run_img->num_rows > 0){
+  while($row = $run_img->fetch_assoc()){
+      $imageURL = '../images/properties/'.$row["property_images"];
+      $inpname = $row["image_id"];
+      //echo $inpname;
+?>
 <div class="form-group" ><!-- form-group Starts -->
 
-<label class="col-md-3 control-label" > Product Image 2 </label>
+<label class="col-md-3 control-label" > Property Image <?php echo $count; ?> </label>
 
 <div class="col-md-6" >
 
-<input type="file" name="product_img2" class="form-control"  >
-<img src="../images/properties/<?php echo $row_pro['property_img2']; ?>" name = "property_img2" height="100" width="100">
+
+<input type="file" name="<?php echo $inpname; ?>" class="form-control"  >
+<img src="<?php echo $imageURL; ?>" name = "<?php echo $inpname; ?>" height="100" width="100">
 
 </div>
 
 </div><!-- form-group Ends -->
+<?php
+$count++;
+ }
+} ?>
+  
 
-<div class="form-group" ><!-- form-group Starts -->
-
-<label class="col-md-3 control-label" > Product Image 3 </label>
-
-<div class="col-md-6" >
-
-<input type="file" name="product_img3" class="form-control"  >
-<img src="../images/properties/<?php echo $row_pro['property_img3']; ?>" name = "property_img3" height="100" width="100">
-
-</div>
-
-</div><!-- form-group Ends -->
-
-<div class="form-group" ><!-- form-group Starts -->
-
-<label class="col-md-3 control-label" > Product Image 4 </label>
-
-<div class="col-md-6" >
-
-<input type="file" name="product_img4" class="form-control"  >
-<img src="../images/properties/<?php echo $row_pro['property_img4']; ?>" name = "property_img4" height="100" width="100">
-
-</div>
-
-</div><!-- form-group Ends -->
-
-<div class="form-group" ><!-- form-group Starts -->
-
-<label class="col-md-3 control-label" > Product Image 5 </label>
-
-<div class="col-md-6" >
-
-<input type="file" name="product_img5" class="form-control"  >
-<img src="../images/properties/<?php echo $row_pro['property_img5']; ?>" name = "property_img5" height="100" width="100">
-</div>
-
-</div><!-- form-group Ends -->
 
 <div class="form-group" ><!-- form-group Starts -->
 
@@ -464,13 +447,33 @@ if(isset($_POST['update'])){
   
   $blueprint = $_FILES['blueprint']['name'];
   $property_video = $_FILES['property_video']['name'];
-  
-  $product_img1 = $_FILES['product_img1']['name'];
-  $product_img2 = $_FILES['product_img2']['name'];
-  $product_img3 = $_FILES['product_img3']['name'];
-  $product_img4 = $_FILES['product_img4']['name'];
-  $product_img5 = $_FILES['product_img5']['name']; 
-  echo "this is :".$row_pro['property_img1'];
+
+
+  $get_img = "select * from property_image where property_id = ".$_GET['edit_product'];
+  $run_img = mysqli_query($con,$get_img);
+  if($run_img->num_rows > 0){
+  while($row = $run_img->fetch_assoc()){
+    $inpname = $row["image_id"];
+    $product_img = $_FILES[$inpname]['name'];
+ 
+   
+
+      if(empty($product_img))
+      {
+        $product_img = $row["property_images"];
+      }
+      else
+      {
+        $temp_name1 = $_FILES['$row["image_id"]']['tmp_name'];
+        move_uploaded_file($temp_name1,"../images/properties/$product_img");
+            
+        $update_property = "update property_image set property_images = '$product_img' where image_id='$inpname'";
+
+        $run_property = mysqli_query($con,$update_property);
+      }
+  }
+}
+$product_img1 = $_FILES['product_img1']['name'];
 if(empty($product_img1))
 {
   $product_img1 = $row_pro['property_img1'];
@@ -481,45 +484,6 @@ else
   move_uploaded_file($temp_name1,"../images/properties/$product_img1");
 }
 
-if(empty($product_img2))
-{
-  $product_img2 = $row_pro['property_img2'];
-}
-else
-{
-  $temp_name2 = $_FILES['product_img2']['tmp_name'];
-  move_uploaded_file($temp_name2,"../images/properties/$product_img2");
-}
-
-if(empty($product_img3))
-{
-  $product_img3 = $row_pro['property_img3'];
-}
-else
-{
-  $temp_name3 = $_FILES['product_img3']['tmp_name'];
-  move_uploaded_file($temp_name3,"../images/properties/$product_img3");
-}
-
-if(empty($product_img4))
-{
-  $product_img4 = $row_pro['property_img4'];  
-}
-else
-{
-  $temp_name4 = $_FILES['product_img4']['tmp_name'];
-  move_uploaded_file($temp_name4,"../images/properties/$product_img4");
-}
-
-if(empty($product_img5))
-{
-  $product_img5 = $row_pro['property_img5'];  
-}
-else
-{
-  $temp_name5 = $_FILES['product_img5']['tmp_name'];
-  move_uploaded_file($temp_name5,"../images/properties/$product_img5");
-}
 
 if(empty($blueprint))
 {
@@ -541,7 +505,8 @@ else
   move_uploaded_file($property_video_temp,"../images/property_videos/$property_video");
 }
 
-$update_property = "update properties set property_title = '$property_title' ,property_details = '$property_details',delivery_type = '$delivery_type',availability = '$availability',price = '$price',property_address = '$property_address',property_img1 = '$product_img1',property_img2 = '$product_img2',property_img3 = '$product_img3',property_img4 = '$product_img4',property_img5 = '$product_img5',bed_room = '$bed_room',liv_room = '$liv_room',parking = '$parking',kitchen = '$kitchen',property_type = '$property_type',floor_space = '$floor_space',agent_id = '$agent_id',blueprint = '$blueprint',property_video = '$property_video',map_location = '$map_location'";
+$update_property = "update properties set property_title = '$property_title' ,property_details = '$property_details',delivery_type = '$delivery_type',availability = '$availability',price = '$price',property_address = '$property_address',property_img1 = '$product_img1',bed_room = '$bed_room',liv_room = '$liv_room',parking = '$parking',kitchen = '$kitchen',property_type = '$property_type',floor_space = '$floor_space',agent_id = '$agent_id',blueprint = '$blueprint',property_video = '$property_video',map_location = '$map_location' where property_id='$pageid'";
+$property_id = $_GET['edit_product'];
 
 $run_property = mysqli_query($con,$update_property);
 

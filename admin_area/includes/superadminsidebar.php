@@ -103,6 +103,16 @@ else {
 
 <ul class="nav navbar-nav side-nav"><!-- nav navbar-nav side-nav Starts -->
 
+<li><!-- li Starts -->
+
+<a href="index.php?dashboard">
+
+<i class="fa fa-fw fa-dashboard"></i> Dashboard
+
+</a>
+
+</li><!-- li Ends -->
+
 <li><!-- Products li Starts -->
 
 <a href="#" data-toggle="collapse" data-target="#products">
@@ -131,10 +141,44 @@ else {
 
 
 
+<li>
+
+<a href="index.php?view_customers">
+
+<i class="fa fa-fw fa-edit"></i> View Customers
+
+</a>
+
+</li>
 
 <li><!-- li Starts -->
 
-<a href="../admin_area/logout.php">
+<a href="#" data-toggle="collapse" data-target="#users">
+
+<i class="fa fa-fw fa-gear"></i> Users
+
+<i class="fa fa-fw fa-caret-down"></i>
+
+
+</a>
+
+<ul id="users" class="collapse">
+
+<li>
+<a href="index.php?insert_user"> Insert User </a>
+</li>
+
+<li>
+<a href="index.php?view_users"> View Users </a>
+</li>
+
+</ul>
+
+</li><!-- li Ends -->
+
+<li><!-- li Starts -->
+
+<a href="http://localhost/builder/admin_area/logout.php">
 
 <i class="fa fa-fw fa-power-off"></i> Log Out
 
