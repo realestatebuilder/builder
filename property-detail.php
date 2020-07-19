@@ -24,10 +24,7 @@ while($property_result = mysqli_fetch_assoc($result)){
 			$price = $property_result['price'];
 			$property_address = $property_result['property_address'];
       $property_img1 = $property_result['property_img1'];
-			$property_img2 = $property_result['property_img2'];
-			$property_img3 = $property_result['property_img3'];
-			$property_img4 = $property_result['property_img4'];
-			$property_img5 = $property_result['property_img5'];
+		
       
 			$bed_room = $property_result['bed_room'];
 			$liv_room = $property_result['liv_room'];
@@ -118,7 +115,7 @@ echo "<script>console.log('$property_id')</script>";
               <ul class="nav navbar-nav navbar-right">
                <li class="active"><a href="index.php">Home</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="contact.php">Contact</a></li>
               </ul>
             </div>
             <!-- #Nav Ends -->
@@ -326,7 +323,7 @@ echo "<script>console.log('$property_id')</script>";
                    <ul class="row">
                 <li class="col-lg-12 col-sm-12 col-xs-3"><a href="index.php">Home</a></li>
                 <li class="col-lg-12 col-sm-12 col-xs-3"><a href="about.html">About</a></li>
-                <li class="col-lg-12 col-sm-12 col-xs-3"><a href="contact.html">Contact</a></li>
+                <li class="col-lg-12 col-sm-12 col-xs-3"><a href="contact.php">Contact</a></li>
               </ul>
             </div>
             

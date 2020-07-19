@@ -14,7 +14,7 @@ else {
 <html>
 
 <head>
-
+<script src="https://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
 <title> Insert Property </title>
 
 
@@ -62,7 +62,7 @@ else {
 
 <div class="panel-body"><!-- panel-body Starts -->
 
-<form class="form-horizontal" method="post" enctype="multipart/form-data"><!-- form-horizontal Starts -->
+<form class="form-horizontal" method="post" enctype="multipart/form-data" onsubmit="return validateProperty()">
 
 <div class="form-group" ><!-- form-group Starts -->
 
@@ -70,7 +70,8 @@ else {
 
 <div class="col-md-6" >
 
-<input type="text" name="property_title" class="form-control" required >
+<input type="text" name="property_title" id="title" class="form-control" required>
+<span id="property-title"></span>
 
 </div>
 
@@ -83,7 +84,8 @@ else {
 
 <div class="col-md-6" >
 
-<input type="text" name="property_address" class="form-control" required >
+<input type="text" name="property_address" id="address" class="form-control"  required>
+<span id="property-address"  ></span>
 
 </div>
 
@@ -96,7 +98,7 @@ else {
 
 <div class="col-md-6" >
 
-<select class="form-control" name="delivery_type"><!-- select delivery_type Starts -->
+<select class="form-control" name="delivery_type" required><!-- select delivery_type Starts -->
 
 <option> Select A Delivery Type </option>
 <option> Sale </option>
@@ -116,7 +118,7 @@ else {
 
 <div class="col-md-6" >
 
-<select name="availability" class="form-control" >
+<select name="availability" class="form-control" required >
 
 <option> Select Property Availability </option>
 <option> Available </option>
@@ -135,7 +137,7 @@ else {
 <div class="col-md-6" >
 
 
-<select name="property_type" class="form-control" >
+<select name="property_type" class="form-control" required >
 
 <option> Select Property Type </option>
 <option> Apartment </option>
@@ -155,7 +157,7 @@ else {
 
 <div class="col-md-6" >
 
-<input type="file" name="product_img1" class="form-control" required >
+<input type="file" name="product_img1" accept="image/png,image/jpeg,image/jpg" class="form-control" required >
 
 </div>
 
@@ -167,7 +169,7 @@ else {
 
 <div class="col-md-6" >
 
-<input type="file" class="form-control" name="files[]" multiple >
+<input type="file" accept="image/png,image/jpeg,image/jpg" class="form-control" name="files[]" multiple required>
 
 </div>
 
@@ -181,7 +183,8 @@ else {
 
 <div class="col-md-6" >
 
-<input type="number" name="price" class="form-control" required >
+<input type="number" name="price" id="price" class="form-control"  >
+<span id="property-price"  ></span>
 
 </div>
 
@@ -221,7 +224,7 @@ else {
 
 <br>
 
-<textarea name="property_details" class="form-control" rows="15" id="property_details">
+<textarea name="property_details" class="form-control" rows="15" id="property_details" required>
 
 
 </textarea>
@@ -233,7 +236,7 @@ else {
 
 <br>
 
-<input type="file" id="blueprint" name="blueprint" class="form-control" required >
+<input type="file" accept="image/png,image/jpeg,image/jpg id="blueprint" name="blueprint" class="form-control" required >
 
 
 </div><!-- features tab-pane fade in Ends -->
@@ -260,7 +263,8 @@ else {
 
 <div class="col-md-6" >
 
-<input type="text" name="floor_space" class="form-control" required >
+<input type="text" name="floor_space"  id="area" class="form-control" required>
+<span id="property-area"  ></span>
 
 </div>
 
@@ -273,7 +277,7 @@ else {
 <div class="col-md-6" >
 
 
-<select name="bed_room" class="form-control" >
+<select name="bed_room" class="form-control" required>
 
 <option> 0 </option>
 <option> 1 </option>
@@ -296,7 +300,7 @@ else {
 <div class="col-md-6" >
 
 
-<select name="liv_room" class="form-control" >
+<select name="liv_room" class="form-control" required >
 
 <option> 0 </option>
 <option> 1 </option>
@@ -316,7 +320,7 @@ else {
 <div class="col-md-6" >
 
 
-<select name="kitchen" class="form-control" >
+<select name="kitchen" class="form-control" required >
 
 <option> 0 </option>
 <option> 1 </option>
@@ -334,7 +338,7 @@ else {
 <div class="col-md-6" >
 
 
-<select name="parking" class="form-control" >
+<select name="parking" class="form-control" required>
 
 <option> Bike Parking </option>
 <option> Car Parking </option>
@@ -353,7 +357,8 @@ else {
 
 <div class="col-md-6" >
 
-<input type="text" name="map_location" class="form-control" required >
+<input type="text" name="map_location"  id="location" class="form-control" required >
+<span id="property-location"  ></span>
 
 </div>
 
@@ -381,6 +386,75 @@ else {
 
 </div><!-- 2 row Ends --> 
 
+
+<script type="text/javascript">
+function validateProperty() {
+    var valid = true;
+
+    
+    var title = $("#title").val();
+    var address = $("#address").val();
+    var price = $("#price").val();
+    var area = $("#area").val();
+    var location = $("#location").val();
+    
+            if (title == "") {
+                        $("#property-title").html(" Title required");
+                        $("#property-title").css("color","red");
+                        $("#title").css('border', '#e66262 1px solid');
+                        valid = false;
+ 
+                    }
+
+            if (address == "") {
+                $("#property-address").html("Address required");
+                $("#property-address").css("color","red");
+                $("#address").css('border', '#e66262 1px solid');
+                valid = false;
+            }
+
+            if (price == "") {
+                $("#property-price").html("Price required");
+                $("#property-price").css("color","red");
+                $("#price").css('border', '#e66262 1px solid');
+                valid = false;
+            }
+
+            else if (!price.match(/^[0-9]+$/))
+            {
+                $("#property-price").html("Enter Number only");
+                $("#property-price").css("color","red");
+                $("#price").css('border', '#e66262 1px solid');
+                valid = false;
+            }
+
+            if (area == "") {
+                $("#property-area").html("Area required");
+                $("#property-area").css("color","red");
+                $("#area").css('border', '#e66262 1px solid');
+                valid = false;
+            }
+
+
+
+            else if (!area.match(/^[0-9]+$/))
+            {
+                $("#property-area").html("Enter number only");
+                $("#property-area").css("color","red");
+                $("#area").css('border', '#e66262 1px solid');
+                valid = false;
+            }
+
+            if (location == "") {
+                $("#property-location").html("Location required");
+                $("#property-location").css("color","red");
+                $("#location").css('border', '#e66262 1px solid');
+                valid = false;
+            }
+
+            return valid;
+        }
+</script>
 
 
 
