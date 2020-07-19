@@ -258,13 +258,14 @@ top: 0;
         <form action="search.php" method="post">
           <input name="search" type="text" class="form-control" placeholder="Search of Properties">
           <div class="row">
-            <div class="col-lg-3 col-sm-3 ">
+            <div class="col-lg-4 col-sm-4 ">
               <select name="delivery_type" class="form-control">
+                <option value="">Rent/Sale</option>
                 <option value="Rent">Rent</option>
                 <option value="Sale">Sale</option>
               </select>
             </div>
-            <div class="col-lg-3 col-sm-4">
+            <div class="col-lg-4 col-sm-4">
              <select name="search_price" class="form-control">
                 <option>Price</option>
                 <option value="1">$5000 - $50,000</option>
@@ -273,7 +274,7 @@ top: 0;
                 <option value="4">$200,000 - above</option>
               </select>
             </div>
-            <div class="col-lg-3 col-sm-4">
+            <div class="col-lg-4 col-sm-4">
            <select name="property_type" class="form-control">
                 <option>Property Type</option>
                 <option value="Apartment">Apartment</option>
@@ -281,8 +282,20 @@ top: 0;
                 <option value="Office-Space">Office-Space</option>
               </select>
               </div>
+
+              <div class="col-lg-4 col-sm-4">
+            <select name="bhk" class="form-control">
+            <option value = "">BHKs</option>
+                  <option value="rk">1RK</option>
+                  <option value="1">1BHK</option>
+                  <option value="2">2BHK</option>
+                  <option value="3">3BHK</option>
+                  <option value="4">3+BHK</option>
+                </select>
+              </div>
+              
               <div class="col-lg-3 col-sm-4">
-              <button name="submit" class="btn btn-success"  onclick="window.location.href='buysalerent.html'">Find Now</button>
+              <button name="submit" class="btn btn-success">Find Now</button>
               </form> 
               </div>
           </div>
@@ -316,7 +329,8 @@ top: 0;
 			$liv_room = $property_result['liv_room'];
 			$parking = $property_result['parking'];
 			$kitchen = $property_result['kitchen'];
-			$address = $property_result['property_address'];
+      $address = $property_result['property_address'];
+      $property_type = $property_result['property_type'];
 		
 	  ?>
       <div class="properties">
@@ -334,6 +348,7 @@ top: 0;
         <h4><a href="property-detail.php?id=<?php echo $id; ?>"><?php echo $property_title;  ?></a></h4>
         <p class="price">Price: ₹<?php echo $price; ?></p>
         <p class="price">Address: <?php echo $address; ?></p>
+        <p class="price">Type: <?php echo $property_type; ?></p>
         <!-- <p class="price">Utilities: <?php echo $utility; ?></p> -->
         <div class="listing-detail">
         <span data-toggle="tooltip" data-placement="bottom" data-original-title="Bed Room"><?php echo $bed_room; ?></span> 

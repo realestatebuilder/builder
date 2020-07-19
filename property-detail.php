@@ -14,8 +14,7 @@ if(!$result){
 
 while($property_result = mysqli_fetch_assoc($result)){
 
-      $property_id = $property_result['property_id'];
-      
+      $property_id = $property_result['property_id'];   
 			$property_title = $property_result['property_title'];
       $property_details = $property_result['property_details'];
 			$map_location = $property_result['map_location'];
@@ -24,19 +23,14 @@ while($property_result = mysqli_fetch_assoc($result)){
 			$price = $property_result['price'];
 			$property_address = $property_result['property_address'];
       $property_img1 = $property_result['property_img1'];
-		
-      
 			$bed_room = $property_result['bed_room'];
 			$liv_room = $property_result['liv_room'];
 			$parking = $property_result['parking'];
-			$kitchen = $property_result['kitchen'];
-			
+			$kitchen = $property_result['kitchen'];			
 			$property_type = $property_result['property_type'];
-			$floor_space = $property_result['floor_space'];
-      
+			$floor_space = $property_result['floor_space'];     
       $blueprint = $property_result['blueprint'];
       $property_video = $property_result['property_video'];
-
 			$agent_name = $property_result['agent_name'];
 			$agent_address = $property_result['agent_address'];
 			$agent_contact = $property_result['agent_contact'];
