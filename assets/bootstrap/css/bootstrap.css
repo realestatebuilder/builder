@@ -342,7 +342,8 @@ img {
 
 .img-responsive {
   display: block;
-  width: 198px;
+    max-width: 100%;
+    height: auto
 }
 
 .img-rounded {
