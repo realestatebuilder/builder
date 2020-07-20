@@ -102,6 +102,13 @@ border-color: #e77548 #e77548 transparent transparent;
 top: 0;
 
 }
+
+@media screen and (max-width: 480px) {
+  .patch{
+    margin-top:-13.5%;
+    margin-left:-32%;
+  }
+}
   </style>
 </head>
 <body>
