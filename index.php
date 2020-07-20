@@ -24,6 +24,7 @@ if(!$result){
   <script src="assets/jquery-1.9.1.min.js"></script>
 	<script src="assets/bootstrap/js/bootstrap.js"></script>
   <script src="assets/script.js"></script>
+  <script type="text/javascript" src="js/contact.js"></script>
 
 
 
@@ -105,6 +106,143 @@ top: 0;
 </head>
 <body>
 
+<!-- Assistance ? yes or no -->
+
+<div class="modal" id="temp" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Take Assistance</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">&nbsp;&nbsp;&nbsp;
+        <p style="font-size: 20px;">Would you like to tell about your future expectations.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" name ="yes" onclick="myFunction()" class="btn btn-success" style="margin: 0 auto;height: 40px;width: 100px;">Yes</button>
+       
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- form modal -->
+	<div id="contact-modal" class="modal fade" role="dialog">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<a class="close" data-dismiss="modal">×</a>
+					<h3> Tell us about your dream project</h3>
+				</div>
+				<form id="contactForm" name="contact" role="form">
+					<div class="modal-body">				
+						<div class="form-group">
+							<label for="name">Name</label>
+							<input type="text" name="name" class="form-control">
+						</div>
+						<div class="form-group">
+							<label for="email">Email</label>
+							<input type="email" name="email" class="form-control">
+						</div>
+						<div class="form-group">
+							<label for="email">Location Preferences</label>
+							<input type="text" name="location" class="form-control">
+						</div>
+						<div class="form-group">
+							<label for="message">Not making a purchase today? Tell us when</label><br/>
+							<label class="radio-inline">
+							<input type="radio" name="optradio" value="Now" checked>
+							Now
+							</label>
+							<label class="radio-inline">
+							<input type="radio" name="optradio" value="Just a visit">Just a visit
+							</label>
+							<label class="radio-inline">
+							<input type="radio" name="optradio" value="Within a year">Within a year
+							</label>
+							<label class="radio-inline">
+							<input type="radio" name="optradio" value="no">After 2-3 years
+							</label>
+						</div>
+						<br>
+
+						<div class="form-group" >
+							<label for="message">Help us know more about you</label><br/>
+							<select id="door-facing" name="type">
+								<option >Type  </option>
+								<option value="volvo">Volvo</option>
+								<option value="saab">Saab</option>
+								<option value="fiat">Fiat</option>
+								<option value="audi">Audi</option>
+							</select> &nbsp;&nbsp;&nbsp;&nbsp;
+							<select id="kitchen" name="bhk">
+								<option >BHK   </option>
+								<option value="volvo">Volvo</option>
+								<option value="saab">Saab</option>
+								<option value="fiat">Fiat</option>
+								<option value="audi">Audi</option>
+							</select>&nbsp;&nbsp;&nbsp;&nbsp;
+							<select id="bedroom" name="budget">
+								<option >Budget   </option>
+								<option value="volvo">Volvo</option>
+								<option value="saab">Saab</option>
+								<option value="fiat">Fiat</option>
+								<option value="audi">Audi</option>
+							</select>
+							</div>
+							<br>
+							<div class="form-group">
+							<label for="message">Do you belive in Vaastu Shastra?</label><br/>
+							<label class="radio-inline">
+							<input type="radio" name="vaastu" value="yes">
+							Yes
+							</label>
+							<label class="radio-inline">
+							<input type="radio" name="vaastu" value="no">No
+							</label>
+						
+						</div>
+						<br>
+						<div class="form-group" id="more-info">
+							<label for="message">Help us know more about you</label><br/>
+							<select id="door-facing" name="door-facing">
+								<option >Door Facing</option>
+								<option value="volvo">Volvo</option>
+								<option value="saab">Saab</option>
+								<option value="fiat">Fiat</option>
+								<option value="audi">Audi</option>
+							</select>&nbsp;&nbsp;&nbsp;&nbsp;
+							<select id="kitchen" name="kitchen">
+								<option>Kitchen</option>
+								<option value="volvo">Volvo</option>
+								<option value="saab">Saab</option>
+								<option value="fiat">Fiat</option>
+								<option value="audi">Audi</option>
+							</select>&nbsp;&nbsp;&nbsp;&nbsp;
+							<select id="bedroom" name="bedroom">
+								<option>Bedroom</option>
+								<option value="volvo">Volvo</option>
+								<option value="saab">Saab</option>
+								<option value="fiat">Fiat</option>
+								<option value="audi">Audi</option>
+							</select>
+							</div>
+							<br>
+
+					<div class="modal-footer">					
+						
+						<input type="submit" class="btn btn-success" id="submit">
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>			
+
+</div>	
 
 <!-- Header Starts -->
 <div class="navbar-wrapper">
@@ -464,7 +602,52 @@ top: 0;
 </div>
 <!-- /.modal -->
 
+<script>
+$(document).ready(function(){	
+	$("#more-info").hide();
+	$("#temp").modal('show');
+	var $radios = $('input[name=vaastu]').change(function () {
+		var value = $radios.filter(':checked').val();
+		if(value=="yes"){
+			$("#more-info").show();
+		}
+		else{
+			$("#more-info").hide();
+			
+		}
+	});
 
+	$("#contactForm").submit(function(event){
+		submitForm();
+		return false;
+	});
+	$("#contactForm").submit(function(event){
+		submitForm();
+		return false;
+	});
+});
+
+function myFunction() {
+	$("#temp").modal('hide');
+	$("#contact-modal").modal('show');
+  }
+// function to handle form submit
+function submitForm(){
+	 $.ajax({
+		type: "POST",
+		url: "saveContact.php",
+		cache:false,
+		data: $('form#contactForm').serialize(),
+		success: function(response){
+			alert(response);
+			$("#contact-modal").modal('hide');
+		},
+		error: function(){
+			alert("Error");
+		}
+	});
+}
+</script>
 
 </body>
 
