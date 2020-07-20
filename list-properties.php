@@ -162,6 +162,7 @@ top: 0;
                         <li><a href="rent.php">Properties on Rent</a></li>
                     </ul>
                 </li>
+              	<li><a href="mapview.php">Map View</a></li>
                 
               </ul>
            </div>
