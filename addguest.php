@@ -6,7 +6,7 @@ if(isset($_POST))
 
     $page =  $_GET['pg'];
 
-    $mailid_guest = $_POST['mailid_guest'];
+    $mailid_guest = $con -> real_escape_string($_POST['mailid_guest']);
     $query = "select * from customers where email = '$mailid_guest'";
     $result = mysqli_query($con, $query);
     $rowcount = mysqli_num_rows($result);
