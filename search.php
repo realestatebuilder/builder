@@ -9,7 +9,7 @@ if(isset($_POST['submit']))
   echo "<script>console.log('$delivery_type')</script>";
   $search_price = $_POST['search_price'];
   echo "<script>console.log('$search_price')</script>";
-
+  $area_search = $_POST['area_search'];
   // echo "<script>console.log('$search_value')</script>";
   
   $property_type = $_POST['property_type'];
@@ -25,6 +25,10 @@ if(isset($_POST['submit']))
   if(!empty($_POST['search']))
   {
     $query.="and property_title LIKE '%$search_value%' or property_details LIKE '%$search_value%' ";   
+  }
+  if(!empty($_POST['area_search']))
+  {
+    $query.="and property_address LIKE '%$area_search%'";   
   }
   if(!empty($_POST['bhk']))
   {
@@ -315,6 +319,8 @@ top: 0;
                 </select>
               </div>
           </div>
+    <input type="text" class="form-control" name="area_search" placeholder="Type Area or Pincode">
+
           <button name="submit" class="btn btn-primary">Find Now</button>
 </form>
   </div>

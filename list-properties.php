@@ -193,6 +193,7 @@ top: 0;
   <div class="search-form"><h4><span class="glyphicon glyphicon-search"></span> Search for</h4>
   <form action="search.php" method="post" name="search">
     <input type="text" class="form-control" name="search" placeholder="Search of Properties">
+
     <div class="row">
     <div class="col-lg-7">
               <select name="delivery_type" class="form-control">
@@ -233,6 +234,8 @@ top: 0;
                 </select>
               </div>
           </div>
+    <input type="text" class="form-control" name="area_search" placeholder="Type Area or Pincode">
+
           <button name="submit" class="btn btn-primary">Find Now</button>
 </form>
   </div>
