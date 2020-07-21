@@ -81,7 +81,36 @@ echo "<script>console.log('$property_id')</script>";
     <script type="text/javascript" src="assets/slitslider/js/jquery.slitslider.js"></script>
 <!-- slitslider -->
 
-<script src='assets/google_analytics_auto.js'></script></head>
+<script src='assets/google_analytics_auto.js'></script>
+<style>
+  
+@media screen and (max-width: 480px) {
+ 
+  iframe{
+   
+    width:100%;
+  }
+  .blueprint{
+      margin-left:-9%;
+      width:120%;
+      height:40%;
+  }
+  .video{
+      margin-left:-9%;
+      width:120%;
+      height:40%;
+  }
+  .blueprintBtn{
+      width:100%;
+      
+  }
+  .videoBtn{
+    width:100%;
+      
+  }
+}
+</style>
+</head>
 
 <body>
 
@@ -130,16 +159,16 @@ echo "<script>console.log('$property_id')</script>";
 <div class="header">
 <a href="index.php"><img src="images/logo.png" alt="Realestate"></a>
 
-            <div class="menu">
-              <ul class="pull-right">
-              	<li><a href="index.php">Home</a></li>
-                <li><a href="list-properties.php">List Properties</a>
+            <div class="menu list2" >
+              <ul class="pull-right list">
+              	<li ><a class="li-item" href="index.php">Home</a></li>
+                <li ><a class="li-item" href="list-properties.php">List Properties</a>
                 	 <ul class="dropdown">
                     	<li><a href="sale.php">Properties on Sale</a></li>
                         <li><a href="rent.php">Properties on Rent</a></li>
                     </ul>
                 </li>
-              	<li><a href="mapview.php">Map View</a></li>
+              	<li ><a class="li-item" href="mapview.php">Map View</a></li>
                 
               </ul>
            </div>
@@ -248,7 +277,7 @@ echo "<script>console.log('$property_id')</script>";
 
   </div>
   <div><h4><span class="glyphicon glyphicon-map-marker"></span> Location</h4>
-<div class="well"><?php echo $map_location; ?></div>
+<div class="well location" ><?php echo $map_location; ?></div>
   </div>
 
   </div>
@@ -263,9 +292,9 @@ echo "<script>console.log('$property_id')</script>";
 <span class="glyphicon glyphicon-envelope"></span> <?php echo $agent_email; ?><br>
 </div>
 
-<a href="#"  class="btn btn-info btn-lg"  data-toggle="modal" data-target="#exampleModal" style="cursor:pointer"><span class="glyphicon glyphicon-picture"></span> <b>Property Blueprint </b></a>
+<a href="#"  class="btn btn-info btn-lg blueprintBtn"  data-toggle="modal" data-target="#exampleModal" style="cursor:pointer"><span class="glyphicon glyphicon-picture"></span> <b>Property Blueprint </b></a>
 <br><br>
-<a href="#" class="btn btn-info btn-lg" data-toggle="modal" data-target="#exampleModal2" style="cursor:pointer"><span class="glyphicon glyphicon-facetime-video"></span> <b>Property Video &nbsp; &nbsp; &nbsp; </b></a>
+<a href="#" class="btn btn-info btn-lg videoBtn" data-toggle="modal" data-target="#exampleModal2" style="cursor:pointer"><span class="glyphicon glyphicon-facetime-video"></span> <b>Property Video &nbsp; &nbsp; &nbsp; </b></a>
 <br><br>
 
 <div class="well"><p class="price">₹ <?php echo $price; ?></p></div>
@@ -414,7 +443,7 @@ while($admin_result = mysqli_fetch_assoc($result2))
         </button>
       </div>
       <div class="modal-body">
-     <a ><img width=500 height=300 src="images/properties/<?php echo $blueprint; ?>"></a>
+     <a ><img class="blueprint" width=500 height=300 src="images/properties/<?php echo $blueprint; ?>"></a>
       </div>
       <!-- <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -438,7 +467,7 @@ while($admin_result = mysqli_fetch_assoc($result2))
         </button>
       </div>
       <div class="modal-body">
-      <video width="520" height="300" controls>
+      <video class="video" width="520" height="300" controls>
         <source src="images/property_videos/<?php echo $property_video ?>" type="video/mp4">
         <!-- <source src="movie.ogg" type="video/ogg"> -->
       </video>

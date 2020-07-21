@@ -109,7 +109,7 @@ top: 0;
 @media screen and (max-width: 480px) {
   .patch{
     margin-top:-13.5%;
-    margin-left:-32%;
+    margin-left:-33%;
   }
 }
   </style>
@@ -300,7 +300,7 @@ top: 0;
 
             <div class="menu">
               <ul class="pull-right">
-              	<li><a href="index.php">Home</a></li>
+              	
                 <li><a href="list-properties.php">List Properties</a>
                 	 <ul class="dropdown">
                     	<li><a href="sale.php">Properties on Sale</a></li>
