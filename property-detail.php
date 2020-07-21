@@ -81,7 +81,36 @@ echo "<script>console.log('$property_id')</script>";
     <script type="text/javascript" src="assets/slitslider/js/jquery.slitslider.js"></script>
 <!-- slitslider -->
 
-<script src='assets/google_analytics_auto.js'></script></head>
+<script src='assets/google_analytics_auto.js'></script>
+<style>
+  
+@media screen and (max-width: 480px) {
+ 
+  iframe{
+   
+    width:100%;
+  }
+  .blueprint{
+      margin-left:-9%;
+      width:120%;
+      height:40%;
+  }
+  .video{
+      margin-left:-9%;
+      width:120%;
+      height:40%;
+  }
+  .blueprintBtn{
+      width:100%;
+      
+  }
+  .videoBtn{
+    width:100%;
+      
+  }
+}
+</style>
+</head>
 
 <body>
 
@@ -130,15 +159,15 @@ echo "<script>console.log('$property_id')</script>";
 <div class="header">
 <a href="index.php"><img src="images/logo.png" alt="Realestate"></a>
 
-            <div class="menu">
-              <ul class="pull-right">
-              	<li><a href="index.php">Home</a></li>
-                <li><a href="list-properties.php">List Properties</a>
+            <div class="menu list2" >
+              <ul class="pull-right list">
+                <li ><a class="li-item" href="list-properties.php">List Properties</a>
                 	 <ul class="dropdown">
                     	<li><a href="sale.php">Properties on Sale</a></li>
                         <li><a href="rent.php">Properties on Rent</a></li>
                     </ul>
                 </li>
+              	<li ><a class="li-item" href="mapview.php">Map View</a></li>
                 
               </ul>
            </div>
@@ -247,7 +276,7 @@ echo "<script>console.log('$property_id')</script>";
 
   </div>
   <div><h4><span class="glyphicon glyphicon-map-marker"></span> Location</h4>
-<div class="well"><?php echo $map_location; ?></div>
+<div class="well location" ><?php echo $map_location; ?></div>
   </div>
 
   </div>
@@ -262,9 +291,9 @@ echo "<script>console.log('$property_id')</script>";
 <span class="glyphicon glyphicon-envelope"></span> <?php echo $agent_email; ?><br>
 </div>
 
-<a href="#"  class="btn btn-info btn-lg"  data-toggle="modal" data-target="#exampleModal" style="cursor:pointer"><span class="glyphicon glyphicon-picture"></span> <b>Property Blueprint </b></a>
+<a href="#"  class="btn btn-info btn-lg blueprintBtn"  data-toggle="modal" data-target="#exampleModal" style="cursor:pointer"><span class="glyphicon glyphicon-picture"></span> <b>Property Blueprint </b></a>
 <br><br>
-<a href="#" class="btn btn-info btn-lg" data-toggle="modal" data-target="#exampleModal2" style="cursor:pointer"><span class="glyphicon glyphicon-facetime-video"></span> <b>Property Video &nbsp; &nbsp; &nbsp; </b></a>
+<a href="#" class="btn btn-info btn-lg videoBtn" data-toggle="modal" data-target="#exampleModal2" style="cursor:pointer"><span class="glyphicon glyphicon-facetime-video"></span> <b>Property Video &nbsp; &nbsp; &nbsp; </b></a>
 <br><br>
 
 <div class="well"><p class="price">₹ <?php echo $price; ?></p></div>
@@ -337,12 +366,25 @@ echo "<script>console.log('$property_id')</script>";
                     <a href="#"><img src="images/instagram.png" alt="instagram"></a>
             </div>
 
+            <?php 
+
+$query2 = "select * from admins where admin_id = 0";
+$result2 = mysqli_query($con, $query2);
+
+while($admin_result = mysqli_fetch_assoc($result2))
+{
+  $admin_address = $admin_result['admin_address'];
+  $admin_email = $admin_result['admin_email'];
+  $admin_contact = $admin_result['admin_contact'];
+}
+
+?>
              <div class="col-lg-3 col-sm-3">
                     <h4>Contact us</h4>
                     <p><b>Mridha Real Estate</b><br>
-<span class="glyphicon glyphicon-map-marker"></span> 8290 Walk Street, Australia <br>
-<span class="glyphicon glyphicon-envelope"></span> salihanmridha@gmail.com<br>
-<span class="glyphicon glyphicon-earphone"></span> (880) 19-44709281</p>
+                <span class="glyphicon glyphicon-map-marker"></span> <?php echo $admin_address; ?> <br>
+                <span class="glyphicon glyphicon-envelope"></span> <?php echo $admin_email; ?><br>
+                <span class="glyphicon glyphicon-earphone"></span> <?php echo $admin_contact; ?></p>
             </div>
         </div>
 <p class="copyright">Copyright 2017. All rights reserved.	</p>
@@ -400,7 +442,7 @@ echo "<script>console.log('$property_id')</script>";
         </button>
       </div>
       <div class="modal-body">
-     <a ><img width=500 height=300 src="images/properties/<?php echo $blueprint; ?>"></a>
+     <a ><img class="blueprint" width=500 height=300 src="images/properties/<?php echo $blueprint; ?>"></a>
       </div>
       <!-- <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -424,7 +466,7 @@ echo "<script>console.log('$property_id')</script>";
         </button>
       </div>
       <div class="modal-body">
-      <video width="520" height="300" controls>
+      <video class="video" width="520" height="300" controls>
         <source src="images/property_videos/<?php echo $property_video ?>" type="video/mp4">
         <!-- <source src="movie.ogg" type="video/ogg"> -->
       </video>

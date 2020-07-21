@@ -102,6 +102,12 @@ border-color: #e77548 #e77548 transparent transparent;
 top: 0;
 
 }
+@media screen and (max-width: 480px) {
+  .patch{
+    margin-top:-13%;
+    margin-left:-33.5%;
+  }
+}
   </style>
 </head>
 
@@ -155,13 +161,14 @@ top: 0;
 
             <div class="menu">
               <ul class="pull-right">
-              	<li><a href="index.php">Home</a></li>
-                <li><a href="list-properties.php">List Properties</a>
+              	
+                <li><a href="list-properties.php" class="alink">List Properties</a>
                 	 <ul class="dropdown">
                     	<li><a href="sale.php">Properties on Sale</a></li>
                         <li><a href="rent.php">Properties on Rent</a></li>
                     </ul>
                 </li>
+              	<li><a href="mapview.php" class="alink">Map View</a></li>
                 
               </ul>
            </div>
@@ -335,12 +342,25 @@ top: 0;
                     <a href="#"><img src="images/instagram.png" alt="instagram"></a>
             </div>
 
+            <?php 
+
+$query2 = "select * from admins where admin_id = 0";
+$result2 = mysqli_query($con, $query2);
+
+while($admin_result = mysqli_fetch_assoc($result2))
+{
+  $admin_address = $admin_result['admin_address'];
+  $admin_email = $admin_result['admin_email'];
+  $admin_contact = $admin_result['admin_contact'];
+}
+
+?>
              <div class="col-lg-3 col-sm-3">
                     <h4>Contact us</h4>
                     <p><b>Mridha Real Estate</b><br>
-<span class="glyphicon glyphicon-map-marker"></span> 8290 Walk Street, Australia <br>
-<span class="glyphicon glyphicon-envelope"></span> salihanmridha@gmail.com<br>
-<span class="glyphicon glyphicon-earphone"></span> (880) 19-44709281</p>
+                <span class="glyphicon glyphicon-map-marker"></span> <?php echo $admin_address; ?> <br>
+                <span class="glyphicon glyphicon-envelope"></span> <?php echo $admin_email; ?><br>
+                <span class="glyphicon glyphicon-earphone"></span> <?php echo $admin_contact; ?></p>
             </div>
         </div>
 <p class="copyright">Copyright 2017. All rights reserved.	</p>
