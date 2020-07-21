@@ -161,7 +161,6 @@ echo "<script>console.log('$property_id')</script>";
 
             <div class="menu list2" >
               <ul class="pull-right list">
-              	<li ><a class="li-item" href="index.php">Home</a></li>
                 <li ><a class="li-item" href="list-properties.php">List Properties</a>
                 	 <ul class="dropdown">
                     	<li><a href="sale.php">Properties on Sale</a></li>
