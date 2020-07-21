@@ -184,6 +184,12 @@ border-color: #e77548 #e77548 transparent transparent;
 top: 0;
 
 }
+@media screen and (max-width: 480px) {
+  .patch{
+    margin-top:-13%;
+    margin-left:-33.5%;
+  }
+}
   </style>
 </head>
 
@@ -236,7 +242,7 @@ top: 0;
 
             <div class="menu">
               <ul class="pull-right">
-              	<li><a href="index.php">Home</a></li>
+              	
                 <li><a href="list-properties.php">List Properties</a>
                 	 <ul class="dropdown">
                     	<li><a href="sale.php">Properties on Sale</a></li>

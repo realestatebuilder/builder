@@ -82,7 +82,7 @@
 
             <div class="menu">
               <ul class="pull-right">
-              	<li><a href="index.php">Home</a></li>
+              
                 <li><a href="list-properties.php">List Properties</a>
                 	 <ul class="dropdown">
                     	<li><a href="sale.php">Properties on Sale</a></li>
@@ -95,11 +95,8 @@
            </div>
 </div>
 </div>
-<div style="width: 100%;
-    position: absolute;
-    margin-top: -100 !important;
-    bottom: 0;">
-<iframe style="width:100%;height:100%" src="https://www.google.com/maps/d/u/0/embed?mid=1l8rIEI1_I4_zFHhqMCvKOfGJSjYlj2J3" ></iframe>
-</div>
+
+<iframe height=500 style="width: 100%;" src="https://www.google.com/maps/d/u/0/embed?mid=1l8rIEI1_I4_zFHhqMCvKOfGJSjYlj2J3" ></iframe>
+
 </body>
 </html>
