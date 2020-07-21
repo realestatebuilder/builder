@@ -108,26 +108,33 @@ top: 0;
 
 <!-- Assistance ? yes or no -->
 
-<div class="modal" id="temp" tabindex="-1" role="dialog">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
+
+<div class="modal fade" id="temp">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
         <h5 class="modal-title">Take Assistance</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">&nbsp;&nbsp;&nbsp;
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
         <p style="font-size: 20px;">Would you like to tell about your future expectations.</p>
-      </div>
-      <div class="modal-footer">
+        </div>
+        
+        <!-- Modal footer -->
+        <div class="modal-footer">
         <button type="button" name ="yes" onclick="myFunction()" class="btn btn-success" style="margin: 0 auto;height: 40px;width: 100px;">Yes</button>
-       
+          <button type="button"  class="btn btn-secondary"   style="margin: 0 auto;height: 40px;width: 100px;" data-dismiss="modal">NO</button>
+        </div>
+        
       </div>
     </div>
   </div>
+  
 </div>
-
 
 
 <!-- form modal -->
@@ -172,26 +179,27 @@ top: 0;
 
 						<div class="form-group" >
 							<label for="message">Help us know more about you</label><br/>
-							<select id="door-facing" name="type">
+							<select id="type" name="type">
 								<option >Type  </option>
-								<option value="volvo">Volvo</option>
-								<option value="saab">Saab</option>
-								<option value="fiat">Fiat</option>
-								<option value="audi">Audi</option>
+								<option value="Apartment">Apartment</option>
+								<option value="Shop">Shop</option>
+								<option value="OfficeSpace">Office Space</option>
+								<option value="Building">Building</option>
 							</select> &nbsp;&nbsp;&nbsp;&nbsp;
-							<select id="kitchen" name="bhk">
+							<select id="bhk" name="bhk">
 								<option >BHK   </option>
-								<option value="volvo">Volvo</option>
-								<option value="saab">Saab</option>
-								<option value="fiat">Fiat</option>
-								<option value="audi">Audi</option>
+								<option value="1RK">1RK</option>
+								<option value="1BHK">1BHK</option>
+								<option value="2BHK">2BHK</option>
+								<option value="3BHK">3BHK</option>
+                <option value="3BHK+">3BHK+</option>
 							</select>&nbsp;&nbsp;&nbsp;&nbsp;
-							<select id="bedroom" name="budget">
-								<option >Budget   </option>
-								<option value="volvo">Volvo</option>
-								<option value="saab">Saab</option>
-								<option value="fiat">Fiat</option>
-								<option value="audi">Audi</option>
+							<select id="budget" name="budget">
+								<option >Budget</option>
+                <option value="$5000 - $50,000">$5000 - $50,000</option>
+                <option value="$50,000 - $100,000">$50,000 - $100,000</option>
+                <option value="$100,000 - $200,000">$100,000 - $200,000</option>
+                <option value="$200,000 - above">$200,000 - above</option>
 							</select>
 							</div>
 							<br>
@@ -211,24 +219,36 @@ top: 0;
 							<label for="message">Help us know more about you</label><br/>
 							<select id="door-facing" name="door-facing">
 								<option >Door Facing</option>
-								<option value="volvo">Volvo</option>
-								<option value="saab">Saab</option>
-								<option value="fiat">Fiat</option>
-								<option value="audi">Audi</option>
+								<option value="East ">East</option>
+								<option value="North">North</option>
+								<option value="South">South</option>
+								<option value="West">West</option>
+                <option value="Northeast">Northeast</option>
+								<option value="Southeast">Southeast</option>
+								<option value="Southwest">Southwest</option>
+								<option value="Northwest">Northwest</option>
 							</select>&nbsp;&nbsp;&nbsp;&nbsp;
 							<select id="kitchen" name="kitchen">
 								<option>Kitchen</option>
-								<option value="volvo">Volvo</option>
-								<option value="saab">Saab</option>
-								<option value="fiat">Fiat</option>
-								<option value="audi">Audi</option>
+								<option value="East ">East</option>
+								<option value="North">North</option>
+								<option value="South">South</option>
+								<option value="West">West</option>
+                <option value="Northeast">Northeast</option>
+								<option value="Southeast">Southeast</option>
+								<option value="Southwest">Southwest</option>
+								<option value="Northwest">Northwest</option>
 							</select>&nbsp;&nbsp;&nbsp;&nbsp;
 							<select id="bedroom" name="bedroom">
 								<option>Bedroom</option>
-								<option value="volvo">Volvo</option>
-								<option value="saab">Saab</option>
-								<option value="fiat">Fiat</option>
-								<option value="audi">Audi</option>
+								<option value="East ">East</option>
+								<option value="North">North</option>
+								<option value="South">South</option>
+								<option value="West">West</option>
+                <option value="Northeast">Northeast</option>
+								<option value="Southeast">Southeast</option>
+								<option value="Southwest">Southwest</option>
+								<option value="Northwest">Northwest</option>
 							</select>
 							</div>
 							<br>
@@ -604,8 +624,18 @@ top: 0;
 
 <script>
 $(document).ready(function(){	
+
+  if (document.cookie.indexOf('modal_shown=') >= 0) {
+    $('#temp').modal('hide');
+ //do nothing if modal_shown cookie is present
+} else {
+  $('#temp').modal('show');  //show modal pop up
+  document.cookie = 'modal_shown=seen'; //set cookie modal_shown
+  //cookie will expire when browser is closed
+}
+
 	$("#more-info").hide();
-	$("#temp").modal('show');
+
 	var $radios = $('input[name=vaastu]').change(function () {
 		var value = $radios.filter(':checked').val();
 		if(value=="yes"){
