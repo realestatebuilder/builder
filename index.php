@@ -461,7 +461,9 @@ top: 0;
                   <option value="4">3+BHK</option>
                 </select>
               </div>
-              
+              <div class="col-lg-4 col-sm-4">
+                  <input name="area_search" type="text" class="form-control" placeholder="Type Area or Pincode">
+              </div>
               <div class="col-lg-3 col-sm-4">
               <button name="submit" class="btn btn-success">Find Now</button>
               </form> 
@@ -567,9 +569,9 @@ top: 0;
             <div class="col-lg-3 col-sm-3">
                     <h4>Newsletter</h4>
                     <p>Get notified about the latest properties in our marketplace.</p>
-                    <form class="form-inline" role="form">
-                            <input type="text" placeholder="Enter Your email address" class="form-control">
-                                <button class="btn btn-success" type="button">Notify Me!</button></form>
+                    <form class="form-inline" role="form" action="addguest.php?pg=index.php" method="POST">
+                            <input type="text" name="mailid_guest" placeholder="Enter Your email address" class="form-control" required>
+                                <button class="btn btn-success" type="submit">Notify Me!</button></form>
             </div>
             
             <div class="col-lg-3 col-sm-3">

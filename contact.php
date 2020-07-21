@@ -242,9 +242,9 @@ function validateContactForm() {
             <div class="col-lg-3 col-sm-3">
                     <h4>Newsletter</h4>
                     <p>Get notified about the latest properties in our marketplace.</p>
-                    <form class="form-inline" role="form">
-                            <input type="text" placeholder="Enter Your email address" class="form-control">
-                                <button class="btn btn-success" type="button">Notify Me!</button></form>
+                    <form class="form-inline" role="form" action="addguest.php?pg=contact.php" method="POST">
+                            <input type="text" name="mailid_guest" placeholder="Enter Your email address" class="form-control" required>
+                                <button class="btn btn-success" type="submit">Notify Me!</button></form>
             </div>
             
             <div class="col-lg-3 col-sm-3">
@@ -255,6 +255,8 @@ function validateContactForm() {
                     <a href="#"><img src="images/instagram.png" alt="instagram"></a>
             </div>
 <?php 
+
+include_once "connection.php";
 
 $query2 = "select * from admins where admin_id = 0";
 $result2 = mysqli_query($con, $query2);
@@ -320,7 +322,6 @@ while($admin_result = mysqli_fetch_assoc($result2))
 <!-- /.modal -->
 
 <?php
-include_once "connection.php";
 if(!empty($_POST["send"])) {
 	$name = $con -> real_escape_string($_POST["userName"]);
 	$email = $con -> real_escape_string($_POST["userEmail"]);
