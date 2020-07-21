@@ -27,7 +27,7 @@ if(!$result){
   <script src="assets/jquery-1.9.1.min.js"></script>
 	<script src="assets/bootstrap/js/bootstrap.js"></script>
   <script src="assets/script.js"></script>
-  <script type="text/javascript" src="js/contact.js"></script>
+
 
 
 
@@ -188,15 +188,16 @@ top: 0;
 						<br>
 
 						<div class="form-group" >
-							<label for="message">Help us know more about you</label><br/>
-							<select id="type" name="type">
+              <label for="message">Help us know more about you</label><br/>
+              
+							<select class="form-control" id="type" name="type">
 								<option >Type  </option>
 								<option value="Apartment">Apartment</option>
 								<option value="Shop">Shop</option>
 								<option value="OfficeSpace">Office Space</option>
 								<option value="Building">Building</option>
 							</select> &nbsp;&nbsp;&nbsp;&nbsp;
-							<select id="bhk" name="bhk">
+							<select class="form-control" id="bhk" name="bhk">
 								<option >BHK   </option>
 								<option value="1RK">1RK</option>
 								<option value="1BHK">1BHK</option>
@@ -204,7 +205,7 @@ top: 0;
 								<option value="3BHK">3BHK</option>
                 <option value="3BHK+">3BHK+</option>
 							</select>&nbsp;&nbsp;&nbsp;&nbsp;
-							<select id="budget" name="budget">
+							<select class="form-control" id="budget" name="budget">
 								<option >Budget</option>
                 <option value="$5000 - $50,000">$5000 - $50,000</option>
                 <option value="$50,000 - $100,000">$50,000 - $100,000</option>
@@ -226,8 +227,8 @@ top: 0;
 						</div>
 						<br>
 						<div class="form-group" id="more-info">
-							<label for="message">Help us know more about you</label><br/>
-							<select id="door-facing" name="door-facing">
+							<label for="message">Directions that you prefer for following</label><br/>
+							<select class="form-control" id="door-facing" name="door-facing">
 								<option >Door Facing</option>
 								<option value="East ">East</option>
 								<option value="North">North</option>
@@ -238,7 +239,7 @@ top: 0;
 								<option value="Southwest">Southwest</option>
 								<option value="Northwest">Northwest</option>
 							</select>&nbsp;&nbsp;&nbsp;&nbsp;
-							<select id="kitchen" name="kitchen">
+							<select class="form-control" id="kitchen" name="kitchen">
 								<option>Kitchen</option>
 								<option value="East ">East</option>
 								<option value="North">North</option>
@@ -249,7 +250,7 @@ top: 0;
 								<option value="Southwest">Southwest</option>
 								<option value="Northwest">Northwest</option>
 							</select>&nbsp;&nbsp;&nbsp;&nbsp;
-							<select id="bedroom" name="bedroom">
+							<select class="form-control" id="bedroom" name="bedroom">
 								<option>Bedroom</option>
 								<option value="East ">East</option>
 								<option value="North">North</option>
@@ -472,9 +473,9 @@ top: 0;
           
           
         </div>
-        <div class="col-lg-5 col-lg-offset-1 col-sm-6 ">
+        <!-- <div class="col-lg-5 col-lg-offset-1 col-sm-6 ">
           <p>Join now and get updated with all the properties deals.</p>
-          <button class="btn btn-info"   data-toggle="modal" data-target="#loginpop">Login</button>        </div>
+          <button class="btn btn-info"   data-toggle="modal" data-target="#loginpop">Login</button>        </div> -->
       </div>
     </div>
   </div>
@@ -666,10 +667,6 @@ $(document).ready(function(){
 		}
 	});
 
-	$("#contactForm").submit(function(event){
-		submitForm();
-		return false;
-	});
 	$("#contactForm").submit(function(event){
 		submitForm();
 		return false;
