@@ -8,7 +8,7 @@ class Mailer
         }
         function notify($price,$bed_room,$property_type)
         {
-            echo "<script>alert('successfully')</script>";
+            // echo "<script>alert('successfully')</script>";
            
             include "includes/db.php";
    
@@ -39,7 +39,7 @@ class Mailer
                 while($property_result = mysqli_fetch_assoc($result))
                 {
                     $email = $property_result["email"];
-                    echo "<script>alert($email)</script>";
+                    // echo "<script>alert($email)</script>";
                     $mails[$i] = $email;
                     $i++;
                 }

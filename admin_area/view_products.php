@@ -97,6 +97,8 @@ $pro_type = $row_pro['property_type'];
 
 $pro_price = $row_pro['price'];
 
+$featured = $row_pro['featured'];
+
 $i++;
 
 ?>
@@ -104,7 +106,7 @@ $i++;
 <tr>
 
 <td>
-    <input type="checkbox" id="<?php echo $i; ?>" onchange="featured(this.id)">
+    <input type="checkbox" id="<?php echo $property_id; ?>" onchange="featured(this.id)" <?php echo $featured=='1'?'checked':''; ?>>
 </td>
 
 <td><?php echo $i; ?></td>

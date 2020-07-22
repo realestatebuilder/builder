@@ -1,5 +1,6 @@
 <?php
 
+error_reporting(0);
 if(!isset($_SESSION['admin_email'])){
 
 echo "<script>window.open('login.php','_self')</script>";
@@ -518,7 +519,7 @@ move_uploaded_file($temp_name1,"../images/properties/$product_img1");
 // move_uploaded_file($temp_name5,"../images/properties/$product_img5");
 
 $agent = 0;
-$insert_property = "insert into properties (property_title,property_details,delivery_type,availability,price,property_address,property_img1,bed_room,liv_room,parking,kitchen,property_type,floor_space,agent_id,blueprint,property_video,map_location) values ('$property_title','$property_details','$delivery_type','$availability',$price,'$property_address','$product_img1','$bed_room','$liv_room','$parking','$kitchen','$property_type','$floor_space',$agent,'$blueprint','$property_video','$map_location')";
+$insert_property = "insert into properties (property_title,property_details,delivery_type,availability,price,property_address,property_img1,bed_room,liv_room,parking,kitchen,property_type,floor_space,agent_id,blueprint,property_video,map_location,featured) values ('$property_title','$property_details','$delivery_type','$availability',$price,'$property_address','$product_img1','$bed_room','$liv_room','$parking','$kitchen','$property_type','$floor_space',$agent,'$blueprint','$property_video','$map_location','0')";
 
 $run_property = mysqli_query($con,$insert_property);
 
@@ -530,7 +531,7 @@ $run_property = mysqli_query($con,$insert_property);
     $result = mysqli_query($con, $query);
     if($result->num_rows > 0){
       while($row = $result->fetch_assoc()){
-          echo $row["MAX(property_id)"];
+        //   echo $row["MAX(property_id)"];
           $property_id=$row["MAX(property_id)"];
           echo $property_id;
   
@@ -579,9 +580,10 @@ $run_property = mysqli_query($con,$insert_property);
 } 
  
 // Display status message 
-echo $statusMsg; 
+// echo $statusMsg; 
 
-if($run_property){
+if($run_property)
+{
     include "mail/maildetails.php";
     $sendmail = new Mailer($mail); 
     $ctr = 0;
@@ -594,13 +596,13 @@ if($run_property){
     {
         foreach($stat as $d)
         {
-            echo "<script>alert('$d')</script>";
+            // echo "<script>alert('$d')</script>";
             $sendmail->sendmail($d,$property_id);
         }
-}
+    }
        
-echo "<script>alert('Product has been inserted successfully')</script>";
-echo "<script>alert($property_id)</script>";
+echo "<script>alert('Property has been inserted successfully')</script>";
+// echo "<script>alert($property_id)</script>";
 
 // echo "<script>window.open('index.php?view_products','_self')</script>";
 
