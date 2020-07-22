@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 4.8.5
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 17, 2020 at 07:50 AM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.4
+-- Generation Time: Jul 22, 2020 at 06:37 PM
+-- Server version: 10.1.38-MariaDB
+-- PHP Version: 7.3.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -34,7 +35,7 @@ CREATE TABLE `admins` (
   `admin_pass` varchar(255) NOT NULL,
   `admin_image` text NOT NULL,
   `admin_contact` varchar(255) NOT NULL,
-  `admin_address` text DEFAULT NULL
+  `admin_address` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -42,7 +43,8 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`admin_id`, `admin_name`, `admin_email`, `admin_pass`, `admin_image`, `admin_contact`, `admin_address`) VALUES
-(4, 'Pragati Gaikwad', 'psgaikwad@mitaoe.ac.in', '123', 'admin.jpg', '7878787878', '    KESHAV NAGAR, NEAR GULMOHAR MARKET    ');
+(0, 'Tejas Bhamre', 'tejasbhamre7@gmail.com', '123', 'admin.jpg', '8421208111', 'Plot 34, NavVinayak Society, Jijai Nagar'),
+(5, 'Atharva ', 'atharvadeshpande99@gmail.com', '123', 'bed-1-2.jpg', '7218340969', 'KESHAV NAGAR, NEAR GULMOHAR MARKET');
 
 -- --------------------------------------------------------
 
@@ -63,9 +65,44 @@ CREATE TABLE `agent` (
 --
 
 INSERT INTO `agent` (`agent_id`, `agent_name`, `agent_address`, `agent_contact`, `agent_email`) VALUES
-(1, 'Samuel A Waldey', '95, Henry Street, Indented Head, Victoria', '03 5321 1053', 'samuel@gmail.com'),
+(0, 'Tejas Bhamre', 'Plot 34, NavVinayak Society, Jijai Nagar', '8421208111', 'tejasbhaamre7@gmail.com'),
 (2, 'Mrs Eden Battarbee', '25 Main Streat, Beaumonts', '08 8762 5308', 'eden@gmail.com'),
 (3, 'Tyson A Salvado', '15 Ghost Hill Road, ST Marys South', '02 4728 5284', 'tyson@gmail.com');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `customers`
+--
+
+CREATE TABLE `customers` (
+  `id` int(50) NOT NULL,
+  `name` varchar(50) DEFAULT NULL,
+  `email` varchar(50) DEFAULT NULL,
+  `mobileNo` varchar(20) DEFAULT NULL,
+  `bhk` int(20) DEFAULT NULL,
+  `price` int(100) DEFAULT NULL,
+  `delivery_type` varchar(20) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `customer_expectations`
+--
+
+CREATE TABLE `customer_expectations` (
+  `username` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `preference_location` varchar(500) NOT NULL,
+  `purchasetime` varchar(50) NOT NULL,
+  `property_type` varchar(50) NOT NULL,
+  `bhk` varchar(50) NOT NULL,
+  `budget` varchar(50) NOT NULL,
+  `door` varchar(50) NOT NULL,
+  `kitchen` varchar(50) NOT NULL,
+  `bedroom` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -89,7 +126,7 @@ CREATE TABLE `images` (
 CREATE TABLE `properties` (
   `property_id` int(10) NOT NULL,
   `property_title` varchar(150) DEFAULT NULL,
-  `property_details` text DEFAULT NULL,
+  `property_details` text,
   `delivery_type` varchar(20) DEFAULT NULL,
   `availability` varchar(15) DEFAULT NULL,
   `price` varchar(20) DEFAULT NULL,
@@ -104,15 +141,9 @@ CREATE TABLE `properties` (
   `agent_id` int(10) DEFAULT NULL,
   `blueprint` varchar(50) DEFAULT NULL,
   `property_video` varchar(50) DEFAULT NULL,
-  `map_location` varchar(1000) DEFAULT NULL
+  `map_location` varchar(1000) DEFAULT NULL,
+  `featured` varchar(5) NOT NULL
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `properties`
---
-
-INSERT INTO `properties` (`property_id`, `property_title`, `property_details`, `delivery_type`, `availability`, `price`, `property_address`, `property_img1`, `bed_room`, `liv_room`, `parking`, `kitchen`, `property_type`, `floor_space`, `agent_id`, `blueprint`, `property_video`, `map_location`) VALUES
-(5, 'Ashirvad Nivas', '<p>hii there</p>', 'Sale', 'Available', '3000', 'Chinchwad', 'about.jpg', '0', '1', 'Not Available', '1', 'Office Space', '1700sqft', 0, 'Screenshot (14).png', 'WIN_20200409_19_25_03_Pro.mp4', '<iframe src=\"https://www.google.com/maps/embed?pb=!1m26!1m12!1m3!1d1890.4393598856968!2d73.78117215807208!3d18.624523996837155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m11!3e6!4m3!3m2!1d18.6229016!2d73.7820462!4m5!1s0x3bc2b9a54f8d6c25%3A0x6c24b1bf1f23643!2sGandhi%20Peth%2C%20Chinchwad%20Gaon%2C%20Chinchwad%2C%20Pimpri-Chinchwad%2C%20Maharashtra%20411033!3m2!1d18.6261464!2d73.7820006!5e0!3m2!1sen!2sin!4v1594384513223!5m2!1sen!2sin\" width=\"600\" height=\"450\" frameborder=\"0\" style=\"border:0;\" allowfullscreen=\"\" aria-hidden=\"false\" tabindex=\"0\"></iframe>');
 
 -- --------------------------------------------------------
 
@@ -143,6 +174,12 @@ ALTER TABLE `agent`
   ADD PRIMARY KEY (`agent_id`);
 
 --
+-- Indexes for table `customers`
+--
+ALTER TABLE `customers`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `images`
 --
 ALTER TABLE `images`
@@ -168,13 +205,19 @@ ALTER TABLE `property_image`
 -- AUTO_INCREMENT for table `admins`
 --
 ALTER TABLE `admins`
-  MODIFY `admin_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `admin_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `agent`
 --
 ALTER TABLE `agent`
   MODIFY `agent_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `customers`
+--
+ALTER TABLE `customers`
+  MODIFY `id` int(50) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `images`
@@ -186,7 +229,7 @@ ALTER TABLE `images`
 -- AUTO_INCREMENT for table `properties`
 --
 ALTER TABLE `properties`
-  MODIFY `property_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `property_id` int(10) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `property_image`
