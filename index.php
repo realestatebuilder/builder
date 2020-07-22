@@ -105,7 +105,31 @@ border-color: #e77548 #e77548 transparent transparent;
 top: 0;
 
 }
+#filtertoggle{
+    color:white;
+    border-radius:2px;
+    background-color: #72b70f;
+    margin-left:-2.5%;
+    width:105%;
+    text-align:center;
+    font-weight:bold;
+    padding-top:4%;
+    padding-bottom: 4%;
+    display:none;
+    
+}
+#filterdiv{
+      display:block;
+    }
+@media only screen and (max-width: 600px) {
+    #filtertoggle{
+        display:block;
+    }
+    #filterdiv{
+      display:none;
+    }
 
+}
 @media screen and (max-width: 480px) {
   .patch{
     margin-top:-13.5%;
@@ -114,6 +138,7 @@ top: 0;
 }
   </style>
 </head>
+
 <body>
 
 <!-- Assistance ? yes or no -->
@@ -198,18 +223,18 @@ top: 0;
 							</select> &nbsp;&nbsp;&nbsp;&nbsp;
 							<select id="bhk" name="bhk">
 								<option >BHK   </option>
-								<option value="1RK">1RK</option>
-								<option value="1BHK">1BHK</option>
-								<option value="2BHK">2BHK</option>
-								<option value="3BHK">3BHK</option>
-                <option value="3BHK+">3BHK+</option>
+								<option value="0">1RK</option>
+								<option value="1">1BHK</option>
+								<option value="2">2BHK</option>
+								<option value="3">3BHK</option>
+                <option value="more">3BHK+</option>
 							</select>&nbsp;&nbsp;&nbsp;&nbsp;
 							<select id="budget" name="budget">
 								<option >Budget</option>
-                <option value="$5000 - $50,000">$5000 - $50,000</option>
-                <option value="$50,000 - $100,000">$50,000 - $100,000</option>
-                <option value="$100,000 - $200,000">$100,000 - $200,000</option>
-                <option value="$200,000 - above">$200,000 - above</option>
+                <option value="1">$5000 - $50,000</option>
+                <option value="2">$50,000 - $100,000</option>
+                <option value="3">$100,000 - $200,000</option>
+                <option value="4">$200,000 - above</option>
 							</select>
 							</div>
 							<br>
@@ -419,11 +444,13 @@ top: 0;
 <div class="banner-search">
   <div class="container"> 
     <!-- banner -->
+    
     <h3>Buy, Sale & Rent</h3>
-    <div class="searchbar">
+    <button id="filtertoggle" >Search for properties</button><br><br>
+    <div class="searchbar" id="filterdiv" >
       <div class="row">
-        <div class="col-lg-6 col-sm-6">
-        <form action="search.php" method="post">
+        <div class="col-lg-6 col-sm-6" >
+        <form  action="search.php"  method="post">
           <input name="search" type="text" class="form-control" placeholder="Search of Properties">
           <div class="row">
             <div class="col-lg-4 col-sm-4 ">
@@ -640,8 +667,34 @@ top: 0;
 <!-- /.modal -->
 
 <script>
+
+  $("#filtertoggle").click(function(){
+    var x = document.getElementById("filterdiv");
+    if (x.style.display === "none") {
+      $('#filterdiv').show(500);
+      x.style.display === "block"
+      // x.style.display = "block";
+     
+    } else {
+      x.style.display = "none";
+    }
+  });
+
+  // function myFunction() 
+  // {
+  //   alert("Hello World")
+  //   var x = document.getElementById("filterdiv");
+  //   if (x.style.display === "none") {
+  //     x.style.display = "block";
+  //   } else {
+  //     x.style.display = "none";
+  //   }
+  // }
+
+
 $(document).ready(function(){	
 
+  
   if (document.cookie.indexOf('modal_shown=') >= 0) {
     $('#temp').modal('hide');
  //do nothing if modal_shown cookie is present
@@ -683,7 +736,6 @@ function submitForm(){
 	 $.ajax({
 		type: "POST",
 		url: "saveContact.php",
-		cache:false,
 		data: $('form#contactForm').serialize(),
 		success: function(response){
 			alert(response);

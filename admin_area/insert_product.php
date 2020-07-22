@@ -463,9 +463,12 @@ function validateProperty() {
 </html>
 
 <?php
+   
+include 'mail/mail.php';
 
-if(isset($_POST['submit'])){
-
+if(isset($_POST['submit']))
+{
+ 
 $property_title = $_POST['property_title'];
 $availability = $_POST['availability'];
 $property_type = $_POST['property_type'];
@@ -579,11 +582,27 @@ $run_property = mysqli_query($con,$insert_property);
 echo $statusMsg; 
 
 if($run_property){
-
+    include "mail/maildetails.php";
+    $sendmail = new Mailer($mail); 
+    $ctr = 0;
+    $stat = $sendmail->notify($price,$bed_room,$property_type,$property_id);
+    if($stat==1)
+    {
+      echo "<script>alert('No data Found')</script>";
+    }
+    else
+    {
+        foreach($stat as $d)
+        {
+            echo "<script>alert('$d')</script>";
+            $sendmail->sendmail($d,$property_id);
+        }
+}
+       
 echo "<script>alert('Product has been inserted successfully')</script>";
 echo "<script>alert($property_id)</script>";
 
-echo "<script>window.open('index.php?view_products','_self')</script>";
+// echo "<script>window.open('index.php?view_products','_self')</script>";
 
 }
 else
