@@ -436,10 +436,10 @@ top: 0;
             <div class="col-lg-4 col-sm-4">
              <select name="search_price" class="form-control">
                 <option>Price</option>
-                <option value="1">$5000 - $50,000</option>
-                <option value="2">$50,000 - $100,000</option>
-                <option value="3">$100,000 - $200,000</option>
-                <option value="4">$200,000 - above</option>
+                <option value="1">₹5000 - ₹50,000</option>
+                <option value="2">₹50,000 - ₹100,000</option>
+                <option value="3">₹100,000 - ₹200,000</option>
+                <option value="4">₹200,000 - above</option>
               </select>
             </div>
             <div class="col-lg-4 col-sm-4">
@@ -519,7 +519,6 @@ top: 0;
         <p class="price">Price: ₹<?php echo $price; ?></p>
         <p class="price">Address: <?php echo $address; ?></p>
         <p class="price">Type: <?php echo $property_type; ?></p>
-        <!-- <p class="price">Utilities: <?php echo $utility; ?></p> -->
         <div class="listing-detail">
         <span data-toggle="tooltip" data-placement="bottom" data-original-title="Bed Room"><?php echo $bed_room; ?></span> 
         <span data-toggle="tooltip" data-placement="bottom" data-original-title="Living Room"><?php echo $liv_room; ?></span> 
