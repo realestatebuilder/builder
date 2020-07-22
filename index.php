@@ -707,13 +707,9 @@ top: 0;
 
 $(document).ready(function(){	
 
-<<<<<<< HEAD
-  
-=======
 //   $('a').click(function(){
 //     $(this).addClass("active");
 // });
->>>>>>> 9d503de82504552d479da75e272a8457bdc9d43f
   if (document.cookie.indexOf('modal_shown=') >= 0) {
     $('#temp').modal('hide');
  //do nothing if modal_shown cookie is present
