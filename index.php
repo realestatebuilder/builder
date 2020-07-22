@@ -18,6 +18,11 @@ if(!$result){
 <!-- Mirrored from thebootstrapthemes.com/live/thebootstrapthemes-realestate/index.php by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 11 Apr 2017 02:43:16 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
+  <style>
+    .active{
+      background-color:green;
+    }
+  </style>
 <title>Mridha Real Estate</title>
 <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -296,9 +301,10 @@ top: 0;
             <!-- Nav Starts -->
             <div class="navbar-collapse  collapse">
               <ul class="nav navbar-nav navbar-right">
-               <li class="active"><a href="index.php">Homes</a></li>
+               <li><a href="index.php">Homes</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.php">Contact</a></li>
+                <li><a onclick="formFunction()">Requirements</a></li>
               </ul>
             </div>
             <!-- #Nav Ends -->
@@ -645,6 +651,9 @@ top: 0;
 <script>
 $(document).ready(function(){	
 
+//   $('a').click(function(){
+//     $(this).addClass("active");
+// });
   if (document.cookie.indexOf('modal_shown=') >= 0) {
     $('#temp').modal('hide');
  //do nothing if modal_shown cookie is present
@@ -692,6 +701,10 @@ function submitForm(){
 			alert("Error");
 		}
 	});
+}
+
+function formFunction(){
+  $("#contact-modal").modal('show');
 }
 </script>
 
