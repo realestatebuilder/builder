@@ -354,7 +354,7 @@ echo "<script>console.log('$property_id')</script>";
                     <h4>Newsletter</h4>
                     <p>Get notified about the latest properties in our marketplace.</p>
                     <form class="form-inline" role="form" action="addguest.php?pg=property-details.php" method="POST">
-                            <input type="text" name="mailid_guest" placeholder="Enter Your email address" class="form-control" required>
+                            <input type="email" name="mailid_guest" placeholder="Enter Your email address" class="form-control" required>
                                 <button class="btn btn-success" type="submit">Notify Me!</button></form>
             </div>
             
