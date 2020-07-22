@@ -22,6 +22,43 @@ if(!$result){
     .active{
       background-color:green;
     }
+
+ .container1{
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.bottom-left {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+}
+
+.top-left {
+  position: absolute;
+  top: 70px;
+  left: 16px;
+}
+
+.top-right {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+}
+
+.bottom-right {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
   </style>
 <title>Mridha Real Estate</title>
 <meta charset="UTF-8" />
@@ -340,85 +377,53 @@ top: 0;
 </div>
 <!-- #Header Starts -->
 </div>
-<div class="">
+<div class="container1">
     
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+      <li data-target="#myCarousel" data-slide-to="4"></li>
+    </ol>
 
-            <div id="slider" class="sl-slider-wrapper">
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <img src="2.jpg"  style="width:100%;">
+       
+        <div class="top-left"> 2 Bed Rooms and 1 Dinning Room Aparment on Sale</div>
+      </div>
 
-        <div class="sl-slider">
-        
-          <div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
-            <div class="sl-slide-inner">
-              <div class="bg-img bg-img-1"></div>
-              <h2><a href="#">2 Bed Rooms and 1 Dinning Room Aparment on Sale</a></h2>
-              <blockquote>              
-              <p class="location"><span class="glyphicon glyphicon-map-marker"></span> 1890 Syndey, Australia</p>
-              <p>Until he extends the circle of his compassion to all living things, man will not himself find peace.</p>
-              <cite>$ 20,000,000</cite>
-              </blockquote>
-            </div>
-          </div>
-          
-          <div class="sl-slide" data-orientation="vertical" data-slice1-rotation="10" data-slice2-rotation="-15" data-slice1-scale="1.5" data-slice2-scale="1.5">
-            <div class="sl-slide-inner">
-              <div class="bg-img bg-img-2"></div>
-              <h2><a href="#">2 Bed Rooms and 1 Dinning Room Aparment on Sale</a></h2>
-              <blockquote>              
-              <p class="location"><span class="glyphicon glyphicon-map-marker"></span> 1890 Syndey, Australia</p>
-              <p>Until he extends the circle of his compassion to all living things, man will not himself find peace.</p>
-              <cite>$ 20,000,000</cite>
-              </blockquote>
-            </div>
-          </div>
-          
-          <div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="3" data-slice2-rotation="3" data-slice1-scale="2" data-slice2-scale="1">
-            <div class="sl-slide-inner">
-              <div class="bg-img bg-img-3"></div>
-              <h2><a href="#">2 Bed Rooms and 1 Dinning Room Aparment on Sale</a></h2>
-              <blockquote>              
-              <p class="location"><span class="glyphicon glyphicon-map-marker"></span> 1890 Syndey, Australia</p>
-              <p>Until he extends the circle of his compassion to all living things, man will not himself find peace.</p>
-              <cite>$ 20,000,000</cite>
-              </blockquote>
-            </div>
-          </div>
-          
-          <div class="sl-slide" data-orientation="vertical" data-slice1-rotation="-5" data-slice2-rotation="25" data-slice1-scale="2" data-slice2-scale="1">
-            <div class="sl-slide-inner">
-              <div class="bg-img bg-img-4"></div>
-              <h2><a href="#">2 Bed Rooms and 1 Dinning Room Aparment on Sale</a></h2>
-              <blockquote>              
-              <p class="location"><span class="glyphicon glyphicon-map-marker"></span> 1890 Syndey, Australia</p>
-              <p>Until he extends the circle of his compassion to all living things, man will not himself find peace.</p>
-              <cite>$ 20,000,000</cite>
-              </blockquote>
-            </div>
-          </div>
-          
-          <div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-5" data-slice2-rotation="10" data-slice1-scale="2" data-slice2-scale="1">
-            <div class="sl-slide-inner">
-              <div class="bg-img bg-img-5"></div>
-              <h2><a href="#">2 Bed Rooms and 1 Dinning Room Aparment on Sale</a></h2>
-              <blockquote>              
-              <p class="location"><span class="glyphicon glyphicon-map-marker"></span> 1890 Syndey, Australia</p>
-              <p>Until he extends the circle of his compassion to all living things, man will not himself find peace.</p>
-              <cite>$ 20,000,000</cite>
-              </blockquote>
-            </div>
-          </div>
-        </div><!-- /sl-slider -->
+      <div class="item">
+        <img src="2.jpg"  style="width:100%;">
+      </div>
 
+      <div class="item">
+        <img src="2.jpg"  style="width:100%;">
+      </div>
 
+      <div class="item">
+        <img src="2.jpg"  style="width:100%;">
+      </div>
+    
+      <div class="item">
+        <img src="2.jpg"  style="width:100%;">
+      </div>
+    </div>
 
-        <nav id="nav-dots" class="nav-dots">
-          <span class="nav-dot-current"></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-        </nav>
-
-      </div><!-- /slider-wrapper -->
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
 </div>
 
 
