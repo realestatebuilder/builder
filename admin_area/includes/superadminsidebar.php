@@ -178,7 +178,7 @@ else {
 
 <li><!-- li Starts -->
 
-<a href="http://localhost/builder/admin_area/logout.php">
+<a href="../admin_area/logout.php">
 
 <i class="fa fa-fw fa-power-off"></i> Log Out
 

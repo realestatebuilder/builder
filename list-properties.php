@@ -136,9 +136,11 @@ top: 0;
             <!-- Nav Starts -->
             <div class="navbar-collapse  collapse">
               <ul class="nav navbar-nav navbar-right">
-               <li class="active"><a href="index.php">Home</a></li>
+               <li><a href="index.php">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.php">Contact</a></li>
+                <li><a style="cursor:pointer" onclick="formFunction()">Requirements</a></li>
+
               </ul>
             </div>
             <!-- #Nav Ends -->
@@ -193,6 +195,7 @@ top: 0;
   <div class="search-form"><h4><span class="glyphicon glyphicon-search"></span> Search for</h4>
   <form action="search.php" method="post" name="search">
     <input type="text" class="form-control" name="search" placeholder="Search of Properties">
+
     <div class="row">
     <div class="col-lg-7">
               <select name="delivery_type" class="form-control">
@@ -233,6 +236,8 @@ top: 0;
                 </select>
               </div>
           </div>
+    <input type="text" class="form-control" name="area_search" placeholder="Type Area or Pincode">
+
           <button name="submit" class="btn btn-primary">Find Now</button>
 </form>
   </div>
@@ -323,15 +328,16 @@ top: 0;
                 <li class="col-lg-12 col-sm-12 col-xs-3"><a href="index.php">Home</a></li>
                 <li class="col-lg-12 col-sm-12 col-xs-3"><a href="about.html">About</a></li>
                 <li class="col-lg-12 col-sm-12 col-xs-3"><a href="contact.php">Contact</a></li>
+
               </ul>
             </div>
             
             <div class="col-lg-3 col-sm-3">
                     <h4>Newsletter</h4>
                     <p>Get notified about the latest properties in our marketplace.</p>
-                    <form class="form-inline" role="form">
-                            <input type="text" placeholder="Enter Your email address" class="form-control">
-                                <button class="btn btn-success" type="button">Notify Me!</button></form>
+                    <form class="form-inline" role="form" action="addguest.php?pg=list-properties.php" method="POST">
+                            <input type="email" name="mailid_guest" placeholder="Enter Your email address" class="form-control" required>
+                                <button class="btn btn-success" type="submit">Notify Me!</button></form>
             </div>
             
             <div class="col-lg-3 col-sm-3">

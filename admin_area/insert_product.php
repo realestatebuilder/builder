@@ -517,7 +517,7 @@ move_uploaded_file($temp_name1,"../images/properties/$product_img1");
 // move_uploaded_file($temp_name4,"../images/properties/$product_img4");
 // move_uploaded_file($temp_name5,"../images/properties/$product_img5");
 
-$agent = 1;
+$agent = 0;
 $insert_property = "insert into properties (property_title,property_details,delivery_type,availability,price,property_address,property_img1,bed_room,liv_room,parking,kitchen,property_type,floor_space,agent_id,blueprint,property_video,map_location) values ('$property_title','$property_details','$delivery_type','$availability',$price,'$property_address','$product_img1','$bed_room','$liv_room','$parking','$kitchen','$property_type','$floor_space',$agent,'$blueprint','$property_video','$map_location')";
 
 $run_property = mysqli_query($con,$insert_property);

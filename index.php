@@ -18,6 +18,48 @@ if(!$result){
 <!-- Mirrored from thebootstrapthemes.com/live/thebootstrapthemes-realestate/index.php by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 11 Apr 2017 02:43:16 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
+  <style>
+    .active{
+      background-color:green;
+    }
+
+ .container1{
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.bottom-left {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+}
+
+.top-left {
+  position: absolute;
+  top: 70px;
+  left: 16px;
+}
+
+.top-right {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+}
+
+.bottom-right {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+  </style>
 <title>Mridha Real Estate</title>
 <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -27,7 +69,7 @@ if(!$result){
   <script src="assets/jquery-1.9.1.min.js"></script>
 	<script src="assets/bootstrap/js/bootstrap.js"></script>
   <script src="assets/script.js"></script>
-  <script type="text/javascript" src="js/contact.js"></script>
+
 
 
 
@@ -213,15 +255,16 @@ top: 0;
 						<br>
 
 						<div class="form-group" >
-							<label for="message">Help us know more about you</label><br/>
-							<select id="type" name="type">
+              <label for="message">Help us know more about you</label><br/>
+              
+							<select class="form-control" id="type" name="type">
 								<option >Type  </option>
 								<option value="Apartment">Apartment</option>
 								<option value="Shop">Shop</option>
 								<option value="OfficeSpace">Office Space</option>
 								<option value="Building">Building</option>
 							</select> &nbsp;&nbsp;&nbsp;&nbsp;
-							<select id="bhk" name="bhk">
+							<select class="form-control" id="bhk" name="bhk">
 								<option >BHK   </option>
 								<option value="0">1RK</option>
 								<option value="1">1BHK</option>
@@ -229,7 +272,7 @@ top: 0;
 								<option value="3">3BHK</option>
                 <option value="more">3BHK+</option>
 							</select>&nbsp;&nbsp;&nbsp;&nbsp;
-							<select id="budget" name="budget">
+							<select class="form-control" id="budget" name="budget">
 								<option >Budget</option>
                 <option value="1">$5000 - $50,000</option>
                 <option value="2">$50,000 - $100,000</option>
@@ -251,8 +294,8 @@ top: 0;
 						</div>
 						<br>
 						<div class="form-group" id="more-info">
-							<label for="message">Help us know more about you</label><br/>
-							<select id="door-facing" name="door-facing">
+							<label for="message">Directions that you prefer for following</label><br/>
+							<select class="form-control" id="door-facing" name="door-facing">
 								<option >Door Facing</option>
 								<option value="East ">East</option>
 								<option value="North">North</option>
@@ -263,7 +306,7 @@ top: 0;
 								<option value="Southwest">Southwest</option>
 								<option value="Northwest">Northwest</option>
 							</select>&nbsp;&nbsp;&nbsp;&nbsp;
-							<select id="kitchen" name="kitchen">
+							<select class="form-control" id="kitchen" name="kitchen">
 								<option>Kitchen</option>
 								<option value="East ">East</option>
 								<option value="North">North</option>
@@ -274,7 +317,7 @@ top: 0;
 								<option value="Southwest">Southwest</option>
 								<option value="Northwest">Northwest</option>
 							</select>&nbsp;&nbsp;&nbsp;&nbsp;
-							<select id="bedroom" name="bedroom">
+							<select class="form-control" id="bedroom" name="bedroom">
 								<option>Bedroom</option>
 								<option value="East ">East</option>
 								<option value="North">North</option>
@@ -323,6 +366,7 @@ top: 0;
                <li class="active"><a href="index.php">Homes</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.php">Contact</a></li>
+                <li><a style="cursor:pointer" onclick="formFunction()">Requirements</a></li>
               </ul>
             </div>
             <!-- #Nav Ends -->
@@ -358,85 +402,53 @@ top: 0;
 </div>
 <!-- #Header Starts -->
 </div>
-<div class="">
+<div class="container1">
     
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#myCarousel" data-slide-to="1"></li>
+      <li data-target="#myCarousel" data-slide-to="2"></li>
+      <li data-target="#myCarousel" data-slide-to="3"></li>
+      <li data-target="#myCarousel" data-slide-to="4"></li>
+    </ol>
 
-            <div id="slider" class="sl-slider-wrapper">
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+        <img src="2.jpg"  style="width:100%;">
+       
+        <div class="top-left"> 2 Bed Rooms and 1 Dinning Room Aparment on Sale</div>
+      </div>
 
-        <div class="sl-slider">
-        
-          <div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
-            <div class="sl-slide-inner">
-              <div class="bg-img bg-img-1"></div>
-              <h2><a href="#">2 Bed Rooms and 1 Dinning Room Aparment on Sale</a></h2>
-              <blockquote>              
-              <p class="location"><span class="glyphicon glyphicon-map-marker"></span> 1890 Syndey, Australia</p>
-              <p>Until he extends the circle of his compassion to all living things, man will not himself find peace.</p>
-              <cite>$ 20,000,000</cite>
-              </blockquote>
-            </div>
-          </div>
-          
-          <div class="sl-slide" data-orientation="vertical" data-slice1-rotation="10" data-slice2-rotation="-15" data-slice1-scale="1.5" data-slice2-scale="1.5">
-            <div class="sl-slide-inner">
-              <div class="bg-img bg-img-2"></div>
-              <h2><a href="#">2 Bed Rooms and 1 Dinning Room Aparment on Sale</a></h2>
-              <blockquote>              
-              <p class="location"><span class="glyphicon glyphicon-map-marker"></span> 1890 Syndey, Australia</p>
-              <p>Until he extends the circle of his compassion to all living things, man will not himself find peace.</p>
-              <cite>$ 20,000,000</cite>
-              </blockquote>
-            </div>
-          </div>
-          
-          <div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="3" data-slice2-rotation="3" data-slice1-scale="2" data-slice2-scale="1">
-            <div class="sl-slide-inner">
-              <div class="bg-img bg-img-3"></div>
-              <h2><a href="#">2 Bed Rooms and 1 Dinning Room Aparment on Sale</a></h2>
-              <blockquote>              
-              <p class="location"><span class="glyphicon glyphicon-map-marker"></span> 1890 Syndey, Australia</p>
-              <p>Until he extends the circle of his compassion to all living things, man will not himself find peace.</p>
-              <cite>$ 20,000,000</cite>
-              </blockquote>
-            </div>
-          </div>
-          
-          <div class="sl-slide" data-orientation="vertical" data-slice1-rotation="-5" data-slice2-rotation="25" data-slice1-scale="2" data-slice2-scale="1">
-            <div class="sl-slide-inner">
-              <div class="bg-img bg-img-4"></div>
-              <h2><a href="#">2 Bed Rooms and 1 Dinning Room Aparment on Sale</a></h2>
-              <blockquote>              
-              <p class="location"><span class="glyphicon glyphicon-map-marker"></span> 1890 Syndey, Australia</p>
-              <p>Until he extends the circle of his compassion to all living things, man will not himself find peace.</p>
-              <cite>$ 20,000,000</cite>
-              </blockquote>
-            </div>
-          </div>
-          
-          <div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-5" data-slice2-rotation="10" data-slice1-scale="2" data-slice2-scale="1">
-            <div class="sl-slide-inner">
-              <div class="bg-img bg-img-5"></div>
-              <h2><a href="#">2 Bed Rooms and 1 Dinning Room Aparment on Sale</a></h2>
-              <blockquote>              
-              <p class="location"><span class="glyphicon glyphicon-map-marker"></span> 1890 Syndey, Australia</p>
-              <p>Until he extends the circle of his compassion to all living things, man will not himself find peace.</p>
-              <cite>$ 20,000,000</cite>
-              </blockquote>
-            </div>
-          </div>
-        </div><!-- /sl-slider -->
+      <div class="item">
+        <img src="2.jpg"  style="width:100%;">
+      </div>
 
+      <div class="item">
+        <img src="2.jpg"  style="width:100%;">
+      </div>
 
+      <div class="item">
+        <img src="2.jpg"  style="width:100%;">
+      </div>
+    
+      <div class="item">
+        <img src="2.jpg"  style="width:100%;">
+      </div>
+    </div>
 
-        <nav id="nav-dots" class="nav-dots">
-          <span class="nav-dot-current"></span>
-          <span></span>
-          <span></span>
-          <span></span>
-          <span></span>
-        </nav>
-
-      </div><!-- /slider-wrapper -->
+    <!-- Left and right controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
 </div>
 
 
@@ -463,10 +475,10 @@ top: 0;
             <div class="col-lg-4 col-sm-4">
              <select name="search_price" class="form-control">
                 <option>Price</option>
-                <option value="1">$5000 - $50,000</option>
-                <option value="2">$50,000 - $100,000</option>
-                <option value="3">$100,000 - $200,000</option>
-                <option value="4">$200,000 - above</option>
+                <option value="1">₹5000 - ₹50,000</option>
+                <option value="2">₹50,000 - ₹100,000</option>
+                <option value="3">₹100,000 - ₹200,000</option>
+                <option value="4">₹200,000 - above</option>
               </select>
             </div>
             <div class="col-lg-4 col-sm-4">
@@ -488,7 +500,9 @@ top: 0;
                   <option value="4">3+BHK</option>
                 </select>
               </div>
-              
+              <div class="col-lg-4 col-sm-4">
+                  <input name="area_search" type="text" class="form-control" placeholder="Type Area or Pincode">
+              </div>
               <div class="col-lg-3 col-sm-4">
               <button name="submit" class="btn btn-success">Find Now</button>
               </form> 
@@ -497,9 +511,9 @@ top: 0;
           
           
         </div>
-        <div class="col-lg-5 col-lg-offset-1 col-sm-6 ">
+        <!-- <div class="col-lg-5 col-lg-offset-1 col-sm-6 ">
           <p>Join now and get updated with all the properties deals.</p>
-          <button class="btn btn-info"   data-toggle="modal" data-target="#loginpop">Login</button>        </div>
+          <button class="btn btn-info"   data-toggle="modal" data-target="#loginpop">Login</button>        </div> -->
       </div>
     </div>
   </div>
@@ -544,7 +558,6 @@ top: 0;
         <p class="price">Price: ₹<?php echo $price; ?></p>
         <p class="price">Address: <?php echo $address; ?></p>
         <p class="price">Type: <?php echo $property_type; ?></p>
-        <!-- <p class="price">Utilities: <?php echo $utility; ?></p> -->
         <div class="listing-detail">
         <span data-toggle="tooltip" data-placement="bottom" data-original-title="Bed Room"><?php echo $bed_room; ?></span> 
         <span data-toggle="tooltip" data-placement="bottom" data-original-title="Living Room"><?php echo $liv_room; ?></span> 
@@ -594,9 +607,9 @@ top: 0;
             <div class="col-lg-3 col-sm-3">
                     <h4>Newsletter</h4>
                     <p>Get notified about the latest properties in our marketplace.</p>
-                    <form class="form-inline" role="form">
-                            <input type="text" placeholder="Enter Your email address" class="form-control">
-                                <button class="btn btn-success" type="button">Notify Me!</button></form>
+                    <form class="form-inline" role="form" action="addguest.php?pg=index.php" method="POST">
+                            <input type="email" name="mailid_guest" placeholder="Enter Your email address" class="form-control" required>
+                                <button class="btn btn-success" type="submit">Notify Me!</button></form>
             </div>
             
             <div class="col-lg-3 col-sm-3">
@@ -694,7 +707,13 @@ top: 0;
 
 $(document).ready(function(){	
 
+<<<<<<< HEAD
   
+=======
+//   $('a').click(function(){
+//     $(this).addClass("active");
+// });
+>>>>>>> 9d503de82504552d479da75e272a8457bdc9d43f
   if (document.cookie.indexOf('modal_shown=') >= 0) {
     $('#temp').modal('hide');
  //do nothing if modal_shown cookie is present
@@ -721,10 +740,6 @@ $(document).ready(function(){
 		submitForm();
 		return false;
 	});
-	$("#contactForm").submit(function(event){
-		submitForm();
-		return false;
-	});
 });
 
 function myFunction() {
@@ -745,6 +760,10 @@ function submitForm(){
 			alert("Error");
 		}
 	});
+}
+
+function formFunction(){
+  $("#contact-modal").modal('show');
 }
 </script>
 
