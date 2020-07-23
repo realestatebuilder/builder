@@ -18,77 +18,34 @@ if(!$result){
 <!-- Mirrored from thebootstrapthemes.com/live/thebootstrapthemes-realestate/index.php by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 11 Apr 2017 02:43:16 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
-  <style>
-    .active{
-      background-color:green;
-    }
 
- .container1{
-  position: relative;
-  text-align: center;
-  color: white;
-}
-
-.bottom-left {
-  position: absolute;
-  bottom: 8px;
-  left: 16px;
-}
-
-.top-left {
-  position: absolute;
-  top: 70px;
-  left: 16px;
-}
-
-.top-right {
-  position: absolute;
-  top: 8px;
-  right: 16px;
-}
-
-.bottom-right {
-  position: absolute;
-  bottom: 8px;
-  right: 16px;
-}
-
-.centered {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-  </style>
 <title>Mridha Real Estate</title>
 <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
  	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css" />
   <link rel="stylesheet" href="assets/style.css"/>
-  <script src="assets/jquery-1.9.1.min.js"></script>
-	<script src="assets/bootstrap/js/bootstrap.js"></script>
-  <script src="assets/script.js"></script>
-
+  <!-- <script src="assets/jquery-1.9.1.min.js"></script> -->
+	
 
 
 
 <!-- Owl stylesheet -->
 <link rel="stylesheet" href="assets/owl-carousel/owl.carousel.css">
 <link rel="stylesheet" href="assets/owl-carousel/owl.theme.css">
-<script src="assets/owl-carousel/owl.carousel.js"></script>
+
 <!-- Owl stylesheet -->
 
 
 <!-- slitslider -->
     <link rel="stylesheet" type="text/css" href="assets/slitslider/css/style.css" />
     <link rel="stylesheet" type="text/css" href="assets/slitslider/css/custom.css" />
-    <script type="text/javascript" src="assets/slitslider/js/modernizr.custom.79639.js"></script>
-    <script type="text/javascript" src="assets/slitslider/js/jquery.ba-cond.min.js"></script>
-    <script type="text/javascript" src="assets/slitslider/js/jquery.slitslider.js"></script>
-<!-- slitslider -->
+   
 
-<script src='assets/google_analytics_auto.js'></script></head>
+
+
+
+
 <head>
   <style>
 .patch {
@@ -147,31 +104,7 @@ border-color: #e77548 #e77548 transparent transparent;
 top: 0;
 
 }
-#filtertoggle{
-    color:white;
-    border-radius:2px;
-    background-color: #72b70f;
-    margin-left:-2.5%;
-    width:105%;
-    text-align:center;
-    font-weight:bold;
-    padding-top:4%;
-    padding-bottom: 4%;
-    display:none;
-    
-}
-#filterdiv{
-      display:block;
-    }
-@media only screen and (max-width: 600px) {
-    #filtertoggle{
-        display:block;
-    }
-    #filterdiv{
-      display:none;
-    }
 
-}
 @media screen and (max-width: 480px) {
   .patch{
     margin-top:-13.5%;
@@ -180,7 +113,6 @@ top: 0;
 }
   </style>
 </head>
-
 <body>
 
 <!-- Assistance ? yes or no -->
@@ -266,18 +198,18 @@ top: 0;
 							</select> &nbsp;&nbsp;&nbsp;&nbsp;
 							<select class="form-control" id="bhk" name="bhk">
 								<option >BHK   </option>
-								<option value="0">1RK</option>
-								<option value="1">1BHK</option>
-								<option value="2">2BHK</option>
-								<option value="3">3BHK</option>
-                <option value="more">3+BHK</option>
+								<option value="1RK">1RK</option>
+								<option value="1BHK">1BHK</option>
+								<option value="2BHK">2BHK</option>
+								<option value="3BHK">3BHK</option>
+                <option value="3BHK+">3BHK+</option>
 							</select>&nbsp;&nbsp;&nbsp;&nbsp;
 							<select class="form-control" id="budget" name="budget">
 								<option >Budget</option>
-                <option value="1">₹5000 - ₹50,000</option>
-                <option value="2">₹50,000 - ₹100,000</option>
-                <option value="3">₹100,000 - ₹200,000</option>
-                <option value="4">₹200,000 - above</option>
+                <option value="$5000 - $50,000">$5000 - $50,000</option>
+                <option value="$50,000 - $100,000">$50,000 - $100,000</option>
+                <option value="$100,000 - $200,000">$100,000 - $200,000</option>
+                <option value="$200,000 - above">$200,000 - above</option>
 							</select>
 							</div>
 							<br>
@@ -363,10 +295,10 @@ top: 0;
             <!-- Nav Starts -->
             <div class="navbar-collapse  collapse">
               <ul class="nav navbar-nav navbar-right">
-               <li class="active"><a href="index.php">Homes</a></li>
+               <li><a href="index.php">Homes</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.php">Contact</a></li>
-                <li><a style="cursor:pointer" onclick="formFunction()">Requirements</a></li>
+                <li><a onclick="formFunction()">Requirements</a></li>
               </ul>
             </div>
             <!-- #Nav Ends -->
@@ -402,7 +334,7 @@ top: 0;
 </div>
 <!-- #Header Starts -->
 </div>
-<div class="">
+<div class="container1">
     
 <div id="slider" class="sl-slider-wrapper">
 
@@ -491,13 +423,11 @@ top: 0;
 <div class="banner-search">
   <div class="container"> 
     <!-- banner -->
-    
     <h3>Buy, Sale & Rent</h3>
-    <button id="filtertoggle" >Search for properties</button><br><br>
-    <div class="searchbar" id="filterdiv" >
+    <div class="searchbar">
       <div class="row">
-        <div class="col-lg-6 col-sm-6" >
-        <form  action="search.php"  method="post">
+        <div class="col-lg-6 col-sm-6">
+        <form action="search.php" method="post">
           <input name="search" type="text" class="form-control" placeholder="Search of Properties">
           <div class="row">
             <div class="col-lg-4 col-sm-4 ">
@@ -510,10 +440,10 @@ top: 0;
             <div class="col-lg-4 col-sm-4">
              <select name="search_price" class="form-control">
                 <option>Price</option>
-                <option value="1">₹5000 - ₹50,000</option>
-                <option value="2">₹50,000 - ₹100,000</option>
-                <option value="3">₹100,000 - ₹200,000</option>
-                <option value="4">₹200,000 - above</option>
+                <option value="1">$5000 - $50,000</option>
+                <option value="2">$50,000 - $100,000</option>
+                <option value="3">$100,000 - $200,000</option>
+                <option value="4">$200,000 - above</option>
               </select>
             </div>
             <div class="col-lg-4 col-sm-4">
@@ -558,6 +488,9 @@ top: 0;
   <div class="properties-listing spacer"> <a href="list-properties.php" class="pull-right viewall">View All Listing</a>
     <h2>Featured Properties</h2>
     <div id="owl-example" class="owl-carousel">
+      
+     
+      
       <?php 
 	  	while($property_result = mysqli_fetch_assoc($result)){
 			$id = $property_result['property_id'];
@@ -590,8 +523,8 @@ top: 0;
         <p class="price">Price: ₹<?php echo $price; ?></p>
         <p class="price">Address: <?php echo $address; ?></p>
         <p class="price">Type: <?php echo $property_type; ?></p>
+        <!-- <p class="price">Utilities: <?php echo $utility; ?></p> -->
         <div class="listing-detail">
-          Rooms <br>
         <span data-toggle="tooltip" data-placement="bottom" data-original-title="Bed Room"><?php echo $bed_room; ?></span> 
         <span data-toggle="tooltip" data-placement="bottom" data-original-title="Living Room"><?php echo $liv_room; ?></span> 
    
@@ -634,8 +567,6 @@ top: 0;
                 <li class="col-lg-12 col-sm-12 col-xs-3"><a href="index.php">Home</a></li>
                 <li class="col-lg-12 col-sm-12 col-xs-3"><a href="about.html">About</a></li>
                 <li class="col-lg-12 col-sm-12 col-xs-3"><a href="contact.php">Contact</a></li>
-                <li class="col-lg-12 col-sm-12 col-xs-3"><a style="cursor:pointer" onclick="formFunction()">Requirements</a></li>
-
               </ul>
             </div>
             
@@ -714,134 +645,9 @@ top: 0;
 </div>
 <!-- /.modal -->
 
-
-
-<script type="text/javascript" src="js/jquery.min.js"></script>
-		<script type="text/javascript" src="js/jquery.ba-cond.min.js"></script>
-		<script type="text/javascript" src="js/jquery.slitslider.js"></script>
-		<script type="text/javascript">	
-			$(function() {
-			
-				var Page = (function() {
-
-					var $navArrows = $( '#nav-arrows' ),
-						$nav = $( '#nav-dots > span' ),
-						slitslider = $( '#slider' ).slitslider( {
-							onBeforeChange : function( slide, pos ) {
-
-								$nav.removeClass( 'nav-dot-current' );
-								$nav.eq( pos ).addClass( 'nav-dot-current' );
-
-							}
-						} ),
-
-						init = function() {
-
-							initEvents();
-							
-						},
-						initEvents = function() {
-
-							// add navigation events
-							$navArrows.children( ':last' ).on( 'click', function() {
-
-								slitslider.next();
-								return false;
-
-							} );
-
-							$navArrows.children( ':first' ).on( 'click', function() {
-								
-								slitslider.previous();
-								return false;
-
-							} );
-
-							$nav.each( function( i ) {
-							
-								$( this ).on( 'click', function( event ) {
-									
-									var $dot = $( this );
-									
-									if( !slitslider.isActive() ) {
-
-										$nav.removeClass( 'nav-dot-current' );
-										$dot.addClass( 'nav-dot-current' );
-									
-									}
-									
-									slitslider.jump( i + 1 );
-									return false;
-								
-								} );
-								
-							} );
-
-						};
-
-						return { init : init };
-
-				})();
-
-				Page.init();
-
-				/**
-				 * Notes: 
-				 * 
-				 * example how to add items:
-				 */
-
-				/*
-				
-				var $items  = $('<div class="sl-slide sl-slide-color-2" data-orientation="horizontal" data-slice1-rotation="-5" data-slice2-rotation="10" data-slice1-scale="2" data-slice2-scale="1"><div class="sl-slide-inner bg-1"><div class="sl-deco" data-icon="t"></div><h2>some text</h2><blockquote><p>bla bla</p><cite>Margi Clarke</cite></blockquote></div></div>');
-				
-				// call the plugin's add method
-				ss.add($items);
-
-				*/
-			
-			});
-		</script>
-
-<!-- External Scripts -->
-<script src="assets/jquery-1.9.1.min.js"></script>
-<script src="assets/bootstrap/js/bootstrap.js"></script>
-<script src="assets/script.js"></script>
-<script src="assets/owl-carousel/owl.carousel.js"></script>
-<script type="text/javascript" src="assets/slitslider/js/modernizr.custom.79639.js"></script>
-<script type="text/javascript" src="assets/slitslider/js/jquery.ba-cond.min.js"></script>
-<script type="text/javascript" src="assets/slitslider/js/jquery.slitslider.js"></script>
-<!-- End External Scripts -->
-
 <script>
-
-  $("#filtertoggle").click(function(){
-    var x = document.getElementById("filterdiv");
-    if (x.style.display === "none") {
-      $('#filterdiv').show(500);
-      x.style.display === "block"
-      // x.style.display = "block";
-     
-    } else {
-      x.style.display = "none";
-    }
-  });
-
-  // function myFunction() 
-  // {
-  //   alert("Hello World")
-  //   var x = document.getElementById("filterdiv");
-  //   if (x.style.display === "none") {
-  //     x.style.display = "block";
-  //   } else {
-  //     x.style.display = "none";
-  //   }
-  // }
-
-
 $(document).ready(function(){	
 
-  
 //   $('a').click(function(){
 //     $(this).addClass("active");
 // });
@@ -882,6 +688,7 @@ function submitForm(){
 	 $.ajax({
 		type: "POST",
 		url: "saveContact.php",
+		cache:false,
 		data: $('form#contactForm').serialize(),
 		success: function(response){
 			alert(response);
@@ -898,10 +705,27 @@ function formFunction(){
 }
 </script>
 
+    <script type="text/javascript" src="assets/script.js"></script>
+    <script type="text/javascript" src="assets/slitslider/js/modernizr.custom.79639.js"></script>
+    <script type="text/javascript" src="assets/slitslider/js/jquery.ba-cond.min.js"></script>
+    <script type="text/javascript" src="assets/slitslider/js/jquery.slitslider.js"></script>
+    <!-- slitslider -->
+
+    <script src='assets/google_analytics_auto.js'></script></head>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+
+  		<script type="text/javascript" src="js/jquery.ba-cond.min.js"></script>
+		<script type="text/javascript" src="js/jquery.slitslider.js"></script>
+    
+    <script src="assets/owl-carousel/owl.carousel.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.js"></script>
+     <script src="assets/script.js"></script>
+
+		<script type="text/javascript">	
+		
+		</script>
+
 </body>
 
 <!-- Mirrored from thebootstrapthemes.com/live/thebootstrapthemes-realestate/index.php by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 11 Apr 2017 02:43:16 GMT -->
 </html>
-
-
-
