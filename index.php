@@ -112,6 +112,35 @@ top: 0;
     margin-left:-33%;
   }
 }
+#filtertoggle{
+    color:white;
+    border-radius:2px;
+    background-color: #72b70f;
+    margin-left:-2.5%;
+    width:105%;
+    text-align:center;
+    font-weight:bold;
+    padding-top:4%;
+    padding-bottom: 4%;
+    display:none;
+    
+}
+#filterdiv{
+      display:block;
+    }
+@media only screen and (max-width: 600px) {
+    #filtertoggle{
+        display:block;
+    }
+    #filterdiv{
+      display:none;
+    }
+    .inside-banner
+    {
+      padding:10px 0;
+    }
+
+}
   </style>
 </head>
 <body>
@@ -428,7 +457,8 @@ top: 0;
     <div class="searchbar">
       <div class="row">
         <div class="col-lg-6 col-sm-6">
-        <form action="search.php" method="post">
+        <button id="filtertoggle" >Search for properties</button><br><br>
+        <form action="search.php" id="filterdiv" method="post">
           <input name="search" type="text" class="form-control" placeholder="Search of Properties">
           <div class="row">
             <div class="col-lg-4 col-sm-4 ">
@@ -726,6 +756,19 @@ function formFunction(){
 		</script>
 
 </body>
+<script>
+$("#filtertoggle").click(function(){
+    var x = document.getElementById("filterdiv");
+    if (x.style.display === "none") {
+      $('#filterdiv').show(500);
+      x.style.display === "block"
+      // x.style.display = "block";
+     
+    } else {
+      x.style.display = "none";
+    }
+  });
 
+</script>
 <!-- Mirrored from thebootstrapthemes.com/live/thebootstrapthemes-realestate/index.php by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 11 Apr 2017 02:43:16 GMT -->
 </html>
