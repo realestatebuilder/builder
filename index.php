@@ -147,7 +147,31 @@ border-color: #e77548 #e77548 transparent transparent;
 top: 0;
 
 }
+#filtertoggle{
+    color:white;
+    border-radius:2px;
+    background-color: #72b70f;
+    margin-left:-2.5%;
+    width:105%;
+    text-align:center;
+    font-weight:bold;
+    padding-top:4%;
+    padding-bottom: 4%;
+    display:none;
+    
+}
+#filterdiv{
+      display:block;
+    }
+@media only screen and (max-width: 600px) {
+    #filtertoggle{
+        display:block;
+    }
+    #filterdiv{
+      display:none;
+    }
 
+}
 @media screen and (max-width: 480px) {
   .patch{
     margin-top:-13.5%;
@@ -156,6 +180,7 @@ top: 0;
 }
   </style>
 </head>
+
 <body>
 
 <!-- Assistance ? yes or no -->
@@ -241,18 +266,18 @@ top: 0;
 							</select> &nbsp;&nbsp;&nbsp;&nbsp;
 							<select class="form-control" id="bhk" name="bhk">
 								<option >BHK   </option>
-								<option value="1RK">1RK</option>
-								<option value="1BHK">1BHK</option>
-								<option value="2BHK">2BHK</option>
-								<option value="3BHK">3BHK</option>
-                <option value="3BHK+">3BHK+</option>
+								<option value="0">1RK</option>
+								<option value="1">1BHK</option>
+								<option value="2">2BHK</option>
+								<option value="3">3BHK</option>
+                <option value="more">3+BHK</option>
 							</select>&nbsp;&nbsp;&nbsp;&nbsp;
 							<select class="form-control" id="budget" name="budget">
 								<option >Budget</option>
-                <option value="$5000 - $50,000">$5000 - $50,000</option>
-                <option value="$50,000 - $100,000">$50,000 - $100,000</option>
-                <option value="$100,000 - $200,000">$100,000 - $200,000</option>
-                <option value="$200,000 - above">$200,000 - above</option>
+                <option value="1">₹5000 - ₹50,000</option>
+                <option value="2">₹50,000 - ₹100,000</option>
+                <option value="3">₹100,000 - ₹200,000</option>
+                <option value="4">₹200,000 - above</option>
 							</select>
 							</div>
 							<br>
@@ -338,10 +363,10 @@ top: 0;
             <!-- Nav Starts -->
             <div class="navbar-collapse  collapse">
               <ul class="nav navbar-nav navbar-right">
-               <li><a href="index.php">Homes</a></li>
+               <li class="active"><a href="index.php">Homes</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.php">Contact</a></li>
-                <li><a onclick="formFunction()">Requirements</a></li>
+                <li><a style="cursor:pointer" onclick="formFunction()">Requirements</a></li>
               </ul>
             </div>
             <!-- #Nav Ends -->
@@ -466,11 +491,13 @@ top: 0;
 <div class="banner-search">
   <div class="container"> 
     <!-- banner -->
+    
     <h3>Buy, Sale & Rent</h3>
-    <div class="searchbar">
+    <button id="filtertoggle" >Search for properties</button><br><br>
+    <div class="searchbar" id="filterdiv" >
       <div class="row">
-        <div class="col-lg-6 col-sm-6">
-        <form action="search.php" method="post">
+        <div class="col-lg-6 col-sm-6" >
+        <form  action="search.php"  method="post">
           <input name="search" type="text" class="form-control" placeholder="Search of Properties">
           <div class="row">
             <div class="col-lg-4 col-sm-4 ">
@@ -483,10 +510,10 @@ top: 0;
             <div class="col-lg-4 col-sm-4">
              <select name="search_price" class="form-control">
                 <option>Price</option>
-                <option value="1">$5000 - $50,000</option>
-                <option value="2">$50,000 - $100,000</option>
-                <option value="3">$100,000 - $200,000</option>
-                <option value="4">$200,000 - above</option>
+                <option value="1">₹5000 - ₹50,000</option>
+                <option value="2">₹50,000 - ₹100,000</option>
+                <option value="3">₹100,000 - ₹200,000</option>
+                <option value="4">₹200,000 - above</option>
               </select>
             </div>
             <div class="col-lg-4 col-sm-4">
@@ -566,8 +593,8 @@ top: 0;
         <p class="price">Price: ₹<?php echo $price; ?></p>
         <p class="price">Address: <?php echo $address; ?></p>
         <p class="price">Type: <?php echo $property_type; ?></p>
-        <!-- <p class="price">Utilities: <?php echo $utility; ?></p> -->
         <div class="listing-detail">
+          Rooms <br>
         <span data-toggle="tooltip" data-placement="bottom" data-original-title="Bed Room"><?php echo $bed_room; ?></span> 
         <span data-toggle="tooltip" data-placement="bottom" data-original-title="Living Room"><?php echo $liv_room; ?></span> 
    
@@ -610,6 +637,8 @@ top: 0;
                 <li class="col-lg-12 col-sm-12 col-xs-3"><a href="index.php">Home</a></li>
                 <li class="col-lg-12 col-sm-12 col-xs-3"><a href="about.html">About</a></li>
                 <li class="col-lg-12 col-sm-12 col-xs-3"><a href="contact.php">Contact</a></li>
+                <li class="col-lg-12 col-sm-12 col-xs-3"><a style="cursor:pointer" onclick="formFunction()">Requirements</a></li>
+
               </ul>
             </div>
             
@@ -778,8 +807,34 @@ top: 0;
 		</script>
 
 <script>
+
+  $("#filtertoggle").click(function(){
+    var x = document.getElementById("filterdiv");
+    if (x.style.display === "none") {
+      $('#filterdiv').show(500);
+      x.style.display === "block"
+      // x.style.display = "block";
+     
+    } else {
+      x.style.display = "none";
+    }
+  });
+
+  // function myFunction() 
+  // {
+  //   alert("Hello World")
+  //   var x = document.getElementById("filterdiv");
+  //   if (x.style.display === "none") {
+  //     x.style.display = "block";
+  //   } else {
+  //     x.style.display = "none";
+  //   }
+  // }
+
+
 $(document).ready(function(){	
 
+  
 //   $('a').click(function(){
 //     $(this).addClass("active");
 // });
@@ -820,7 +875,6 @@ function submitForm(){
 	 $.ajax({
 		type: "POST",
 		url: "saveContact.php",
-		cache:false,
 		data: $('form#contactForm').serialize(),
 		success: function(response){
 			alert(response);

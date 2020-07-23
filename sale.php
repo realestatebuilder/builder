@@ -101,6 +101,32 @@ border-color: #e77548 #e77548 transparent transparent;
 top: 0;
 
 }
+
+#filtertoggle{
+    color:white;
+    border-radius:2px;
+    background-color: #72b70f;
+    margin-left:-2.5%;
+    width:105%;
+    text-align:center;
+    font-weight:bold;
+    padding-top:4%;
+    padding-bottom: 4%;
+    display:none;
+    
+}
+#filterdiv{
+      display:block;
+    }
+@media only screen and (max-width: 600px) {
+    #filtertoggle{
+        display:block;
+    }
+    #filterdiv{
+      display:none;
+    }
+
+}
   </style>
 </head>
 
@@ -181,8 +207,8 @@ top: 0;
 
 <div class="row">
 <div class="col-lg-3 col-sm-4 ">
-
-  <div class="search-form"><h4><span class="glyphicon glyphicon-search"></span> Search for</h4>
+<button id="filtertoggle" >Search for properties</button><br><br>
+  <div class="search-form" id="filterdiv"><h4><span class="glyphicon glyphicon-search"></span> Search for</h4>
   <form action="search.php" method="post" name="search">
     <input type="text" class="form-control" name="search" placeholder="Search of Properties">
     <div class="row">
@@ -268,6 +294,7 @@ top: 0;
         <p class="price">Address : <?php echo $address; ?></p>
         <!-- <p class="price">Utilities: <?php ?></p> -->
         <div class="listing-detail">
+        Rooms <br>
         <span data-toggle="tooltip" data-placement="bottom" data-original-title="Bed Room"><?php echo $bed_room; ?></span> 
         <span data-toggle="tooltip" data-placement="bottom" data-original-title="Living Room"><?php echo $liv_room; ?></span> 
         <span data-toggle="tooltip" data-placement="bottom" data-original-title="Kitchen"><?php echo $kitchen; ?></span> 
@@ -301,6 +328,8 @@ top: 0;
                 <li class="col-lg-12 col-sm-12 col-xs-3"><a href="index.php">Home</a></li>
                 <li class="col-lg-12 col-sm-12 col-xs-3"><a href="about.html">About</a></li>
                 <li class="col-lg-12 col-sm-12 col-xs-3"><a href="contact.php">Contact</a></li>
+                <li class="col-lg-12 col-sm-12 col-xs-3"><a style="cursor:pointer" onclick="formFunction()">Requirements</a></li>
+
               </ul>
             </div>
             
@@ -388,7 +417,19 @@ while($admin_result = mysqli_fetch_assoc($result2))
 
 
 </body>
-
+<script>
+$("#filtertoggle").click(function(){
+    var x = document.getElementById("filterdiv");
+    if (x.style.display === "none") {
+      $('#filterdiv').show(500);
+      x.style.display === "block"
+      // x.style.display = "block";
+     
+    } else {
+      x.style.display = "none";
+    }
+  });
+</script>
 <!-- Mirrored from thebootstrapthemes.com/live/thebootstrapthemes-realestate/buysalerent.php by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 11 Apr 2017 02:45:10 GMT -->
 </html>
 

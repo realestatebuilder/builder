@@ -56,10 +56,10 @@
             <!-- Nav Starts -->
             <div class="navbar-collapse  collapse">
               <ul class="nav navbar-nav navbar-right">
-               <li class="active"><a href="index.php">Home</a></li>
+                <li><a href="index.php">Home</a></li>
                 <li><a href="about.html">About</a></li>
-                <li><a href="contact.php">Contact</a></li>
-                <li><a onclick="formFunction()">Requirements</a></li>
+                <li class="active"><a href="contact.php">Contact</a></li>
+                <li><a style="cursor:pointer" onclick="formFunction()">Requirements</a></li>
               </ul>
             </div>
             <!-- #Nav Ends -->
@@ -166,7 +166,9 @@ onsubmit="return validateContactForm()">
                 
         </div>
   <div class="col-lg-6 col-sm-6 ">
-  <div class="well"><iframe width="100%" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Pulchowk,+Patan,+Central+Region,+Nepal&amp;aq=0&amp;oq=pulch&amp;sll=37.0625,-95.677068&amp;sspn=39.371738,86.572266&amp;ie=UTF8&amp;hq=&amp;hnear=Pulchowk,+Patan+Dhoka,+Patan,+Bagmati,+Central+Region,+Nepal&amp;ll=27.678236,85.316853&amp;spn=0.001347,0.002642&amp;t=m&amp;z=14&amp;output=embed"></iframe></div>
+  <div class="well">
+  <iframe width="100%" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.7036630718885!2d73.7926615148424!3d18.497077487422647!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bfcb4b26eec9%3A0xba00f8adbe639778!2sNav%20Vinayak%20Society!5e0!3m2!1sen!2sin!4v1595481623878!5m2!1sen!2sin" ></iframe>
+    <!-- <iframe  src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Pulchowk,+Patan,+Central+Region,+Nepal&amp;aq=0&amp;oq=pulch&amp;sll=37.0625,-95.677068&amp;sspn=39.371738,86.572266&amp;ie=UTF8&amp;hq=&amp;hnear=Pulchowk,+Patan+Dhoka,+Patan,+Bagmati,+Central+Region,+Nepal&amp;ll=27.678236,85.316853&amp;spn=0.001347,0.002642&amp;t=m&amp;z=14&amp;output=embed"></iframe></div> -->
   </div>
 </div>
 </div>
@@ -230,14 +232,14 @@ onsubmit="return validateContactForm()">
               <option value="1BHK">1BHK</option>
               <option value="2BHK">2BHK</option>
               <option value="3BHK">3BHK</option>
-              <option value="3BHK+">3BHK+</option>
+              <option value="3BHK+">3+BHK</option>
             </select>&nbsp;&nbsp;&nbsp;&nbsp;
             <select class="form-control" id="budget" name="budget">
               <option >Budget</option>
-              <option value="$5000 - $50,000">$5000 - $50,000</option>
-              <option value="$50,000 - $100,000">$50,000 - $100,000</option>
-              <option value="$100,000 - $200,000">$100,000 - $200,000</option>
-              <option value="$200,000 - above">$200,000 - above</option>
+              <option value="$5000 - $50,000">₹5000 - ₹50,000</option>
+              <option value="$50,000 - $100,000">$50,000 - ₹100,000</option>
+              <option value="$100,000 - $200,000">₹100,000 - ₹200,000</option>
+              <option value="$200,000 - above">₹200,000 - above</option>
             </select>
             </div>
             <br>
@@ -400,6 +402,8 @@ function validateContactForm() {
                 <li class="col-lg-12 col-sm-12 col-xs-3"><a href="index.php">Home</a></li>
                 <li class="col-lg-12 col-sm-12 col-xs-3"><a href="about.html">About</a></li>
                 <li class="col-lg-12 col-sm-12 col-xs-3"><a href="contact.php">Contact</a></li>
+                <li class="col-lg-12 col-sm-12 col-xs-3"><a style="cursor:pointer" onclick="formFunction()">Requirements</a></li>
+
               </ul>
             </div>
             

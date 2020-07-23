@@ -1,7 +1,5 @@
 <?php
 
-
-
 if(!isset($_SESSION['admin_email'])){
 
 echo "<script>window.open('login.php','_self')</script>";
@@ -12,6 +10,7 @@ else {
 
 ?>
 
+<script src="js/jquery.min.js"></script>
 
 <div class="row"><!--  1 row Starts -->
 
@@ -57,6 +56,7 @@ else {
 <thead>
 
 <tr>
+<th>Featured</th>
 <th>Property ID</th>
 <th>Property Title</th>
 <th>Property Image</th>
@@ -97,11 +97,17 @@ $pro_type = $row_pro['property_type'];
 
 $pro_price = $row_pro['price'];
 
+$featured = $row_pro['featured'];
+
 $i++;
 
 ?>
 
 <tr>
+
+<td>
+    <input type="checkbox" id="<?php echo $property_id; ?>" onchange="featured(this.id)" <?php echo $featured=='1'?'checked':''; ?>>
+</td>
 
 <td><?php echo $i; ?></td>
 
@@ -109,7 +115,7 @@ $i++;
 
 <td><img src="../images/properties/<?php echo $pro_image; ?>" width="60" height="60"></td>
 
-<td> <?php echo $pro_price; ?> </td>
+<td> ₹ <?php echo $pro_price; ?> </td>
 
 <td><?php echo $pro_availability; ?></td>
 
@@ -157,7 +163,34 @@ $i++;
 
 </div><!-- 2 row Ends -->
 
-
-
-
 <?php } ?>
+
+<script>
+function featured(id)
+{
+    if(document.getElementById(id).checked)
+    {
+        $.ajax({
+        url:"setfeatured.php",
+        type:"POST",
+        data: { "property_id" :  id},
+        success:function(para)
+        {
+            console.log(para)
+        }
+        })
+    }
+    else
+    {
+        $.ajax({
+        url:"unsetfeatured.php",
+        type:"POST",
+        data: { "property_id" :  id},
+        success:function(para)
+        {
+            console.log(para)
+        }
+        })
+    }
+}
+</script>

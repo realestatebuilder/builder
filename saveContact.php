@@ -5,6 +5,7 @@ if (isset($_POST['name'])) {
 	$email = strip_tags($_POST['email']);
 	$location = strip_tags($_POST['location']);
 	$optradio = strip_tags($_POST['optradio']);
+
 	if($_POST['type'] !="Type"  and $_POST['bhk'] !="BHK" and $_POST['budget'] !="Budget"){
 		$type = strip_tags($_POST['type']);
 		$bhk = strip_tags($_POST['bhk']);
@@ -29,8 +30,8 @@ if (isset($_POST['name'])) {
 
 }
 
-$sql =  "INSERT INTO customer_expectations (username,email,preference_location,purchasetime,property_type,bhk,budget,door,kitchen,bedroom) VALUES('" . $name. "', '" . $email. "','" . $location. "','" . $optradio. "','" . $type. "','" . $bhk. "','" . $budget. "','" . $door. "','" . $kitchen. "','" . $bedroom. "')";
-
+// $sql = "INSERT INTO customer_expectations (username,email,preference_location,purchasetime,property_type,bhk,budget,door,kitchen,bedroom) VALUES('" . $name. "', '" . $email. "','" . $location. "','" . $optradio. "','" . $type. "','" . $bhk. "','" . $budget. "','" . $door. "','" . $kitchen. "','" . $bedroom. "')";
+$sql = "INSERT INTO customer_expectations (username,email,preference_location,purchasetime,property_type,bhk,budget,door,kitchen,bedroom) VALUES('$name','$email','$location','$optradio','$type','$bhk',$budget,'$door','$kitchen','$bedroom')";
 if (mysqli_query($con, $sql)) {
 	echo "New record created successfully";
  } else {
