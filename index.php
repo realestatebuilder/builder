@@ -715,7 +715,6 @@ top: 0;
 <!-- /.modal -->
 
 
-
 <script type="text/javascript" src="js/jquery.min.js"></script>
 		<script type="text/javascript" src="js/jquery.ba-cond.min.js"></script>
 		<script type="text/javascript" src="js/jquery.slitslider.js"></script>
@@ -803,7 +802,6 @@ top: 0;
 			});
 		</script>
 
-<script src="assets/owl-carousel/owl.carousel.js"></script>
 <script>
 
   $("#filtertoggle").click(function(){
@@ -888,6 +886,13 @@ function formFunction(){
   $("#contact-modal").modal('show');
 }
 </script>
+
+<!--External Scripts -->
+<script src="assets/jquery-1.9.1.min.js"></script>
+<script src="assets/bootstrap/js/bootstrap.js"></script>
+<script src="assets/script.js"></script>
+<script src="assets/owl-carousel/owl.carousel.js"></script>
+<!--End External Scripts -->
 
 </body>
 
