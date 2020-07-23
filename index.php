@@ -377,53 +377,88 @@ top: 0;
 </div>
 <!-- #Header Starts -->
 </div>
-<div class="container1">
+<div class="">
     
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-      <li data-target="#myCarousel" data-slide-to="2"></li>
-      <li data-target="#myCarousel" data-slide-to="3"></li>
-      <li data-target="#myCarousel" data-slide-to="4"></li>
-    </ol>
+<div id="slider" class="sl-slider-wrapper">
 
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner">
-      <div class="item active">
-        <img src="2.jpg"  style="width:100%;">
-       
-        <div class="top-left"> 2 Bed Rooms and 1 Dinning Room Aparment on Sale</div>
-      </div>
+<div class="sl-slider">
 
-      <div class="item">
-        <img src="2.jpg"  style="width:100%;">
-      </div>
-
-      <div class="item">
-        <img src="2.jpg"  style="width:100%;">
-      </div>
-
-      <div class="item">
-        <img src="2.jpg"  style="width:100%;">
-      </div>
-    
-      <div class="item">
-        <img src="2.jpg"  style="width:100%;">
-      </div>
+  <div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-25" data-slice2-rotation="-25" data-slice1-scale="2" data-slice2-scale="2">
+    <div class="sl-slide-inner">
+      <div class="bg-img bg-img-1"></div>
+      <h2><a href="#">2 Bed Rooms and 1 Dinning Room Aparment on Sale</a></h2>
+      <blockquote>              
+      <p class="location"><span class="glyphicon glyphicon-map-marker"></span> 1890 Syndey, Australia</p>
+      <p>Until he extends the circle of his compassion to all living things, man will not himself find peace.</p>
+      <cite>$ 20,000,000</cite>
+      </blockquote>
     </div>
-
-    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right"></span>
-      <span class="sr-only">Next</span>
-    </a>
   </div>
+  
+  <div class="sl-slide" data-orientation="vertical" data-slice1-rotation="10" data-slice2-rotation="-15" data-slice1-scale="1.5" data-slice2-scale="1.5">
+    <div class="sl-slide-inner">
+      <div class="bg-img bg-img-2"></div>
+      <h2><a href="#">2 Bed Rooms and 1 Dinning Room Aparment on Sale</a></h2>
+      <blockquote>              
+      <p class="location"><span class="glyphicon glyphicon-map-marker"></span> 1890 Syndey, Australia</p>
+      <p>Until he extends the circle of his compassion to all living things, man will not himself find peace.</p>
+      <cite>$ 20,000,000</cite>
+      </blockquote>
+    </div>
+  </div>
+  
+  <div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="3" data-slice2-rotation="3" data-slice1-scale="2" data-slice2-scale="1">
+    <div class="sl-slide-inner">
+      <div class="bg-img bg-img-3"></div>
+      <h2><a href="#">2 Bed Rooms and 1 Dinning Room Aparment on Sale</a></h2>
+      <blockquote>              
+      <p class="location"><span class="glyphicon glyphicon-map-marker"></span> 1890 Syndey, Australia</p>
+      <p>Until he extends the circle of his compassion to all living things, man will not himself find peace.</p>
+      <cite>$ 20,000,000</cite>
+      </blockquote>
+    </div>
+  </div>
+  
+  <div class="sl-slide" data-orientation="vertical" data-slice1-rotation="-5" data-slice2-rotation="25" data-slice1-scale="2" data-slice2-scale="1">
+    <div class="sl-slide-inner">
+      <div class="bg-img bg-img-4"></div>
+      <h2><a href="#">2 Bed Rooms and 1 Dinning Room Aparment on Sale</a></h2>
+      <blockquote>              
+      <p class="location"><span class="glyphicon glyphicon-map-marker"></span> 1890 Syndey, Australia</p>
+      <p>Until he extends the circle of his compassion to all living things, man will not himself find peace.</p>
+      <cite>$ 20,000,000</cite>
+      </blockquote>
+    </div>
+  </div>
+  
+  <div class="sl-slide" data-orientation="horizontal" data-slice1-rotation="-5" data-slice2-rotation="10" data-slice1-scale="2" data-slice2-scale="1">
+    <div class="sl-slide-inner">
+      <div class="bg-img bg-img-5"></div>
+      <h2><a href="#">2 Bed Rooms and 1 Dinning Room Aparment on Sale</a></h2>
+      <blockquote>              
+      <p class="location"><span class="glyphicon glyphicon-map-marker"></span> 1890 Syndey, Australia</p>
+      <p>Until he extends the circle of his compassion to all living things, man will not himself find peace.</p>
+      <cite>$ 20,000,000</cite>
+      </blockquote>
+    </div>
+  </div>
+</div><!-- /sl-slider -->
+
+
+<nav id="nav-arrows" class="nav-arrows">
+  <span class="nav-arrow-prev">Previous</span>
+  <span class="nav-arrow-next">Next</span>
+</nav>
+
+<nav id="nav-dots" class="nav-dots">
+  <span class="nav-dot-current"></span>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+</nav>
+
+</div><!-- /slider-wrapper -->
 </div>
 
 
@@ -652,6 +687,95 @@ top: 0;
   </div>
 </div>
 <!-- /.modal -->
+
+
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+		<script type="text/javascript" src="js/jquery.ba-cond.min.js"></script>
+		<script type="text/javascript" src="js/jquery.slitslider.js"></script>
+		<script type="text/javascript">	
+			$(function() {
+			
+				var Page = (function() {
+
+					var $navArrows = $( '#nav-arrows' ),
+						$nav = $( '#nav-dots > span' ),
+						slitslider = $( '#slider' ).slitslider( {
+							onBeforeChange : function( slide, pos ) {
+
+								$nav.removeClass( 'nav-dot-current' );
+								$nav.eq( pos ).addClass( 'nav-dot-current' );
+
+							}
+						} ),
+
+						init = function() {
+
+							initEvents();
+							
+						},
+						initEvents = function() {
+
+							// add navigation events
+							$navArrows.children( ':last' ).on( 'click', function() {
+
+								slitslider.next();
+								return false;
+
+							} );
+
+							$navArrows.children( ':first' ).on( 'click', function() {
+								
+								slitslider.previous();
+								return false;
+
+							} );
+
+							$nav.each( function( i ) {
+							
+								$( this ).on( 'click', function( event ) {
+									
+									var $dot = $( this );
+									
+									if( !slitslider.isActive() ) {
+
+										$nav.removeClass( 'nav-dot-current' );
+										$dot.addClass( 'nav-dot-current' );
+									
+									}
+									
+									slitslider.jump( i + 1 );
+									return false;
+								
+								} );
+								
+							} );
+
+						};
+
+						return { init : init };
+
+				})();
+
+				Page.init();
+
+				/**
+				 * Notes: 
+				 * 
+				 * example how to add items:
+				 */
+
+				/*
+				
+				var $items  = $('<div class="sl-slide sl-slide-color-2" data-orientation="horizontal" data-slice1-rotation="-5" data-slice2-rotation="10" data-slice1-scale="2" data-slice2-scale="1"><div class="sl-slide-inner bg-1"><div class="sl-deco" data-icon="t"></div><h2>some text</h2><blockquote><p>bla bla</p><cite>Margi Clarke</cite></blockquote></div></div>');
+				
+				// call the plugin's add method
+				ss.add($items);
+
+				*/
+			
+			});
+		</script>
 
 <script>
 $(document).ready(function(){	
