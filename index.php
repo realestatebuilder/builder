@@ -559,6 +559,7 @@ top: 0;
         <p class="price">Address: <?php echo $address; ?></p>
         <p class="price">Type: <?php echo $property_type; ?></p>
         <div class="listing-detail">
+          Rooms <br>
         <span data-toggle="tooltip" data-placement="bottom" data-original-title="Bed Room"><?php echo $bed_room; ?></span> 
         <span data-toggle="tooltip" data-placement="bottom" data-original-title="Living Room"><?php echo $liv_room; ?></span> 
    

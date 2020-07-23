@@ -136,7 +136,7 @@ echo "<script>console.log('$property_id')</script>";
             <!-- Nav Starts -->
             <div class="navbar-collapse  collapse">
               <ul class="nav navbar-nav navbar-right">
-               <li class="active"><a href="index.php">Home</a></li>
+               <li><a href="index.php">Home</a></li>
                 <li><a href="about.html">About</a></li>
                 <li><a href="contact.php">Contact</a></li>
               </ul>
@@ -276,7 +276,7 @@ echo "<script>console.log('$property_id')</script>";
 
   </div>
   <div><h4><span class="glyphicon glyphicon-map-marker"></span> Location</h4>
-<div class="well location" ><?php echo $map_location; ?></div>
+<div class="well location"><?php echo $map_location; ?></div>
   </div>
 
   </div>
