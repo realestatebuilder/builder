@@ -25,7 +25,8 @@ if(!$result){
 
  	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css" />
   <link rel="stylesheet" href="assets/style.css"/>
-  <!-- <script src="assets/jquery-1.9.1.min.js"></script> -->
+  <script src="assets/jquery-1.9.1.min.js"></script>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 	
 
 
@@ -712,7 +713,6 @@ function formFunction(){
     <!-- slitslider -->
 
     <script src='assets/google_analytics_auto.js'></script></head>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 
   		<script type="text/javascript" src="js/jquery.ba-cond.min.js"></script>
 		<script type="text/javascript" src="js/jquery.slitslider.js"></script>
