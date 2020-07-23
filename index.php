@@ -558,9 +558,6 @@ top: 0;
   <div class="properties-listing spacer"> <a href="list-properties.php" class="pull-right viewall">View All Listing</a>
     <h2>Featured Properties</h2>
     <div id="owl-example" class="owl-carousel">
-      
-     
-      
       <?php 
 	  	while($property_result = mysqli_fetch_assoc($result)){
 			$id = $property_result['property_id'];
@@ -806,6 +803,7 @@ top: 0;
 			});
 		</script>
 
+<script src="assets/owl-carousel/owl.carousel.js"></script>
 <script>
 
   $("#filtertoggle").click(function(){
