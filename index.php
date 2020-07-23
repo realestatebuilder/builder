@@ -715,6 +715,7 @@ top: 0;
 <!-- /.modal -->
 
 
+
 <script type="text/javascript" src="js/jquery.min.js"></script>
 		<script type="text/javascript" src="js/jquery.ba-cond.min.js"></script>
 		<script type="text/javascript" src="js/jquery.slitslider.js"></script>
@@ -802,6 +803,16 @@ top: 0;
 			});
 		</script>
 
+<!-- External Scripts -->
+<script src="assets/jquery-1.9.1.min.js"></script>
+<script src="assets/bootstrap/js/bootstrap.js"></script>
+<script src="assets/script.js"></script>
+<script src="assets/owl-carousel/owl.carousel.js"></script>
+<script type="text/javascript" src="assets/slitslider/js/modernizr.custom.79639.js"></script>
+<script type="text/javascript" src="assets/slitslider/js/jquery.ba-cond.min.js"></script>
+<script type="text/javascript" src="assets/slitslider/js/jquery.slitslider.js"></script>
+<!-- End External Scripts -->
+
 <script>
 
   $("#filtertoggle").click(function(){
@@ -886,13 +897,6 @@ function formFunction(){
   $("#contact-modal").modal('show');
 }
 </script>
-
-<!--External Scripts -->
-<script src="assets/jquery-1.9.1.min.js"></script>
-<script src="assets/bootstrap/js/bootstrap.js"></script>
-<script src="assets/script.js"></script>
-<script src="assets/owl-carousel/owl.carousel.js"></script>
-<!--End External Scripts -->
 
 </body>
 
