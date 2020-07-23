@@ -230,14 +230,14 @@ onsubmit="return validateContactForm()">
               <option value="1BHK">1BHK</option>
               <option value="2BHK">2BHK</option>
               <option value="3BHK">3BHK</option>
-              <option value="3BHK+">3BHK+</option>
+              <option value="3BHK+">3+BHK</option>
             </select>&nbsp;&nbsp;&nbsp;&nbsp;
             <select class="form-control" id="budget" name="budget">
               <option >Budget</option>
-              <option value="$5000 - $50,000">$5000 - $50,000</option>
-              <option value="$50,000 - $100,000">$50,000 - $100,000</option>
-              <option value="$100,000 - $200,000">$100,000 - $200,000</option>
-              <option value="$200,000 - above">$200,000 - above</option>
+              <option value="$5000 - $50,000">₹5000 - ₹50,000</option>
+              <option value="$50,000 - $100,000">$50,000 - ₹100,000</option>
+              <option value="$100,000 - $200,000">₹100,000 - ₹200,000</option>
+              <option value="$200,000 - above">₹200,000 - above</option>
             </select>
             </div>
             <br>
@@ -400,6 +400,8 @@ function validateContactForm() {
                 <li class="col-lg-12 col-sm-12 col-xs-3"><a href="index.php">Home</a></li>
                 <li class="col-lg-12 col-sm-12 col-xs-3"><a href="about.html">About</a></li>
                 <li class="col-lg-12 col-sm-12 col-xs-3"><a href="contact.php">Contact</a></li>
+                <li class="col-lg-12 col-sm-12 col-xs-3"><a style="cursor:pointer" onclick="formFunction()">Requirements</a></li>
+
               </ul>
             </div>
             
