@@ -66,7 +66,7 @@
             <div class="navbar-collapse  collapse">
               <ul class="nav navbar-nav navbar-right">
                 <li><a href="index.php">Home</a></li>
-                <li><a href="about.html">About</a></li>
+                <li><a href="about.php">About</a></li>
                 <li class="active"><a href="contact.php">Contact</a></li>
                 <li><a style="cursor:pointer" onclick="formFunction()">Requirements</a></li>
               </ul>
@@ -193,12 +193,12 @@ onsubmit="return validateContactForm()">
       <form id="contactForm" name="contact" role="form">
         <div class="modal-body">				
           <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" name="name" class="form-control">
+            <label for="name">Name*</label>
+            <input type="text" name="name" class="form-control" required>
           </div>
           <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" name="email" class="form-control">
+            <label for="email">Email*</label>
+            <input type="email" name="email" class="form-control" required>
           </div>
           <div class="form-group">
             <label for="email">Location Preferences</label>
@@ -242,10 +242,10 @@ onsubmit="return validateContactForm()">
             </select>&nbsp;&nbsp;&nbsp;&nbsp;
             <select class="form-control" id="budget" name="budget">
               <option >Budget</option>
-              <option value="$5000 - $50,000">₹5000 - ₹50,000</option>
-              <option value="$50,000 - $100,000">$50,000 - ₹100,000</option>
-              <option value="$100,000 - $200,000">₹100,000 - ₹200,000</option>
-              <option value="$200,000 - above">₹200,000 - above</option>
+              <option value="₹5000 - ₹50,000">₹5000 - ₹50,000</option>
+              <option value="₹50,000 - ₹100,000">$50,000 - ₹100,000</option>
+              <option value="₹100,000 - ₹200,000">₹100,000 - ₹200,000</option>
+              <option value="₹200,000 - above">₹200,000 - above</option>
             </select>
             </div>
             <br>
@@ -406,7 +406,7 @@ function validateContactForm() {
                    <h4>Information</h4>
                    <ul class="row">
                 <li class="col-lg-12 col-sm-12 col-xs-3"><a href="index.php">Home</a></li>
-                <li class="col-lg-12 col-sm-12 col-xs-3"><a href="about.html">About</a></li>
+                <li class="col-lg-12 col-sm-12 col-xs-3"><a href="about.php">About</a></li>
                 <li class="col-lg-12 col-sm-12 col-xs-3"><a href="contact.php">Contact</a></li>
                 <li class="col-lg-12 col-sm-12 col-xs-3"><a style="cursor:pointer" onclick="formFunction()">Requirements</a></li>
 

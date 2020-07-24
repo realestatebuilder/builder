@@ -1,8 +1,16 @@
 <?php
 include_once "connection.php";
 
-$query = "select * from properties";
+$query = "select * from properties where featured = '1'";
 $result = mysqli_query($con, $query);
+$featured_count = mysqli_num_rows($result);
+
+if($featured_count < 2)
+{
+  $query = "select * from properties ORDER BY property_id DESC LIMIT 3";
+  $result = mysqli_query($con, $query);
+}
+
 
 $query2 = "select * from admins where admin_id = 0";
 $result2 = mysqli_query($con, $query2);
@@ -187,11 +195,19 @@ top: 0;
 				<form id="contactForm" name="contact" role="form">
 					<div class="modal-body">				
 						<div class="form-group">
+<<<<<<< HEAD
 							<label for="name">Name</label>
 							<input type="text" name="name" class="form-control" required>
 						</div>
 						<div class="form-group">
 							<label for="email">Email</label>
+=======
+							<label for="name">Name*</label>
+							<input type="text" name="name" class="form-control" required>
+						</div>
+						<div class="form-group">
+							<label for="email">Email*</label>
+>>>>>>> 850f352fac8656464b674a0905e426db65f0e6d5
 							<input type="email" name="email" class="form-control" required>
 						</div>
 						<div class="form-group">
@@ -232,14 +248,14 @@ top: 0;
 								<option value="1BHK">1BHK</option>
 								<option value="2BHK">2BHK</option>
 								<option value="3BHK">3BHK</option>
-                <option value="3BHK+">3BHK+</option>
+                <option value="3BHK+">3+BHK</option>
 							</select>&nbsp;&nbsp;&nbsp;&nbsp;
 							<select class="form-control" id="budget" name="budget">
 								<option >Budget</option>
-                <option value="$5000 - $50,000">$5000 - $50,000</option>
-                <option value="$50,000 - $100,000">$50,000 - $100,000</option>
-                <option value="$100,000 - $200,000">$100,000 - $200,000</option>
-                <option value="$200,000 - above">$200,000 - above</option>
+                <option value="₹5000 - ₹50,000">$5000 - $50,000</option>
+                <option value="₹50,000 - ₹100,000">$50,000 - $100,000</option>
+                <option value="₹100,000 - ₹200,000">$100,000 - $200,000</option>
+                <option value="₹200,000 - above">$200,000 - above</option>
 							</select>
 							</div>
 							<br>
@@ -326,7 +342,7 @@ top: 0;
             <div class="navbar-collapse  collapse">
               <ul class="nav navbar-nav navbar-right">
                <li><a href="index.php">Homes</a></li>
-                <li><a href="about.html">About</a></li>
+                <li><a href="about.php">About</a></li>
                 <li><a href="contact.php">Contact</a></li>
                 <li><a onclick="formFunction()">Requirements</a></li>
               </ul>
@@ -513,7 +529,7 @@ top: 0;
 </div>
 <!-- banner -->
 <div class="container">
-  <div class="properties-listing spacer"> <a href="list-properties.php" class="pull-right viewall">View All Listing</a>
+  <div class="properties-listing spacer"> <a href="list-properties.php" class="pull-right viewall"><b>View All Listing</b></a>
     <h2>Featured Properties</h2>
     <div id="owl-example" class="owl-carousel">
       
@@ -538,7 +554,7 @@ top: 0;
       <div class="properties">
 
         <div class="image-holder"><img src="images/properties/<?php echo $property_img; ?>" class="img-responsive" alt="properties">
-            <a class='patch sale' href='#' style='color:black;'>
+            <a class='patch sale' style='color:black;'>
                 <div class='thepatch'><?php echo $delivery_type; ?></div>
                 <div class='patch-background'> </div>
             </a>
@@ -553,6 +569,7 @@ top: 0;
         <p class="price">Type: <?php echo $property_type; ?></p>
         <!-- <p class="price">Utilities: <?php echo $utility; ?></p> -->
         <div class="listing-detail">
+          Rooms <br>
         <span data-toggle="tooltip" data-placement="bottom" data-original-title="Bed Room"><?php echo $bed_room; ?></span> 
         <span data-toggle="tooltip" data-placement="bottom" data-original-title="Living Room"><?php echo $liv_room; ?></span> 
    
@@ -570,9 +587,9 @@ top: 0;
     <div class="row">
       <div class="col-lg-12 col-sm-12 recent-view">
         <h3>About Us</h3>
-        <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.<br><a href="about.html">Learn More</a></p>
-         <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.<br><a href="about.html">Learn More</a></p>
-          <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.<br><a href="about.html">Learn More</a></p>
+        <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.<br><a href="about.php">Learn More</a></p>
+         <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.<br><a href="about.php">Learn More</a></p>
+          <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.<br><a href="about.php">Learn More</a></p>
       
       </div>
       
@@ -593,8 +610,10 @@ top: 0;
                    <h4>Information</h4>
                    <ul class="row">
                 <li class="col-lg-12 col-sm-12 col-xs-3"><a href="index.php">Home</a></li>
-                <li class="col-lg-12 col-sm-12 col-xs-3"><a href="about.html">About</a></li>
+                <li class="col-lg-12 col-sm-12 col-xs-3"><a href="about.php">About</a></li>
                 <li class="col-lg-12 col-sm-12 col-xs-3"><a href="contact.php">Contact</a></li>
+                <li class="col-lg-12 col-sm-12 col-xs-3"><a style="cursor:pointer" onclick="formFunction()">Requirements</a></li>
+
               </ul>
             </div>
             

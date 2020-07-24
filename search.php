@@ -1,6 +1,6 @@
 <?php
 include_once "connection.php";
-
+error_reporting(0);
 if(isset($_POST['submit']))
 {
   $search_value = $_POST['search'];
@@ -244,7 +244,7 @@ top: 0;
             <div class="navbar-collapse  collapse">
               <ul class="nav navbar-nav navbar-right">
                <li><a href="index.php">Home</a></li>
-                <li><a href="about.html">About</a></li>
+                <li><a href="about.php">About</a></li>
                 <li><a href="contact.php">Contact</a></li>
                 <li><a style="cursor:pointer" onclick="formFunction()">Requirements</a></li>
 
@@ -391,7 +391,7 @@ top: 0;
           <div class="col-lg-4 col-sm-6">
           <div class="properties">
             <div class="image-holder"><img src="images/properties/<?php echo $property_img; ?>" class="img-responsive" alt="properties">
-                <a class='patch sale' href='#' style='color:black;'>
+                <a class='patch sale' style='color:black;'>
                     <div class='thepatch'><?php echo $delivery_type; ?></div>
                     <div class='patch-background'> </div>
                 </a> 
@@ -453,7 +453,7 @@ top: 0;
                    <h4>Information</h4>
                    <ul class="row">
                 <li class="col-lg-12 col-sm-12 col-xs-3"><a href="index.php">Home</a></li>
-                <li class="col-lg-12 col-sm-12 col-xs-3"><a href="about.html">About</a></li>
+                <li class="col-lg-12 col-sm-12 col-xs-3"><a href="about.php">About</a></li>
                 <li class="col-lg-12 col-sm-12 col-xs-3"><a href="contact.php">Contact</a></li>
                 <li class="col-lg-12 col-sm-12 col-xs-3"><a style="cursor:pointer" onclick="formFunction()">Requirements</a></li>
 

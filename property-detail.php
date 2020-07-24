@@ -137,7 +137,7 @@ echo "<script>console.log('$property_id')</script>";
             <div class="navbar-collapse  collapse">
               <ul class="nav navbar-nav navbar-right">
                <li><a href="index.php">Home</a></li>
-                <li><a href="about.html">About</a></li>
+                <li><a href="about.php">About</a></li>
                 <li><a href="contact.php">Contact</a></li>
               </ul>
             </div>
@@ -187,17 +187,17 @@ echo "<script>console.log('$property_id')</script>";
 
 
 <div class="search-form"><h4><span class="glyphicon glyphicon-search"></span> Search for</h4>
-  <form action="search.php" method="post" name="search">
+<form action="search.php" method="post" name="search">
     <input type="text" class="form-control" name="search" placeholder="Search of Properties">
     <div class="row">
-            <div class="col-lg-5">
+    <div class="col-lg-7">
               <select name="delivery_type" class="form-control">
-                <option value="Rent/Sale">Rent/Sale</option>
+                <option value="">Rent/Sale</option>
                 <option value="Rent">Rent</option>
                 <option value="Sale">Sale</option>
               </select>
             </div>
-            <div class="col-lg-7">
+    <div class="col-lg-5">
               <select name="search_price" class="form-control">
                 <option>Price</option>
                 <option value="1">$5000 - $50,000</option>
@@ -206,10 +206,12 @@ echo "<script>console.log('$property_id')</script>";
                 <option value="4">$200,000 - above</option>
               </select>
             </div>
+            
+            
           </div>
 
           <div class="row">
-          <div class="col-lg-12">
+          <div class="col-lg-7">
               <select name="property_type" class="form-control">
                 <option>Property Type</option>
                 <option value="Apartment">Apartment</option>
@@ -217,7 +219,19 @@ echo "<script>console.log('$property_id')</script>";
                 <option value="Office-Space">Office-Space</option>
               </select>
               </div>
+              <div class="col-lg-5">
+            <select name="bhk" class="form-control">
+                  <option value = "">BHKs</option>
+                  <option value="rk">1RK</option>
+                  <option value="1">1BHK</option>
+                  <option value="2">2BHK</option>
+                  <option value="3">3BHK</option>
+                  <option value="4">3+BHK</option>
+                </select>
+              </div>
           </div>
+    <input type="text" class="form-control" name="area_search" placeholder="Type Area or Pincode">
+
           <button name="submit" class="btn btn-primary">Find Now</button>
 </form>
   </div>
@@ -293,7 +307,7 @@ echo "<script>console.log('$property_id')</script>";
 <a href="#" class="btn btn-info btn-lg videoBtn" data-toggle="modal" data-target="#exampleModal2" style="cursor:pointer"><span class="glyphicon glyphicon-facetime-video"></span> <b>Property Video &nbsp; &nbsp; &nbsp; </b></a>
 <br><br>
 
-<div class="well"><p class="price">₹ <?php echo $price; ?></p></div>
+<div class="well"><p class="price">₹ <?php echo $price; ?>/-</p></div>
 
   <p class="area"><div class="well"><span class="glyphicon glyphicon-map-marker"></span> <?php echo $property_address; ?> </div></p>
   
@@ -312,7 +326,7 @@ echo "<script>console.log('$property_id')</script>";
     </div>
     <div class="well"><span class="glyphicon glyphicon-check"></span> &nbsp; <b>Parking - <?php echo $parking; ?> </b></div>
     
-    <div class="well"><span class="glyphicon glyphicon-check"></span> &nbsp; <b>Floor Space - <?php echo $floor_space; ?></b></div>
+    <div class="well"><span class="glyphicon glyphicon-check"></span> &nbsp; <b>Floor Space - <?php echo $floor_space; ?> (ft<sup>2</sup>)</b></div>
 
     
 
@@ -342,7 +356,7 @@ echo "<script>console.log('$property_id')</script>";
                    <h4>Information</h4>
                    <ul class="row">
                 <li class="col-lg-12 col-sm-12 col-xs-3"><a href="index.php">Home</a></li>
-                <li class="col-lg-12 col-sm-12 col-xs-3"><a href="about.html">About</a></li>
+                <li class="col-lg-12 col-sm-12 col-xs-3"><a href="about.php">About</a></li>
                 <li class="col-lg-12 col-sm-12 col-xs-3"><a href="contact.php">Contact</a></li>
                 <li class="col-lg-12 col-sm-12 col-xs-3"><a style="cursor:pointer" onclick="formFunction()">Requirements</a></li>
 
