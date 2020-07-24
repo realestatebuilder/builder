@@ -1,8 +1,16 @@
 <?php
 include_once "connection.php";
 
-$query = "select * from properties";
+$query = "select * from properties where featured = '1'";
 $result = mysqli_query($con, $query);
+$featured_count = mysqli_num_rows($result);
+
+if($featured_count < 2)
+{
+  $query = "select * from properties ORDER BY property_id DESC LIMIT 3";
+  $result = mysqli_query($con, $query);
+}
+
 
 $query2 = "select * from admins where admin_id = 0";
 $result2 = mysqli_query($con, $query2);
@@ -516,7 +524,7 @@ top: 0;
 </div>
 <!-- banner -->
 <div class="container">
-  <div class="properties-listing spacer"> <a href="list-properties.php" class="pull-right viewall">View All Listing</a>
+  <div class="properties-listing spacer"> <a href="list-properties.php" class="pull-right viewall"><b>View All Listing</b></a>
     <h2>Featured Properties</h2>
     <div id="owl-example" class="owl-carousel">
       
