@@ -197,11 +197,11 @@ while($admin_result = mysqli_fetch_assoc($result2))
         <div class="modal-body">				
           <div class="form-group">
             <label for="name">Name</label>
-            <input type="text" name="name" class="form-control">
+            <input type="text" name="name" class="form-control" required>
           </div>
           <div class="form-group">
             <label for="email">Email</label>
-            <input type="email" name="email" class="form-control">
+            <input type="email" name="email" class="form-control" required>
           </div>
           <div class="form-group">
             <label for="email">Location Preferences</label>
