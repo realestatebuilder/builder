@@ -310,7 +310,7 @@ echo "<script>console.log('$property_id')</script>";
 <a href="#" class="btn btn-info btn-lg videoBtn" data-toggle="modal" data-target="#exampleModal2" style="cursor:pointer"><span class="glyphicon glyphicon-facetime-video"></span> <b>Property Video &nbsp; &nbsp; &nbsp; </b></a>
 <br><br>
 
-<div class="well"><p class="price">₹ <?php echo $price; ?></p></div>
+<div class="well"><p class="price">₹ <?php echo $price; ?>/-</p></div>
 
   <p class="area"><div class="well"><span class="glyphicon glyphicon-map-marker"></span> <?php echo $property_address; ?> </div></p>
   
@@ -329,7 +329,7 @@ echo "<script>console.log('$property_id')</script>";
     </div>
     <div class="well"><span class="glyphicon glyphicon-check"></span> &nbsp; <b>Parking - <?php echo $parking; ?> </b></div>
     
-    <div class="well"><span class="glyphicon glyphicon-check"></span> &nbsp; <b>Floor Space - <?php echo $floor_space; ?></b></div>
+    <div class="well"><span class="glyphicon glyphicon-check"></span> &nbsp; <b>Floor Space - <?php echo $floor_space; ?> (ft<sup>2</sup>)</b></div>
 
     
 
