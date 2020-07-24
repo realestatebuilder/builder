@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!-- Mirrored from thebootstrapthemes.com/live/thebootstrapthemes-realestate/contact.php by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 11 Apr 2017 02:45:10 GMT -->
+<!-- Mirrored from thebootstrapthemes.com/live/thebootstrapthemes-realestate/about.php by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 11 Apr 2017 02:43:16 GMT -->
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
 <head>
-<script src="https://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
-<title>Contact us - Mridha Real Estate</title>
+<title>About us - Mridha Real Estate</title>
 <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
@@ -35,6 +34,8 @@
 <script src='assets/google_analytics_auto.js'></script></head>
 
 <body>
+
+
 <!-- Header Starts -->
 <div class="navbar-wrapper">
 
@@ -56,9 +57,9 @@
             <!-- Nav Starts -->
             <div class="navbar-collapse  collapse">
               <ul class="nav navbar-nav navbar-right">
-                <li><a href="index.php">Home</a></li>
-                <li><a href="about.php">About</a></li>
-                <li class="active"><a href="contact.php">Contact</a></li>
+               <li><a href="index.php">Home</a></li>
+                <li class="active"><a href="about.php">About</a></li>
+                <li><a href="contact.php">Contact</a></li>
                 <li><a style="cursor:pointer" onclick="formFunction()">Requirements</a></li>
               </ul>
             </div>
@@ -82,7 +83,6 @@
 
             <div class="menu">
               <ul class="pull-right">
-              	
                 <li><a href="list-properties.php">List Properties</a>
                 	 <ul class="dropdown">
                     	<li><a href="sale.php">Properties on Sale</a></li>
@@ -97,7 +97,7 @@
 </div><!-- banner -->
 <div class="inside-banner">
   <div class="container"> 
-    <h2>Contact Us</h2>
+    <h2>About Us</h2>
 </div>
 </div>
 <!-- banner -->
@@ -105,75 +105,84 @@
 
 <div class="container">
 <div class="spacer">
-<div class="row contact">
-  <div class="col-lg-6 col-sm-6 ">
-
-    <!-- <form name="frmContact" id="" frmContact"" method="post"
-    action="" onsubmit="return validateContactForm()">
-                <input type="text" class="form-control" id="fullname" name="fullname" placeholder="Full Name">
-                <input type="email" class="form-control" id="email" name="email" placeholder="Email Address">
-                <input type="text" class="form-control" id="contact" name="contact" placeholder="Contact Number">
-                <textarea rows="6" class="form-control" id="message" name="message" placeholder="Message"></textarea>
-                 <button type="submit" class="btn btn-success" name="Submit">Send Message</button>
-          
-
-</form> -->
-<form name="frmContact" id="" frmContact"" method="post"
-action="" enctype="multipart/form-data"
-onsubmit="return validateContactForm()">
-
-<div class="input-row">
-   <br /> <input
-        type="text" class="form-control" placeholder="Name" name="userName"
-        id="userName" /> <span
-        id="userName-info" class="info"></span>
-</div>
-<div class="input-row">
-<br /> <input type="text"
-        placeholder="Email" class="form-control" name="userEmail" id="userEmail" />
-        <span id="userEmail-info"
-        class="info"></span>
-</div>
-<div class="input-row">
-<br /> <input type="text"
-        class="form-control" placeholder="Subject" name="subject" id="subject" />
-        <span id="subject-info"
-        class="info"></span>
-</div>
-<div class="input-row">
-  <br />
-    <textarea name="content" id="content"
-    class="form-control"placeholder="Message"  cols="60" rows="6"></textarea>
-    <span id="userMessage-info"
-    class="info"></span>
-</div>
-<br />
-<div>
-    <input type="submit" name="send" class="btn btn-success"
-        value="Send" />
-
-    <div id="statusMessage"> 
-            <?php
-            if (! empty($message)) {
-                ?>
-                <p class='<?php echo $type; ?>Message'><?php echo $message; ?></p>
-            <?php
-            }
-            ?>
-        </div>
-</div>
-</form>
-                
-        </div>
-  <div class="col-lg-6 col-sm-6 ">
-  <div class="well">
-  <iframe width="100%" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.7036630718885!2d73.7926615148424!3d18.497077487422647!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bfcb4b26eec9%3A0xba00f8adbe639778!2sNav%20Vinayak%20Society!5e0!3m2!1sen!2sin!4v1595481623878!5m2!1sen!2sin" ></iframe>
-    <!-- <iframe  src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Pulchowk,+Patan,+Central+Region,+Nepal&amp;aq=0&amp;oq=pulch&amp;sll=37.0625,-95.677068&amp;sspn=39.371738,86.572266&amp;ie=UTF8&amp;hq=&amp;hnear=Pulchowk,+Patan+Dhoka,+Patan,+Bagmati,+Central+Region,+Nepal&amp;ll=27.678236,85.316853&amp;spn=0.001347,0.002642&amp;t=m&amp;z=14&amp;output=embed"></iframe></div> -->
+<div class="row">
+  <div class="col-lg-8  col-lg-offset-2">
+  <img src="images/about.jpg" class="img-responsive thumbnail"  alt="realestate">
+  <h3>Business Background</h3>
+  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+  <h3>Company Profile</h3>
+  <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.</p>
+  <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
   </div>
+ 
 </div>
 </div>
 </div>
 
+
+
+
+<div class="footer">
+
+<div class="container">
+
+
+
+<div class="row">
+            <div class="col-lg-3 col-sm-3">
+                   <h4>Information</h4>
+                   <ul class="row">
+                <li class="col-lg-12 col-sm-12 col-xs-3"><a href="index.php">Home</a></li>
+                <li class="col-lg-12 col-sm-12 col-xs-3"><a href="about.php">About</a></li>
+                <li class="col-lg-12 col-sm-12 col-xs-3"><a href="contact.php">Contact</a></li>
+                <li class="col-lg-12 col-sm-12 col-xs-3"><a style="cursor:pointer" onclick="formFunction()">Requirements</a></li>
+
+              </ul>
+            </div>
+            
+            <div class="col-lg-3 col-sm-3">
+                    <h4>Newsletter</h4>
+                    <p>Get notified about the latest properties in our marketplace.</p>
+                    <form class="form-inline" role="form" action="addguest.php?pg=about.php" method="POST">
+                            <input type="email" name="mailid_guest" placeholder="Enter Your email address" class="form-control" required>
+                                <button class="btn btn-success" type="submit">Notify Me!</button></form>
+            </div>
+            
+            <div class="col-lg-3 col-sm-3">
+                    <h4>Follow us</h4>
+                    <a href="#"><img src="images/facebook.png" alt="facebook"></a>
+                    <a href="#"><img src="images/twitter.png" alt="twitter"></a>
+                    <a href="#"><img src="images/linkedin.png" alt="linkedin"></a>
+                    <a href="#"><img src="images/instagram.png" alt="instagram"></a>
+            </div>
+
+            <?php 
+
+include_once "connection.php";
+
+$query2 = "select * from admins where admin_id = 0";
+$result2 = mysqli_query($con, $query2);
+
+while($admin_result = mysqli_fetch_assoc($result2))
+{
+  $admin_address = $admin_result['admin_address'];
+  $admin_email = $admin_result['admin_email'];
+  $admin_contact = $admin_result['admin_contact'];
+}
+
+?>
+             <div class="col-lg-3 col-sm-3">
+                    <h4>Contact us</h4>
+                    <p><b>Mridha Real Estate</b><br>
+                <span class="glyphicon glyphicon-map-marker"></span> <?php echo $admin_address; ?> <br>
+                <span class="glyphicon glyphicon-envelope"></span> <?php echo $admin_email; ?><br>
+                <span class="glyphicon glyphicon-earphone"></span> <?php echo $admin_contact; ?></p>
+            </div>
+        </div>
+<p class="copyright">Copyright 2017. All rights reserved.	</p>
+
+
+</div></div>
 
 
 
@@ -237,7 +246,7 @@ onsubmit="return validateContactForm()">
             <select class="form-control" id="budget" name="budget">
               <option >Budget</option>
               <option value="₹5000 - ₹50,000">₹5000 - ₹50,000</option>
-              <option value="₹50,000 - ₹100,000">$50,000 - ₹100,000</option>
+              <option value="₹50,000 - ₹100,000">₹50,000 - ₹100,000</option>
               <option value="₹100,000 - ₹200,000">₹100,000 - ₹200,000</option>
               <option value="₹200,000 - above">₹200,000 - above</option>
             </select>
@@ -302,156 +311,6 @@ onsubmit="return validateContactForm()">
   </div>
 </div>			
 
-<script type="text/javascript">
-
-$(document).ready(function(){	
-    $("#contact-modal").modal('hide');
-    $("#more-info").hide();
-    var $radios = $('input[name=vaastu]').change(function () {
-		var value = $radios.filter(':checked').val();
-		if(value=="yes"){
-			$("#more-info").show();
-		}
-		else{
-			$("#more-info").hide();
-			
-		}
-	});
-    $("#contactForm").submit(function(event){
-		submitForm();
-		return false;
-	});
- });
-function formFunction(){
-  $("#contact-modal").modal('show');
-}
-function submitForm(){
-	 $.ajax({
-		type: "POST",
-		url: "saveContact.php",
-		cache:false,
-		data: $('form#contactForm').serialize(),
-		success: function(response){
-			alert(response);
-			$("#contact-modal").modal('hide');
-		},
-		error: function(){
-			alert("Error");
-		}
-	});
-}
-function validateContactForm() {
-    var valid = true;
-
-    $(".info").html("");
-    $(".input-field").css('border', '#e0dfdf 1px solid');
-    var userName = $("#userName").val();
-    var userEmail = $("#userEmail").val();
-    var subject = $("#subject").val();
-    var content = $("#content").val();
-    
-            if (userName == "") {
-                        $("#userName-info").html(" Name required");
-                        $("#userName").css('border', '#e66262 1px solid');
-                        valid = false;
- 
-                    }
-            else if (!userName.match(/^[A-Za-z]+$/))
-            {
-                $("#userName-info").html("Invalid Name");
-                $("#userEmail").css('border', '#e66262 1px solid');
-                valid = false;
-            }
-
-            if (userEmail == "") {
-                $("#userEmail-info").html("Email required");
-                $("#userEmail").css('border', '#e66262 1px solid');
-                valid = false;
-            }
-            if (!userEmail.match(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/))
-            {
-                $("#userEmail-info").html("Invalid Email Address");
-                $("#userEmail").css('border', '#e66262 1px solid');
-                valid = false;
-            }
-
-            if (subject == "") {
-                $("#subject-info").html("Subject required");
-                $("#subject").css('border', '#e66262 1px solid');
-                valid = false;
-            }
-            if (content == "") {
-                $("#userMessage-info").html("Message required");
-                $("#content").css('border', '#e66262 1px solid');
-                valid = false;
-            }
-            return valid;
-        }
-</script>
-
-<div class="footer">
-
-<div class="container">
-
-
-
-<div class="row">
-            <div class="col-lg-3 col-sm-3">
-                   <h4>Information</h4>
-                   <ul class="row">
-                <li class="col-lg-12 col-sm-12 col-xs-3"><a href="index.php">Home</a></li>
-                <li class="col-lg-12 col-sm-12 col-xs-3"><a href="about.php">About</a></li>
-                <li class="col-lg-12 col-sm-12 col-xs-3"><a href="contact.php">Contact</a></li>
-                <li class="col-lg-12 col-sm-12 col-xs-3"><a style="cursor:pointer" onclick="formFunction()">Requirements</a></li>
-
-              </ul>
-            </div>
-            
-            <div class="col-lg-3 col-sm-3">
-                    <h4>Newsletter</h4>
-                    <p>Get notified about the latest properties in our marketplace.</p>
-                    <form class="form-inline" role="form" action="addguest.php?pg=contact.php" method="POST">
-                            <input type="email" name="mailid_guest" placeholder="Enter Your email address" class="form-control" required>
-                                <button class="btn btn-success" type="submit">Notify Me!</button></form>
-            </div>
-            
-            <div class="col-lg-3 col-sm-3">
-                    <h4>Follow us</h4>
-                    <a href="#"><img src="images/facebook.png" alt="facebook"></a>
-                    <a href="#"><img src="images/twitter.png" alt="twitter"></a>
-                    <a href="#"><img src="images/linkedin.png" alt="linkedin"></a>
-                    <a href="#"><img src="images/instagram.png" alt="instagram"></a>
-            </div>
-<?php 
-
-include_once "connection.php";
-
-$query2 = "select * from admins where admin_id = 0";
-$result2 = mysqli_query($con, $query2);
-
-while($admin_result = mysqli_fetch_assoc($result2))
-{
-  $admin_address = $admin_result['admin_address'];
-  $admin_email = $admin_result['admin_email'];
-  $admin_contact = $admin_result['admin_contact'];
-}
-
-?>
-             <div class="col-lg-3 col-sm-3">
-                    <h4>Contact us</h4>
-                    <p><b>Mridha Real Estate</b><br>
-                <span class="glyphicon glyphicon-map-marker"></span> <?php echo $admin_address; ?> <br>
-                <span class="glyphicon glyphicon-envelope"></span> <?php echo $admin_email; ?><br>
-                <span class="glyphicon glyphicon-earphone"></span> <?php echo $admin_contact; ?></p>
-            </div>
-        </div>
-<p class="copyright">Copyright 2017. All rights reserved.	</p>
-
-
-</div></div>
-
-
-
 
 <!-- Modal -->
 <div id="loginpop" class="modal fade">
@@ -489,28 +348,49 @@ while($admin_result = mysqli_fetch_assoc($result2))
 </div>
 <!-- /.modal -->
 
-<?php
-if(!empty($_POST["send"])) {
-	$name = $con -> real_escape_string($_POST["userName"]);
-	$email = $con -> real_escape_string($_POST["userEmail"]);
-	$subject = $con -> real_escape_string($_POST["subject"]);
-	$content = $con -> real_escape_string($_POST["content"]);
 
-	
-	mysqli_query($con, "INSERT INTO contact (user_name, user_email,subject,content) VALUES ('" . $name. "', '" . $email. "','" . $subject. "','" . $content. "')");
-  $insert_id = mysqli_insert_id($con);
-  echo "<script>alert('Your contact information is saved successfully')</script>";
-	//if(!empty($insert_id)) {
-	   $message = "Your contact information is saved successfully.";
-	   $type = "success";
-	//}
+<script>
+  $(document).ready(function(){	
+    $("#contact-modal").modal('hide');
+    $("#more-info").hide();
+    var $radios = $('input[name=vaastu]').change(function () {
+		var value = $radios.filter(':checked').val();
+		if(value=="yes"){
+			$("#more-info").show();
+		}
+		else{
+			$("#more-info").hide();
+			
+		}
+	});
+
+    $("#contactForm").submit(function(event){
+		submitForm();
+		return false;
+	});
+ });
+function formFunction(){
+  $("#contact-modal").modal('show');
 }
-
-?>
-
+function submitForm(){
+	 $.ajax({
+		type: "POST",
+		url: "saveContact.php",
+		cache:false,
+		data: $('form#contactForm').serialize(),
+		success: function(response){
+			alert(response);
+			$("#contact-modal").modal('hide');
+		},
+		error: function(){
+			alert("Error");
+		}
+	});
+}
+</script>
 </body>
 
-<!-- Mirrored from thebootstrapthemes.com/live/thebootstrapthemes-realestate/contact.php by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 11 Apr 2017 02:45:10 GMT -->
+<!-- Mirrored from thebootstrapthemes.com/live/thebootstrapthemes-realestate/about.php by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 11 Apr 2017 02:43:40 GMT -->
 </html>
 
 
