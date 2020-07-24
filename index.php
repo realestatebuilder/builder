@@ -135,9 +135,9 @@ top: 0;
     #filterdiv{
       display:none;
     }
-    .inside-banner
+    .banner-search
     {
-      padding:10px 0;
+      height:140px;
     }
 
 }
@@ -188,15 +188,15 @@ top: 0;
 					<div class="modal-body">				
 						<div class="form-group">
 							<label for="name">Name</label>
-							<input type="text" name="name" class="form-control">
+							<input type="text" name="name" class="form-control" required>
 						</div>
 						<div class="form-group">
 							<label for="email">Email</label>
-							<input type="email" name="email" class="form-control">
+							<input type="email" name="email" class="form-control" required>
 						</div>
 						<div class="form-group">
 							<label for="email">Location Preferences</label>
-							<input type="text" name="location" class="form-control">
+							<input type="text" name="location" class="form-control" required>
 						</div>
 						<div class="form-group">
 							<label for="message">Not making a purchase today? Tell us when</label><br/>
@@ -353,10 +353,7 @@ top: 0;
               <ul class="pull-right">
               	
                 <li><a href="list-properties.php">List Properties</a>
-                	 <ul class="dropdown">
-                    	<li><a href="sale.php">Properties on Sale</a></li>
-                        <li><a href="rent.php">Properties on Rent</a></li>
-                    </ul>
+                	 
                 </li>
               	<li><a href="mapview.php">Map View</a></li>
               </ul>

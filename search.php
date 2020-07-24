@@ -188,10 +188,32 @@ border-color: #e77548 #e77548 transparent transparent;
 top: 0;
 
 }
+#filtertoggle{
+    color:white;
+    border-radius:2px;
+    background-color: #72b70f;
+    margin-left:-2.5%;
+    width:105%;
+    text-align:center;
+    font-weight:bold;
+    padding-top:4%;
+    padding-bottom: 4%;
+    display:none;
+    
+}
+#filterdiv{
+      display:block;
+    }
 @media screen and (max-width: 480px) {
   .patch{
     margin-top:-13%;
     margin-left:-33.5%;
+  }
+  #filtertoggle{
+        display:block;
+    }
+  #filterdiv{
+    display:none;
   }
 }
   </style>
@@ -250,10 +272,7 @@ top: 0;
               <ul class="pull-right">
               	
                 <li><a href="list-properties.php">List Properties</a>
-                	 <ul class="dropdown">
-                    	<li><a href="sale.php">Properties on Sale</a></li>
-                        <li><a href="rent.php">Properties on Rent</a></li>
-                    </ul>
+                	 
                 </li>
               	<li><a href="mapview.php">Map View</a></li>
                 
@@ -277,7 +296,8 @@ top: 0;
 <div class="row">
 <div class="col-lg-3 col-sm-4 ">
 
-  <div class="search-form"><h4><span class="glyphicon glyphicon-search"></span> Search for</h4>
+   <button id="filtertoggle" >Search for properties</button><br><br>
+  <div class="search-form" id="filterdiv"><h4><span class="glyphicon glyphicon-search"></span> Search for</h4>
   <form action="search.php" method="post" name="search">
     <input type="text" class="form-control" name="search" placeholder="Search of Properties">
     <div class="row">
@@ -591,7 +611,20 @@ while($admin_result = mysqli_fetch_assoc($result2))
 
 
 </body>
+<script>
+$("#filtertoggle").click(function(){
+    var x = document.getElementById("filterdiv");
+    if (x.style.display === "none") {
+      $('#filterdiv').show(500);
+      x.style.display === "block"
+      // x.style.display = "block";
+     
+    } else {
+      x.style.display = "none";
+    }
+  });
 
+</script>
 <!-- Mirrored from thebootstrapthemes.com/live/thebootstrapthemes-realestate/buysalerent.php by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 11 Apr 2017 02:45:10 GMT -->
 </html>
 
