@@ -143,7 +143,7 @@ else {
 <option> Select Property Type </option>
 <option> Apartment </option>
 <option> Office Space </option>
-<option> Building </option>
+<option> Bungalow </option>
 <option> Shop </option>
 
 </select>

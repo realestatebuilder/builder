@@ -27,7 +27,7 @@
               <select name="property_type" class="form-control">
                 <option>Property Type</option>
                 <option value="Apartment">Apartment</option>
-                <option value="Building">Building</option>
+                <option value="Bungalow">Bungalow</option>
                 <option value="Office-Space">Office-Space</option>
               </select>
               </div>

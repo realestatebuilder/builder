@@ -149,7 +149,7 @@ else {
 <option> <?php echo $row_pro['property_type']; ?> </option>
 <option> Apartment </option>
 <option> Office Space </option>
-<option> Building </option>
+<option> Bungalow </option>
 <option> Shop </option>
 
 </select>

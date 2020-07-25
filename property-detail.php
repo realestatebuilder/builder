@@ -386,7 +386,7 @@ echo "<script>console.log('$property_id')</script>";
               <option value="Apartment">Apartment</option>
               <option value="Shop">Shop</option>
               <option value="OfficeSpace">Office Space</option>
-              <option value="Building">Building</option>
+              <option value="Bungalow">Bungalow</option>
             </select> &nbsp;&nbsp;&nbsp;&nbsp;
             <select class="form-control" id="bhk" name="bhk">
               <option >BHK   </option>

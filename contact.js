@@ -1,5 +1,5 @@
 $(document).ready(function(){	
-
+	$("#includedContent").load("contactmodal.html");
     $("#contact-modal").modal('hide');
     $("#more-info").hide();
     var $radios = $('input[name=vaastu]').change(function () {
