@@ -1,8 +1,16 @@
 <?php
 include_once "connection.php";
 
-$query = "select * from properties";
+$query = "select * from properties where featured = '1'";
 $result = mysqli_query($con, $query);
+$featured_count = mysqli_num_rows($result);
+
+if($featured_count < 2)
+{
+  $query = "select * from properties ORDER BY property_id DESC LIMIT 3";
+  $result = mysqli_query($con, $query);
+}
+
 
 $query2 = "select * from admins where admin_id = 0";
 $result2 = mysqli_query($con, $query2);
@@ -135,9 +143,9 @@ top: 0;
     #filterdiv{
       display:none;
     }
-    .inside-banner
+    .banner-search
     {
-      padding:10px 0;
+      height:140px;
     }
 
 }
@@ -187,16 +195,24 @@ top: 0;
 				<form id="contactForm" name="contact" role="form">
 					<div class="modal-body">				
 						<div class="form-group">
+<<<<<<< HEAD
+							<label for="name">Name</label>
+							<input type="text" name="name" class="form-control" required>
+						</div>
+						<div class="form-group">
+							<label for="email">Email</label>
+=======
 							<label for="name">Name*</label>
 							<input type="text" name="name" class="form-control" required>
 						</div>
 						<div class="form-group">
 							<label for="email">Email*</label>
+>>>>>>> 850f352fac8656464b674a0905e426db65f0e6d5
 							<input type="email" name="email" class="form-control" required>
 						</div>
 						<div class="form-group">
 							<label for="email">Location Preferences</label>
-							<input type="text" name="location" class="form-control">
+							<input type="text" name="location" class="form-control" required>
 						</div>
 						<div class="form-group">
 							<label for="message">Not making a purchase today? Tell us when</label><br/>
@@ -353,10 +369,7 @@ top: 0;
               <ul class="pull-right">
               	
                 <li><a href="list-properties.php">List Properties</a>
-                	 <ul class="dropdown">
-                    	<li><a href="sale.php">Properties on Sale</a></li>
-                        <li><a href="rent.php">Properties on Rent</a></li>
-                    </ul>
+                	 
                 </li>
               	<li><a href="mapview.php">Map View</a></li>
               </ul>
@@ -516,7 +529,7 @@ top: 0;
 </div>
 <!-- banner -->
 <div class="container">
-  <div class="properties-listing spacer"> <a href="list-properties.php" class="pull-right viewall">View All Listing</a>
+  <div class="properties-listing spacer"> <a href="list-properties.php" class="pull-right viewall"><b>View All Listing</b></a>
     <h2>Featured Properties</h2>
     <div id="owl-example" class="owl-carousel">
       

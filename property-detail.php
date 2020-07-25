@@ -164,10 +164,7 @@ echo "<script>console.log('$property_id')</script>";
             <div class="menu list2" >
               <ul class="pull-right list">
                 <li ><a class="li-item" href="list-properties.php">List Properties</a>
-                	 <ul class="dropdown">
-                    	<li><a href="sale.php">Properties on Sale</a></li>
-                        <li><a href="rent.php">Properties on Rent</a></li>
-                    </ul>
+                	 
                 </li>
               	<li ><a class="li-item" href="mapview.php">Map View</a></li>
                 
@@ -292,7 +289,7 @@ echo "<script>console.log('$property_id')</script>";
 
   </div>
   <div><h4><span class="glyphicon glyphicon-map-marker"></span> Location</h4>
-<div class="well location"><?php echo $map_location; ?></div>
+<div class="well location" style="width:80%;"><?php echo $map_location; ?></div>
   </div>
 
   </div>

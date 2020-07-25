@@ -33,7 +33,16 @@
 <!-- slitslider -->
 
 <script src='assets/google_analytics_auto.js'></script></head>
+<style>
+@media only screen and (max-width: 600px) {
+   
+    .inside-banner
+    {
+      padding:12px 0;
+    }
 
+}
+</style>
 <body>
 <!-- Header Starts -->
 <div class="navbar-wrapper">
@@ -84,10 +93,7 @@
               <ul class="pull-right">
               	
                 <li><a href="list-properties.php">List Properties</a>
-                	 <ul class="dropdown">
-                    	<li><a href="sale.php">Properties on Sale</a></li>
-                        <li><a href="rent.php">Properties on Rent</a></li>
-                    </ul>
+                	 
                 </li>
               	<li><a href="mapview.php">Map View</a></li>
               </ul>
