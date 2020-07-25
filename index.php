@@ -195,19 +195,11 @@ top: 0;
 				<form id="contactForm" name="contact" role="form">
 					<div class="modal-body">				
 						<div class="form-group">
-<<<<<<< HEAD
-							<label for="name">Name</label>
-							<input type="text" name="name" class="form-control" required>
-						</div>
-						<div class="form-group">
-							<label for="email">Email</label>
-=======
 							<label for="name">Name*</label>
 							<input type="text" name="name" class="form-control" required>
 						</div>
 						<div class="form-group">
 							<label for="email">Email*</label>
->>>>>>> 850f352fac8656464b674a0905e426db65f0e6d5
 							<input type="email" name="email" class="form-control" required>
 						</div>
 						<div class="form-group">
