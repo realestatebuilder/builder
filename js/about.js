@@ -1,6 +1,7 @@
 $(document).ready(function(){	
   $("#contact-modal").modal('hide');
   $("#more-info").hide();
+  $("#successmodal").hide();
   var $radios = $('input[name=vaastu]').change(function () {
       var value = $radios.filter(':checked').val();
       if(value=="yes"){
@@ -27,8 +28,11 @@ function submitForm(){
       cache:false,
       data: $('form#contactForm').serialize(),
       success: function(response){
-          alert(response);
-          $("#contact-modal").modal('hide');
+          if(response){
+            $("#contact-modal").modal('hide');
+            $("#successmodal").modal('show');
+          }
+
       },
       error: function(){
           alert("Error");

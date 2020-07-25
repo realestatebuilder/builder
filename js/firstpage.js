@@ -1,8 +1,5 @@
 $(document).ready(function(){	
 
-//   $('a').click(function(){
-//     $(this).addClass("active");
-// });
   if (document.cookie.indexOf('modal_shown=') >= 0) {
     $('#temp').modal('hide');
  //do nothing if modal_shown cookie is present
@@ -12,7 +9,8 @@ $(document).ready(function(){
   //cookie will expire when browser is closed
 }
 
-	$("#more-info").hide();
+    $("#more-info").hide();
+    $("#successmodal").hide();
 
 	var $radios = $('input[name=vaastu]').change(function () {
 		var value = $radios.filter(':checked').val();
@@ -43,8 +41,11 @@ function submitForm(){
 		cache:false,
 		data: $('form#contactForm').serialize(),
 		success: function(response){
-			alert(response);
-			$("#contact-modal").modal('hide');
+            if(response){
+                $("#contact-modal").modal('hide');
+                $("#successmodal").modal('show');
+              }
+    
 		},
 		error: function(){
 			alert("Error");
