@@ -119,31 +119,30 @@
 
 </form> -->
 <form name="frmContact" id="" frmContact"" method="post"
-action="" enctype="multipart/form-data"
-onsubmit="return validateContactForm()">
+action="" enctype="multipart/form-data">
 
 <div class="input-row">
    <br /> <input
         type="text" class="form-control" placeholder="Name" name="userName"
-        id="userName" /> <span
+        id="userName" onfocusout="validatename()" /> <span
         id="userName-info" class="info"></span>
 </div>
 <div class="input-row">
 <br /> <input type="text"
-        placeholder="Email" class="form-control" name="userEmail" id="userEmail" />
+        placeholder="Email" class="form-control" name="userEmail" id="userEmail" onfocusout="validateemail()" />
         <span id="userEmail-info"
         class="info"></span>
 </div>
 <div class="input-row">
 <br /> <input type="text"
-        class="form-control" placeholder="Subject" name="subject" id="subject" />
+        class="form-control" placeholder="Subject" name="subject" id="subject" onfocusout="validatesubject()" />
         <span id="subject-info"
         class="info"></span>
 </div>
 <div class="input-row">
   <br />
     <textarea name="content" id="content"
-    class="form-control"placeholder="Message"  cols="60" rows="6"></textarea>
+    class="form-control"placeholder="Message"  cols="60" rows="6" onfocusout="validatemessage()"></textarea>
     <span id="userMessage-info"
     class="info"></span>
 </div>
@@ -340,53 +339,78 @@ function submitForm(){
 		}
 	});
 }
-function validateContactForm() {
-    var valid = true;
 
-    $(".info").html("");
-    $(".input-field").css('border', '#e0dfdf 1px solid');
+function validatename() {
+
     var userName = $("#userName").val();
-    var userEmail = $("#userEmail").val();
-    var subject = $("#subject").val();
-    var content = $("#content").val();
-    
-            if (userName == "") {
+    if (userName == "") {
                         $("#userName-info").html(" Name required");
                         $("#userName").css('border', '#e66262 1px solid');
-                        valid = false;
+                  
  
                     }
-            else if (!userName.match(/^[A-Za-z]+$/))
+    else if (!userName.match(/^[A-Za-z]+$/))
             {
                 $("#userName-info").html("Invalid Name");
                 $("#userEmail").css('border', '#e66262 1px solid');
-                valid = false;
+            
             }
+    else{
+      $("#userName-info").html("");
+    }
+            
+    }
 
-            if (userEmail == "") {
-                $("#userEmail-info").html("Email required");
-                $("#userEmail").css('border', '#e66262 1px solid');
-                valid = false;
-            }
-            if (!userEmail.match(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/))
+function validateemail() {
+
+  var userEmail = $("#userEmail").val();
+  if (userEmail == "") {
+        $("#userEmail-info").html("Email required");
+        $("#userEmail").css('border', '#e66262 1px solid');
+     
+      }
+  else if (!userEmail.match(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/))
             {
                 $("#userEmail-info").html("Invalid Email Address");
                 $("#userEmail").css('border', '#e66262 1px solid');
                 valid = false;
             }
+    else{
+      $("#userEmail-info").html("");
+    }
+    }
 
-            if (subject == "") {
+function validatesubject() {
+  
+  var subject = $("#subject").val();
+  if (subject == "") {
                 $("#subject-info").html("Subject required");
                 $("#subject").css('border', '#e66262 1px solid');
                 valid = false;
             }
-            if (content == "") {
+    else{
+      $("#subject-info").html("");
+    }
+            
+    }
+
+
+function validatemessage() {
+
+  var content = $("#content").val();
+  if (content == "") {
                 $("#userMessage-info").html("Message required");
                 $("#content").css('border', '#e66262 1px solid');
                 valid = false;
             }
-            return valid;
-        }
+  else{
+    $("#userMessage-info").html("");
+    }
+     
+           
+    }
+
+
 </script>
 
 <div class="footer">

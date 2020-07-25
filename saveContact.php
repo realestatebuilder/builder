@@ -30,8 +30,8 @@ if (isset($_POST['name'])) {
 
 }
 
-// $sql = "INSERT INTO customer_expectations (username,email,preference_location,purchasetime,property_type,bhk,budget,door,kitchen,bedroom) VALUES('" . $name. "', '" . $email. "','" . $location. "','" . $optradio. "','" . $type. "','" . $bhk. "','" . $budget. "','" . $door. "','" . $kitchen. "','" . $bedroom. "')";
-$sql = "INSERT INTO customer_expectations (username,email,preference_location,purchasetime,property_type,bhk,budget,door,kitchen,bedroom) VALUES('$name','$email','$location','$optradio','$type','$bhk',$budget,'$door','$kitchen','$bedroom')";
+$sql = "INSERT INTO customer_expectations (username,email,preference_location,purchasetime,property_type,bhk,budget,door,kitchen,bedroom) VALUES('" . $name. "', '" . $email. "','" . $location. "','" . $optradio. "','" . $type. "','" . $bhk. "','" . $budget. "','" . $door. "','" . $kitchen. "','" . $bedroom. "')";
+//$sql = "INSERT INTO customer_expectations (username,email,preference_location,purchasetime,property_type,bhk,budget,door,kitchen,bedroom) VALUES('$name','$email','$location','$optradio','$type','$bhk',$budget,'$door','$kitchen','$bedroom')";
 if (mysqli_query($con, $sql)) {
 	echo "New record created successfully";
  } else {
