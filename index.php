@@ -31,7 +31,7 @@ if(!$result){
  	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css" />
   <link rel="stylesheet" href="assets/style.css"/>
   <script src="assets/jquery-1.9.1.min.js"></script>
-  <script src="js/firstpage.js"></script>
+  <script src="js/contact.js"></script>
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 	
 

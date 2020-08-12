@@ -6,21 +6,23 @@ if (isset($_POST['name'])) {
 	$location = strip_tags($_POST['location']);
 	$optradio = strip_tags($_POST['optradio']);
 
-	if($_POST['type'] !="Type"  and $_POST['bhk'] !="BHK" and $_POST['budget'] !="Budget"){
-		$type = strip_tags($_POST['type']);
-		$bhk = strip_tags($_POST['bhk']);
-		$budget = strip_tags($_POST['budget']);
-	}else{
-		$type = "None";
-		$bhk = "None";
-		$budget ="None";
-
+	$type = $_POST['type']? strip_tags($_POST['type']) : 'None';
+	$bhk = $_POST['bhk']? strip_tags($_POST['bhk']) : 'None';
+	if($_POST['budget']!="Budget"){
+		$budget = $_POST['budget']? strip_tags($_POST['budget']) : 'None';
 	}
+
+	if($_POST['budget1']!="Budget"){
+		$budget = $_POST['budget1']? strip_tags($_POST['budget1']) : 'None';
+	}
+
+
+
 	$vaastu = strip_tags($_POST['vaastu']);
-	if($vaastu=="yes" and $_POST['door-facing'] !="Door Facing"  and $_POST['kitchen'] !="Kitchen" and $_POST['bedroom'] !="Bedroom"){
-		$door = strip_tags($_POST['door-facing']);
-		$kitchen = strip_tags($_POST['kitchen']);
-		$bedroom = strip_tags($_POST['bedroom']);
+	if($vaastu=="yes"){
+		$door = $_POST['door-facing']? strip_tags($_POST['door-facing']) : 'None';
+		$kitchen = $_POST['kitchen']? strip_tags($_POST['kitchen']) : 'None';
+		$bedroom = $_POST['bedroom']? strip_tags($_POST['bedroom']) : 'None';
 	}else{
 		$door = "None";
 		$kitchen = "None";

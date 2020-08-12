@@ -28,7 +28,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <a class="close" data-dismiss="modal">×</a>
-          <h3> Tell us about your dream project</h3>
+          <h3> When Are You Willing To Purchase</h3>
         </div>
         <form id="contactForm" name="contact" role="form">
           <div class="modal-body">				
@@ -62,6 +62,19 @@
             </div>
             <br>
   
+
+            <div class="form-group">
+              <label for="message">Buy/Rent</label><br/>
+              <label class="radio-inline">
+              <input type="radio" name="buy_rent" value="buy">
+              Buy
+              </label>
+              <label class="radio-inline">
+              <input type="radio" name="buy_rent" value="rent">Rent
+              </label>
+            </div>
+            <br>
+  
             <div class="form-group" >
               <label for="message">Help us know more about you</label><br/>
               
@@ -72,20 +85,33 @@
                 <option value="OfficeSpace">Office Space</option>
                 <option value="Bungalow">Bungalow</option>
               </select> &nbsp;&nbsp;&nbsp;&nbsp;
+
               <select class="form-control" id="bhk" name="bhk">
                 <option >BHK   </option>
                 <option value="1RK">1RK</option>
                 <option value="1BHK">1BHK</option>
                 <option value="2BHK">2BHK</option>
-                <option value="3BHK">3BHK</option>
-                <option value="3BHK+">3+BHK</option>
+                <option value="3BHK">3 & 3+ BHK</option>
+                <option value="3BHK + Servant Quarters">3BHK + Servant Quarters</option>
+                <option value="4 & 4+ BHK">4 & 4+ BHK</option>
+                <option value="4BHK + Servant Quarters">4BHK + Servant Quarters</option>
               </select>&nbsp;&nbsp;&nbsp;&nbsp;
-              <select class="form-control" id="budget" name="budget">
+              <select class="form-control" id="buybudget" name="budget1">
                 <option >Budget</option>
-                <option value="₹5000 - ₹50,000">₹5000 - ₹50,000</option>
-                <option value="₹50,000 - ₹100,000">$50,000 - ₹100,000</option>
-                <option value="₹100,000 - ₹200,000">₹100,000 - ₹200,000</option>
-                <option value="₹200,000 - above">₹200,000 - above</option>
+                <option value="20L – 50L">20L – 50L</option>
+                <option value="50L – 1Cr">50L – 1Cr</option>
+                <option value="1Cr – 2Cr">1Cr – 2Cr</option>
+                <option value="2Cr – 5Cr">2Cr – 5Cr</option>
+                <option value="5Cr+">5Cr+</option>
+              </select>
+              
+              <select class="form-control" id="rentbudget" name="budget">
+                <option >Budget</option>
+                <option value="5k – 10k">5k – 10k</option>
+                <option value="10k – 20k">10k – 20k</option>
+                <option value="20k – 30k">20k – 30k</option>
+                <option value="30k – 50k">30k – 50k</option>
+                <option value="50k+">50k+</option>
               </select>
               </div>
               <br>

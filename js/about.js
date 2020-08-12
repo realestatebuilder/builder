@@ -2,6 +2,8 @@ $(document).ready(function(){
   $("#contact-modal").modal('hide');
   $("#more-info").hide();
   $("#successmodal").hide();
+  $("#buybudget").hide();
+  $("#rentbudget").hide();
   var $radios = $('input[name=vaastu]').change(function () {
       var value = $radios.filter(':checked').val();
       if(value=="yes"){
@@ -12,6 +14,20 @@ $(document).ready(function(){
           
       }
   });
+
+  var $radios1 = $('input[name=buy_rent]').change(function () {
+    var value = $radios1.filter(':checked').val();
+
+		if(value=="buy"){
+      $("#buybudget").show();
+      $("#rentbudget").hide();
+		}
+		if(value=="rent"){
+      $("#rentbudget").show();
+      $("#buybudget").hide();
+			
+		}
+	});
 
   $("#contactForm").submit(function(event){
       submitForm();
