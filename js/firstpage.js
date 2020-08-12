@@ -47,15 +47,14 @@ $(document).ready(function(){
 		  if($(this).val()=="Rent"){
 			$('#search_price').empty()
 			var rentoptions = {
-				val1 : "5k – 10k",
-				val2 : "10k – 20k",
-				val3 : "20k – 30k",
-				val4 : "20k – 30k",
-				val5 : "50k+"
+				1 : "5k – 10k",
+				2 : "10k – 20k",
+				3 : "20k – 30k",
+				4 : "20k – 30k",
+				5 : "50k+"
 			};
 			var mySelect = $('#search_price');
 			$.each(rentoptions, function(val, text) {
-				
 				mySelect.append(
 					$('<option></option>').val(val).html(text)
 				);
@@ -63,16 +62,15 @@ $(document).ready(function(){
 		  }else{
 			$('#search_price').empty()
 			var buyoptons = {
-				val6 : "20L – 50L",
-				val7 : "50L – 1Cr",
-				val8 : "1Cr – 2Cr",
-				val9 : "2Cr – 5Cr",
-				val10 : "5Cr+"
+				6 : "20L – 50L",
+				7 : "50L – 1Cr",
+				8 : "1Cr – 2Cr",
+				9 : "2Cr – 5Cr",
+				10 : "5Cr+"
 				
 			};
 			var mySelect = $('#search_price');
 			$.each(buyoptons, function(val, text) {
-			
 				mySelect.append(
 					$('<option></option>').val(val).html(text)
 				);

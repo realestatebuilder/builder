@@ -50,61 +50,57 @@ if(isset($_POST['submit']))
   {
     $query .= "and property_type = '$property_type'";
   }
+
   if(!empty($_POST['search_price']))
   {
-    if($_POST['search_price']=="val1")
+
+    if($_POST['search_price']== 1)
     {
-      $query .= "and price > 5000 AND price < 10000";
+      $query .= "and price BETWEEN 5000 AND 10000"; 
+      
     }
-    else if($_POST['search_price']=="val2")
+    else if($_POST['search_price']== 2)
     {
       $query .= "and price BETWEEN 10000 AND 20000"; 
     }
-    else if($_POST['search_price']=="val3")
+    else if($_POST['search_price']==3)
     {
-      $query .= "and price price BETWEEN 20000 AND 30000"; 
+      $query .= "and  price BETWEEN 20000 AND 30000"; 
     }
-    else if($_POST['search_price']=="val4")
+    else if($_POST['search_price']==4)
     {
       $query .= "and price BETWEEN 30000 AND 50000"; 
     }
-    else if($_POST['search_price']=="val5")
+    else if($_POST['search_price']==5)
     {
-      $query .= "and price >= 50000 "; 
+      $query .= "and price > 50000 "; 
     }
-    else if($_POST['search_price']=="val6")
+    else if($_POST['search_price']==6)
     {
-      $query .= "and price > 2000000 AND price < 5000000";
+      $query .= "and price BETWEEN 2000000 AND 5000000"; 
+     
     }
-    else if($_POST['search_price']=="val7")
+    else if($_POST['search_price']==7)
     {
       $query .= "and price BETWEEN 5000000 AND 10000000"; 
     }
-    else if($_POST['search_price']=="val8")
+    else if($_POST['search_price']==8)
     {
-      $query .= "and price price BETWEEN 10000000 AND 20000000"; 
+      $query .= "and  price BETWEEN 10000000 AND 20000000"; 
     }
-    else if($_POST['search_price']=="val9")
+    else if($_POST['search_price']==9)
     {
-      $query .= "and price price BETWEEN 20000000 AND 50000000"; 
+      $query .= "and  price BETWEEN 20000000 AND 50000000"; 
     }
-    else if($_POST['search_price']=="val10")
+    else if($_POST['search_price']==10)
     {
-      $query .= "and price >= 50000000 "; 
+      $query .= "and price > 50000000 "; 
    
   }
    
   }
   
-
-  
-
-  
-  echo "<script>console.log($query)</script>";
-  
-  
-  
-  
+    echo "<script>console.log($query)</script>";
   
   $result = mysqli_query($con, $query) ;
 	if(!$result){
