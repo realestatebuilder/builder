@@ -1,4 +1,5 @@
 <?php
+
 include_once "connection.php";
 error_reporting(0);
 if(isset($_POST['submit']))
@@ -51,24 +52,53 @@ if(isset($_POST['submit']))
   }
   if(!empty($_POST['search_price']))
   {
-    if($_POST['search_price']==1)
+    if($_POST['search_price']=="val1")
     {
-      $query .= "and price > 5000 AND price < 50000";
+      $query .= "and price > 5000 AND price < 10000";
     }
-    else if($_POST['search_price']==2)
+    else if($_POST['search_price']=="val2")
     {
-      $query .= "and price BETWEEN 50000 AND 100000"; 
+      $query .= "and price BETWEEN 10000 AND 20000"; 
     }
-    else if($_POST['search_price']==3)
+    else if($_POST['search_price']=="val3")
     {
-      $query .= "and price price BETWEEN 100000 AND 200000"; 
+      $query .= "and price price BETWEEN 20000 AND 30000"; 
     }
-    else if($_POST['search_price']==4)
+    else if($_POST['search_price']=="val4")
     {
-      $query .= "and price >= 200000 "; 
+      $query .= "and price BETWEEN 30000 AND 50000"; 
     }
+    else if($_POST['search_price']=="val5")
+    {
+      $query .= "and price >= 50000 "; 
+    }
+    else if($_POST['search_price']=="val6")
+    {
+      $query .= "and price > 2000000 AND price < 5000000";
+    }
+    else if($_POST['search_price']=="val7")
+    {
+      $query .= "and price BETWEEN 5000000 AND 10000000"; 
+    }
+    else if($_POST['search_price']=="val8")
+    {
+      $query .= "and price price BETWEEN 10000000 AND 20000000"; 
+    }
+    else if($_POST['search_price']=="val9")
+    {
+      $query .= "and price price BETWEEN 20000000 AND 50000000"; 
+    }
+    else if($_POST['search_price']=="val10")
+    {
+      $query .= "and price >= 50000000 "; 
    
   }
+   
+  }
+  
+
+  
+
   
   echo "<script>console.log($query)</script>";
   
@@ -111,7 +141,7 @@ else
 	<script src="assets/bootstrap/js/bootstrap.js"></script>
   	<script src="assets/script.js"></script>
 
-
+    <script src="js/firstpage.js"></script>
 
 <!-- Owl stylesheet -->
 <link rel="stylesheet" href="assets/owl-carousel/owl.carousel.css">

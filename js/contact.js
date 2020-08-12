@@ -1,10 +1,23 @@
 $(document).ready(function(){	
 
+
+
+  
+	if (document.cookie.indexOf('modal_shown=') >= 0) {
+		$('#temp').modal('hide');
+	 //do nothing if modal_shown cookie is present
+	} else {
+	  $('#temp').modal('show');  //show modal pop up
+	  document.cookie = 'modal_shown=seen'; //set cookie modal_shown
+	  //cookie will expire when browser is closed
+	}
+	
   $("#contact-modal").modal('hide');
 	$("#more-info").hide();
   $("#successmodal").hide();
   $("#buybudget").hide();
-	$("#rentbudget").hide();
+  $("#rentbudget").hide();
+
     var $radios = $('input[name=vaastu]').change(function () {
 		var value = $radios.filter(':checked').val();
 		if(value=="yes"){

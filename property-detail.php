@@ -64,7 +64,7 @@ echo "<script>console.log('$property_id')</script>";
 	<script src="assets/bootstrap/js/bootstrap.js"></script>
   <script src="assets/script.js"></script>
 
-
+  <script src="js/firstpage.js"></script>
 
 <!-- Owl stylesheet -->
 <link rel="stylesheet" href="assets/owl-carousel/owl.carousel.css">

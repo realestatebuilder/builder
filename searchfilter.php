@@ -3,19 +3,16 @@
     <input type="text" class="form-control" name="search" placeholder="Search of Properties">
     <div class="row">
     <div class="col-lg-7">
-              <select name="delivery_type" class="form-control">
+              <select name="delivery_type" id="delivery_type" class="form-control">
                 <option value="">Rent/Sale</option>
                 <option value="Rent">Rent</option>
                 <option value="Sale">Sale</option>
               </select>
             </div>
     <div class="col-lg-5">
-              <select name="search_price" class="form-control">
+    <select name="search_price" id="search_price" class="form-control opt">
                 <option>Price</option>
-                <option value="1">$5000 - $50,000</option>
-                <option value="2">$50,000 - $100,000</option>
-                <option value="3">$100,000 - $200,000</option>
-                <option value="4">$200,000 - above</option>
+               
               </select>
             </div>
             

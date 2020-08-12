@@ -31,7 +31,7 @@ if(!$result){
  	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.css" />
   <link rel="stylesheet" href="assets/style.css"/>
   <script src="assets/jquery-1.9.1.min.js"></script>
-  <script src="js/contact.js"></script>
+  <script src="js/firstpage.js"></script>
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 	
 
@@ -287,23 +287,8 @@ top: 0;
         <form action="search.php" id="filterdiv" method="post">
           <input name="search" type="text" class="form-control" placeholder="Search of Properties">
           <div class="row">
-            <div class="col-lg-4 col-sm-4 ">
-              <select name="delivery_type" class="form-control">
-                <option value="">Rent/Sale</option>
-                <option value="Rent">Rent</option>
-                <option value="Sale">Sale</option>
-              </select>
-            </div>
-            <div class="col-lg-4 col-sm-4">
-             <select name="search_price" class="form-control">
-                <option>Price</option>
-                <option value="1">$5000 - $50,000</option>
-                <option value="2">$50,000 - $100,000</option>
-                <option value="3">$100,000 - $200,000</option>
-                <option value="4">$200,000 - above</option>
-              </select>
-            </div>
-            <div class="col-lg-4 col-sm-4">
+
+          <div class="col-lg-4 col-sm-4">
            <select name="property_type" class="form-control">
                 <option>Property Type</option>
                 <option value="Apartment">Apartment</option>
@@ -322,9 +307,27 @@ top: 0;
                   <option value="4">3+BHK</option>
                 </select>
               </div>
+
               <div class="col-lg-4 col-sm-4">
-                  <input name="area_search" type="text" class="form-control" placeholder="Type Area or Pincode">
+                  <input name="area_search" id="area_search" type="text" class="form-control" placeholder="Type Area or Pincode">
               </div>
+
+            <div class="col-lg-4 col-sm-4 ">
+              <select name="delivery_type" id="delivery_type" class="form-control">
+                <option value="">Rent/Sale</option>
+                <option value="Rent">Rent</option>
+                <option value="Sale">Sale</option>
+              </select>
+            </div>
+            
+
+            <div class="col-lg-4 col-sm-4">
+             <select name="search_price" id="search_price" class="form-control opt">
+                <option>Price</option>
+               
+              </select>
+            </div>
+        
               <div class="col-lg-3 col-sm-4">
               <button name="submit" class="btn btn-success">Find Now</button>
               </form> 
@@ -473,6 +476,7 @@ top: 0;
 		</script>
 
 </body>
+
 <script>
 $("#filtertoggle").click(function(){
     var x = document.getElementById("filterdiv");
