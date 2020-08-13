@@ -9,7 +9,6 @@
 
 
 
-
  $(function() {
 			
   var Page = (function() {
@@ -20,7 +19,7 @@
         onBeforeChange : function( slide, pos ) {
 
           $nav.removeClass( 'nav-dot-current' );
-          $nav.eq( pos ).addClass( 'nav-dot-current' );
+          $nav.eq(pos).addClass( 'nav-dot-current' );
 
         }
       } ),

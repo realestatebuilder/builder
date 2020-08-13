@@ -40,14 +40,16 @@ if(!$result){
 <!-- Owl stylesheet -->
 <link rel="stylesheet" href="assets/owl-carousel/owl.carousel.css">
 <link rel="stylesheet" href="assets/owl-carousel/owl.theme.css">
-
+<script src="assets/owl-carousel/owl.carousel.js"></script>
 <!-- Owl stylesheet -->
 
 
 <!-- slitslider -->
-    <link rel="stylesheet" type="text/css" href="assets/slitslider/css/style.css" />
-    <link rel="stylesheet" type="text/css" href="assets/slitslider/css/custom.css" />
-   
+<link rel="stylesheet" type="text/css" href="assets/slitslider/css/style.css" />
+<link rel="stylesheet" type="text/css" href="assets/slitslider/css/custom.css" />
+<script type="text/javascript" src="assets/slitslider/js/modernizr.custom.79639.js"></script>
+<script type="text/javascript" src="assets/slitslider/js/jquery.ba-cond.min.js"></script>
+<script type="text/javascript" src="assets/slitslider/js/jquery.slitslider.js"></script>
 
 
 
@@ -462,16 +464,7 @@ top: 0;
 <!-- /.modal -->
 
 
-    <script type="text/javascript" src="assets/script.js"></script>
-    <script type="text/javascript" src="assets/slitslider/js/modernizr.custom.79639.js"></script>
-    <script type="text/javascript" src="assets/slitslider/js/jquery.ba-cond.min.js"></script>
-    <script type="text/javascript" src="assets/slitslider/js/jquery.slitslider.js"></script>
-    <!-- slitslider -->
-
-    <script src='assets/google_analytics_auto.js'></script></head>
-
-  		<script type="text/javascript" src="js/jquery.ba-cond.min.js"></script>
-		<script type="text/javascript" src="js/jquery.slitslider.js"></script>
+  
     
     <script src="assets/owl-carousel/owl.carousel.js"></script>
     <script src="assets/bootstrap/js/bootstrap.js"></script>
