@@ -308,11 +308,7 @@ top: 0;
                 </select>
               </div>
 
-              <div class="col-lg-4 col-sm-4">
-                  <input name="area_search" id="area_search" type="text" class="form-control" placeholder="Type Area or Pincode">
-              </div>
-
-            <div class="col-lg-4 col-sm-4 ">
+              <div class="col-lg-4 col-sm-4 ">
               <select name="delivery_type" id="delivery_type" class="form-control">
                 <option value="">Rent/Sale</option>
                 <option value="Rent">Rent</option>
@@ -328,6 +324,16 @@ top: 0;
               </select>
             </div>
         
+
+              <div class="col-lg-4 col-sm-4">
+                  <input name="area_search" id="area_search" type="text" class="form-control" placeholder="Area or Pincode">
+              </div>
+              
+              <div class="col-lg-4 col-sm-4">
+                  <input name="carpet_area" id="carpet_area" type="number" class="form-control" placeholder="Carpet Area">
+              </div>
+
+ 
               <div class="col-lg-3 col-sm-4">
               <button name="submit" class="btn btn-success">Find Now</button>
               </form> 

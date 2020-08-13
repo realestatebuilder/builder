@@ -11,6 +11,7 @@ if(isset($_POST['submit']))
   $search_price = $_POST['search_price'];
   echo "<script>console.log('$search_price')</script>";
   $area_search = $_POST['area_search'];
+  $carpet_area = $_POST['carpet_area'];
   // echo "<script>console.log('$search_value')</script>";
   
   $property_type = $_POST['property_type'];
@@ -30,6 +31,10 @@ if(isset($_POST['submit']))
   if(!empty($_POST['area_search']))
   {
     $query.="and property_address LIKE '%$area_search%'";   
+  }
+  if(!empty($_POST['carpet_area']))
+  {
+    $query.="and floor_space BETWEEN $carpet_area-500 AND $carpet_area+500";   
   }
   if(!empty($_POST['bhk']))
   {

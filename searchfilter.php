@@ -41,6 +41,10 @@
           </div>
     <input type="text" class="form-control" name="area_search" placeholder="Type Area or Pincode">
 
+   <input name="carpet_area" id="carpet_area" type="number" class="form-control" placeholder="Carpet Area">
+             
+
+
           <button name="submit" class="btn btn-primary">Find Now</button>
 </form>
   </div>
