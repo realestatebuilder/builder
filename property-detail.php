@@ -366,9 +366,7 @@ echo "<script>console.log('$property_id')</script>";
             <input type="radio" name="optradio" value="Now" checked>
             Now
             </label>
-            <label class="radio-inline">
-            <input type="radio" name="optradio" value="Just a visit">Just a visit
-            </label>
+            
             <label class="radio-inline">
             <input type="radio" name="optradio" value="Within a year">Within a year
             </label>
